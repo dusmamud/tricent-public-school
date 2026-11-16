@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tricent-public-school.pages.dev/sitemap.xml
