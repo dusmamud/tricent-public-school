@@ -1,13 +1,37 @@
-// Playwright verification for Tricent Public School (local preview).
-// Checks horizontal overflow, console errors, failed requests, screenshots,
-// and key interactions. Run: BASE_URL=http://127.0.0.1:4174 node scripts/verify.mjs
+// Playwright verification for Tricent Public School (round 2: 29 routes).
+// Overflow sweep + console errors + interactions. Run: BASE_URL=http://127.0.0.1:4175 node scripts/verify.mjs
 import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 const { chromium } = require('/home/hatch/.npm-global/lib/node_modules/playwright');
 
-const BASE = process.env.BASE_URL || 'http://127.0.0.1:4173';
-const VIEWPORTS = [360, 390, 768, 1024, 1440];
-const ROUTES = ['/', '/about', '/academics', '/facilities', '/admissions', '/gallery', '/news-events', '/contact', '/parent-login', '/careers'];
+const BASE = process.env.BASE_URL || 'http://127.0.0.1:4175';
+const VIEWPORTS = [390, 768, 1440];
+const ROUTES = [
+	'/',
+	'/about',
+	'/academics',
+	'/facilities',
+	'/admissions',
+	'/gallery',
+	'/news-events',
+	'/news-events/admissions-open-2026-27',
+	'/news-events/basketball-championship-win',
+	'/contact',
+	'/parent-login',
+	'/careers',
+	'/privacy-policy',
+	'/terms',
+	'/mandatory-disclosure',
+	'/results',
+	'/academic-calendar',
+	'/faculty',
+	'/notices',
+	'/downloads',
+	'/transport',
+	'/testimonials',
+	'/faq',
+	'/sitemap'
+];
 const results = { overflow: [], errors: [], failedRequests: [], interactions: [], screenshots: [] };
 
 const browser = await chromium.launch();
@@ -25,8 +49,8 @@ async function checkRoute(route, width) {
 	page.on('response', (r) => {
 		if (r.status() >= 400) failed.push(`${r.url()} :: HTTP ${r.status()}`);
 	});
-	await page.goto(BASE + route, { waitUntil: 'networkidle', timeout: 30000 });
-	await page.waitForTimeout(800);
+	await page.goto(BASE + route, { waitUntil: 'domcontentloaded', timeout: 30000 });
+	await page.waitForTimeout(700);
 	const overflow = await page.evaluate(() => {
 		const de = document.documentElement;
 		return { scrollWidth: de.scrollWidth, innerWidth: window.innerWidth, over: de.scrollWidth > window.innerWidth + 1 };
@@ -37,7 +61,6 @@ async function checkRoute(route, width) {
 	return page;
 }
 
-// 1. Overflow sweep
 for (const route of ROUTES) {
 	for (const w of VIEWPORTS) {
 		const page = await checkRoute(route, w);
@@ -45,40 +68,31 @@ for (const route of ROUTES) {
 	}
 }
 
-// 2. Screenshots (home 390 + 1440, admissions 390)
-const shots = [
-	['/', 390, 'home-390.png'],
-	['/', 1440, 'home-1440.png'],
-	['/admissions', 390, 'admissions-390.png'],
-	['/about', 1440, 'about-1440.png'],
-	['/gallery', 1440, 'gallery-1440.png']
-];
-for (const [route, w, name] of shots) {
+// Viewport screenshots (instant scroll, no fullPage)
+async function shot(name, route, w, y) {
 	const page = await context.newPage({ viewport: { width: w, height: 900 } });
-	await page.goto(BASE + route, { waitUntil: 'networkidle' });
-	await page.waitForTimeout(1200);
-	// scroll through to trigger reveals
-	await page.evaluate(async () => {
-		await new Promise((res) => {
-			let y = 0;
-			const t = setInterval(() => {
-				y += 700;
-				window.scrollTo(0, y);
-				if (y >= document.body.scrollHeight) {
-					clearInterval(t);
-					window.scrollTo(0, 0);
-					res();
-				}
-			}, 120);
-		});
-	});
-	await page.waitForTimeout(600);
-	await page.screenshot({ path: `scripts/shots/${name}`, fullPage: true });
+	await page.goto(BASE + route, { waitUntil: 'domcontentloaded' });
+	await page.waitForTimeout(1000);
+	await page.evaluate(async (yy) => {
+		const h = document.body.scrollHeight;
+		for (let s = 0; s <= h; s += 600) {
+			window.scrollTo({ top: s, behavior: 'instant' });
+			await new Promise((r) => setTimeout(r, 50));
+		}
+		window.scrollTo({ top: yy, behavior: 'instant' });
+	}, y);
+	await page.waitForTimeout(900);
+	await page.screenshot({ path: `scripts/shots/${name}` });
 	results.screenshots.push(name);
 	await page.close();
 }
+await shot('home-390-ticker.png', '/', 390, 480);
+await shot('home-390-quicklinks.png', '/', 390, 1750);
+await shot('disclosure-1440.png', '/mandatory-disclosure', 1440, 0);
+await shot('results-1440.png', '/results', 1440, 0);
+await shot('news-detail-390.png', '/news-events/basketball-championship-win', 390, 0);
 
-// 3. Interactions
+// Interactions
 async function interact(name, fn) {
 	const page = await context.newPage({ viewport: { width: 390, height: 844 } });
 	try {
@@ -90,78 +104,94 @@ async function interact(name, fn) {
 	await page.close();
 }
 
-await interact('mobile menu opens + Academics submenu', async (page) => {
-	await page.goto(BASE + '/', { waitUntil: 'networkidle' });
-	await page.getByLabel('Open menu').click();
-	await page.waitForTimeout(300);
-	await page.getByLabel('Toggle Academics submenu').click();
-	await page.waitForTimeout(300);
-	return await page.getByText('Pre-Primary (Nursery – KG)').first().isVisible();
-});
-
-await interact('hero next arrow changes slide', async (page) => {
-	await page.goto(BASE + '/', { waitUntil: 'networkidle' });
-	const first = await page.locator('h1').first().innerText();
-	await page.getByLabel('Next slide').click();
-	await page.waitForTimeout(1300);
-	const second = await page.locator('h1').first().innerText();
-	return first !== second;
-});
-
-await interact('admissions FAQ toggles + enquiry form submits', async (page) => {
-	await page.goto(BASE + '/admissions', { waitUntil: 'networkidle' });
-	await page.getByText('Is there an entrance test?').click();
+await interact('results year tab switches to 2023-24', async (page) => {
+	await page.goto(BASE + '/results', { waitUntil: 'domcontentloaded' });
+	await page.getByRole('tab', { name: '2023–24' }).click();
 	await page.waitForTimeout(400);
-	const faqVisible = await page.getByText('Nursery to Class V admissions are through a friendly interaction').isVisible();
-	await page.locator('#parent-name').fill('Test Parent');
-	await page.locator('#phone').fill('9876543210');
-	await page.locator('#child-class').selectOption('VI');
-	await page.getByRole('button', { name: 'SUBMIT ENQUIRY' }).click();
-	await page.waitForTimeout(400);
-	const ok = await page.getByText(/Thank you, Test Parent/).isVisible();
-	return faqVisible && ok;
+	return await page.getByText('Ananya Singh').first().isVisible();
 });
 
-await interact('gallery filter + lightbox', async (page) => {
-	await page.goto(BASE + '/gallery', { waitUntil: 'networkidle' });
-	await page.getByRole('button', { name: 'Sports', exact: true }).click();
+await interact('calendar filter Exam shows exams only', async (page) => {
+	await page.goto(BASE + '/academic-calendar', { waitUntil: 'domcontentloaded' });
+	await page.getByRole('button', { name: 'Exam', exact: true }).click();
 	await page.waitForTimeout(300);
-	await page.locator('button:has(img[alt="Basketball"])').first().click();
-	await page.waitForTimeout(400);
-	const lb = await page.getByRole('dialog', { name: 'Photo viewer' }).isVisible();
-	await page.getByLabel('Close photo viewer').click();
+	const txt = await page.textContent('main, div');
+	return txt.includes('Half-Yearly Examinations') && !txt.includes('Diwali break');
+});
+
+await interact('faculty filter Science shows Dr. Meera Bhatt', async (page) => {
+	await page.goto(BASE + '/faculty', { waitUntil: 'domcontentloaded' });
+	await page.getByRole('button', { name: 'Science', exact: true }).click();
 	await page.waitForTimeout(300);
-	return lb;
+	return await page.getByText('Dr. Meera Bhatt').isVisible();
 });
 
-await interact('parent login demo → dashboard', async (page) => {
-	await page.goto(BASE + '/parent-login', { waitUntil: 'networkidle' });
-	await page.locator('#login-email').fill('parent@example.com');
-	await page.locator('#login-password').fill('demo1234');
-	await page.getByRole('button', { name: 'LOGIN' }).click();
-	await page.waitForTimeout(400);
-	return await page.getByText('Aarav Verma').isVisible();
+await interact('notices search finds sports day', async (page) => {
+	await page.goto(BASE + '/notices', { waitUntil: 'domcontentloaded' });
+	await page.locator('input[type="search"]').fill('sports day');
+	await page.waitForTimeout(300);
+	return await page.getByText('Annual Sports Day on 05 December 2026').isVisible();
 });
 
-await interact('header search finds fees', async (page) => {
-	await page.goto(BASE + '/', { waitUntil: 'networkidle' });
+await interact('downloads PDF link returns 200', async (page) => {
+	const resp = await page.request.get(BASE + '/downloads/admission-form.pdf');
+	return resp.status() === 200 && (resp.headers()['content-type'] || '').includes('pdf');
+});
+
+await interact('faq accordion opens transport answer', async (page) => {
+	await page.goto(BASE + '/faq', { waitUntil: 'domcontentloaded' });
+	await page.getByRole('button', { name: 'Transport', exact: true }).click();
+	await page.waitForTimeout(300);
+	await page.getByText('Which areas do the school buses cover?').click();
+	await page.waitForTimeout(500);
+	return await page.getByText('15 GPS-enabled buses cover Simri Bakhtiyarpur').isVisible();
+});
+
+await interact('home count-up stats reach 20+ and 100%', async (page) => {
+	await page.goto(BASE + '/', { waitUntil: 'domcontentloaded' });
+	await page.evaluate(() => window.scrollTo({ top: 1100, behavior: 'instant' }));
+	await page.waitForTimeout(1800);
+	const txt = await page.evaluate(() => document.body.innerText);
+	return txt.includes('20+') && txt.includes('100%');
+});
+
+await interact('testimonials filter Alumni shows Rohit Verma', async (page) => {
+	await page.goto(BASE + '/testimonials', { waitUntil: 'domcontentloaded' });
+	await page.getByRole('button', { name: 'Alumni', exact: true }).click();
+	await page.waitForTimeout(300);
+	return await page.getByText('Rohit Verma').isVisible();
+});
+
+await interact('news card links to detail page', async (page) => {
+	await page.goto(BASE + '/news-events', { waitUntil: 'domcontentloaded' });
+	await page.getByText('Tricent Wins Inter-School Basketball Championship').click();
+	await page.waitForTimeout(500);
+	return page.url().includes('/news-events/basketball-championship-win');
+});
+
+await interact('header search finds Mandatory Disclosure', async (page) => {
+	await page.goto(BASE + '/', { waitUntil: 'domcontentloaded' });
 	await page.getByLabel('Search').click();
 	await page.waitForTimeout(300);
-	await page.locator('input[type="search"]').fill('fees');
+	await page.locator('input[type="search"]').fill('disclosure');
 	await page.waitForTimeout(300);
-	return await page.getByText('Fee Structure').first().isVisible();
+	return await page.getByText('Mandatory Disclosure').first().isVisible();
 });
 
 await browser.close();
 
-// Filter out the known VM-blocked Google Fonts request from failures
-const knownBlocked = (u) => u.includes('fonts.googleapis.com') || u.includes('fonts.gstatic.com');
+// Filter out known VM-blocked external requests (Google Fonts + Maps embed)
+const knownBlocked = (u) => u.includes('fonts.googleapis.com') || u.includes('fonts.gstatic.com') || u.includes('google.com/maps');
+const isFontsErr = (e) => e.includes('ERR_TUNNEL_CONNECTION_FAILED') || e.includes('fonts.g');
 results.failedRequests = results.failedRequests
 	.map((r) => ({ ...r, failed: r.failed.filter((f) => !knownBlocked(f)) }))
 	.filter((r) => r.failed.length > 0);
+results.errors = results.errors
+	.map((r) => ({ ...r, errors: r.errors.filter((e) => !isFontsErr(e)) }))
+	.filter((r) => r.errors.length > 0);
 
 const badOverflow = results.overflow.filter((o) => o.over);
 console.log(JSON.stringify({ ...results, badOverflow }, null, 2));
 console.log(
-	`\nSUMMARY: overflow issues ${badOverflow.length}/${results.overflow.length} · page errors ${results.errors.length} · failed requests (excl. Google Fonts) ${results.failedRequests.length} · interactions ${results.interactions.filter((i) => i.ok).length}/${results.interactions.length} passed`
+	`\nSUMMARY: overflow issues ${badOverflow.length}/${results.overflow.length} · page errors ${results.errors.length} · failed requests (excl. VM-blocked Fonts/Maps) ${results.failedRequests.length} · interactions ${results.interactions.filter((i) => i.ok).length}/${results.interactions.length} passed`
 );

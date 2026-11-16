@@ -42,7 +42,7 @@
 			<nav aria-label="Quick links">
 				<h3 class="text-xs font-extrabold tracking-[0.25em] text-gold-400">QUICK LINKS</h3>
 				<ul class="mt-4 space-y-2.5 text-sm">
-					{#each [{ label: 'Home', href: '/' }, { label: 'About Us', href: '/about' }, { label: 'Academics', href: '/academics' }, { label: 'Facilities', href: '/facilities' }, { label: 'Admissions', href: '/admissions' }, { label: 'Gallery', href: '/gallery' }, { label: 'Contact Us', href: '/contact' }] as l}
+					{#each [{ label: 'Home', href: '/' }, { label: 'About Us', href: '/about' }, { label: 'Academics', href: '/academics' }, { label: 'Facilities', href: '/facilities' }, { label: 'Admissions', href: '/admissions' }, { label: 'Gallery', href: '/gallery' }, { label: 'Contact Us', href: '/contact' }, { label: 'Mandatory Disclosure', href: '/mandatory-disclosure' }, { label: 'Sitemap', href: '/sitemap' }] as l}
 						<li>
 							<a href={l.href} class="text-white/75 transition hover:text-gold-300">{l.label}</a>
 						</li>
@@ -53,7 +53,7 @@
 			<nav aria-label="Information">
 				<h3 class="text-xs font-extrabold tracking-[0.25em] text-gold-400">INFORMATION</h3>
 				<ul class="mt-4 space-y-2.5 text-sm">
-					{#each [{ label: 'Fee Structure', href: '/admissions#fees' }, { label: 'Admission Process', href: '/admissions#process' }, { label: 'School Calendar', href: '/news-events' }, { label: 'News & Events', href: '/news-events' }, { label: 'Careers', href: '/careers' }, { label: 'Alumni', href: '/about#alumni' }, { label: 'Parent Login', href: '/parent-login' }] as l}
+					{#each [{ label: 'Fee Structure', href: '/admissions#fees' }, { label: 'Admission Process', href: '/admissions#process' }, { label: 'Academic Calendar', href: '/academic-calendar' }, { label: 'Board Results', href: '/results' }, { label: 'Notice Board', href: '/notices' }, { label: 'Downloads', href: '/downloads' }, { label: 'FAQ', href: '/faq' }, { label: 'Careers', href: '/careers' }, { label: 'Parent Login', href: '/parent-login' }] as l}
 						<li>
 							<a href={l.href} class="text-white/75 transition hover:text-gold-300">{l.label}</a>
 						</li>

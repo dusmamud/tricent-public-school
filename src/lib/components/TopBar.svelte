@@ -26,6 +26,9 @@
 			<a href="/careers" class="hidden hover:text-gold-300 sm:inline">Career</a>
 			<a href="/about#alumni" class="hidden hover:text-gold-300 sm:inline">Alumni</a>
 			<a href="/news-events" class="hidden hover:text-gold-300 lg:inline">News &amp; Events</a>
+			<a href="/mandatory-disclosure" class="hidden font-bold text-gold-400 hover:text-gold-300 md:inline"
+				>Mandatory Disclosure</a
+			>
 			<a href="/parent-login" class="hidden hover:text-gold-300 md:inline">Parent Login</a>
 			<a
 				href="/admissions"

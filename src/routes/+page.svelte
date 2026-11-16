@@ -2,7 +2,9 @@
 	import Icon from '#lib/components/Icon.svelte';
 	import Reveal from '#lib/components/Reveal.svelte';
 	import SectionHeading from '#lib/components/SectionHeading.svelte';
+	import CountUp from '#lib/components/CountUp.svelte';
 	import { features, academics, facilities, newsItems, testimonials, stats } from '#lib/data/site';
+	import { notices } from '#lib/data/more';
 
 	const slides = [
 		{
@@ -177,6 +179,22 @@
 	</div>
 </section>
 
+<!-- ============ NOTICE TICKER ============ -->
+<div class="marquee overflow-hidden border-b border-forest-900/10 bg-gold-500 py-2.5" aria-label="Latest notices">
+	<div class="marquee-track flex w-max items-center gap-8">
+		{#each [...notices.slice(0, 4), ...notices.slice(0, 4)] as n}
+			<a
+				href="/notices"
+				class="flex shrink-0 items-center gap-2 text-xs font-extrabold tracking-wide whitespace-nowrap text-forest-950 transition hover:text-forest-800"
+			>
+				<Icon name="megaphone" cls="h-4 w-4" />
+				{n.title}
+			</a>
+			<span class="shrink-0 text-gold-600" aria-hidden="true">✦</span>
+		{/each}
+	</div>
+</div>
+
 <!-- ============ FEATURE STRIP ============ -->
 <section class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:-mt-10 lg:px-8">
 	<Reveal>
@@ -244,7 +262,13 @@
 							>
 								<Icon name={s.icon} cls="h-5 w-5" />
 							</span>
-							<p class="mt-2 font-display text-2xl font-bold text-forest-900">{s.value}</p>
+							<p class="mt-2 font-display text-2xl font-bold text-forest-900">
+								{#if s.count}
+									<CountUp value={s.count} suffix={s.suffix ?? ''} />
+								{:else}
+									{s.value}
+								{/if}
+							</p>
 							<p class="text-xs font-semibold tracking-wide text-ink/55 uppercase">{s.label}</p>
 						</div>
 					{/each}
@@ -256,6 +280,29 @@
 					READ MORE ABOUT US
 					<Icon name="arrow-right" cls="h-4 w-4 text-gold-400" />
 				</a>
+			</div>
+		</Reveal>
+	</div>
+</section>
+
+<!-- ============ QUICK LINKS ============ -->
+<section class="border-y border-forest-900/10 bg-white">
+	<div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+		<Reveal>
+			<div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
+				{#each [{ icon: 'file', label: 'Mandatory Disclosure', href: '/mandatory-disclosure' }, { icon: 'trophy', label: 'Board Results', href: '/results' }, { icon: 'calendar', label: 'Academic Calendar', href: '/academic-calendar' }, { icon: 'download', label: 'Downloads', href: '/downloads' }, { icon: 'megaphone', label: 'Notice Board', href: '/notices' }, { icon: 'bus', label: 'Transport', href: '/transport' }, { icon: 'users', label: 'Our Faculty', href: '/faculty' }, { icon: 'alert-circle', label: 'FAQ', href: '/faq' }] as q}
+					<a
+						href={q.href}
+						class="group flex items-center gap-3 rounded-xl border border-forest-900/10 bg-cream px-4 py-4 transition hover:-translate-y-0.5 hover:border-gold-500/50 hover:shadow-md"
+					>
+						<span
+							class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-forest-900 text-gold-400 transition group-hover:bg-gold-500 group-hover:text-forest-950"
+						>
+							<Icon name={q.icon} cls="h-5 w-5" />
+						</span>
+						<span class="text-sm leading-snug font-bold text-forest-900">{q.label}</span>
+					</a>
+				{/each}
 			</div>
 		</Reveal>
 	</div>
@@ -407,6 +454,20 @@
 	</div>
 </section>
 
+<!-- ============ MARQUEE BAND ============ -->
+<div class="marquee overflow-hidden bg-forest-950 py-4" aria-hidden="true">
+	<div class="marquee-track flex w-max items-center gap-10">
+		{#each Array(2) as _}
+			{#each ['ADMISSIONS OPEN 2026–27', 'CBSE AFFILIATION', '100% BOARD RESULTS', '20+ YEARS OF EXCELLENCE', 'NURSERY TO CLASS XII', 'GPS-ENABLED SCHOOL BUSES'] as m}
+				<span class="flex shrink-0 items-center gap-10 text-sm font-extrabold tracking-[0.2em] whitespace-nowrap text-gold-400">
+					{m}
+					<span class="text-gold-500">✦</span>
+				</span>
+			{/each}
+		{/each}
+	</div>
+</div>
+
 <!-- ============ NEWS & EVENTS ============ -->
 <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
 	<Reveal>
@@ -426,7 +487,7 @@
 	<div class="mt-10 grid gap-6 md:grid-cols-3">
 		{#each newsItems.slice(0, 3) as n}
 			<Reveal>
-				<a href="/news-events" class="group block h-full">
+				<a href="/news-events/{n.slug}" class="group block h-full">
 					<article
 						class="h-full overflow-hidden rounded-xl border border-forest-900/10 bg-white shadow-sm transition group-hover:-translate-y-1 group-hover:shadow-lg"
 					>

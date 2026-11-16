@@ -30,6 +30,16 @@
 		{ label: 'Photo Gallery', href: '/gallery', section: 'Gallery' },
 		{ label: 'News & Events', href: '/news-events', section: 'News' },
 		{ label: 'Parent Login', href: '/parent-login', section: 'Parents' },
+		{ label: 'Mandatory Disclosure', href: '/mandatory-disclosure', section: 'School' },
+		{ label: 'Board Results', href: '/results', section: 'Academics' },
+		{ label: 'Academic Calendar', href: '/academic-calendar', section: 'Academics' },
+		{ label: 'Our Faculty', href: '/faculty', section: 'About Us' },
+		{ label: 'Notice Board', href: '/notices', section: 'School' },
+		{ label: 'Downloads', href: '/downloads', section: 'Parents' },
+		{ label: 'Transport', href: '/transport', section: 'Facilities' },
+		{ label: 'Testimonials', href: '/testimonials', section: 'School' },
+		{ label: 'FAQ', href: '/faq', section: 'School' },
+		{ label: 'Sitemap', href: '/sitemap', section: 'School' },
 		{ label: 'Careers', href: '/careers', section: 'School' },
 		{ label: 'Contact Us', href: '/contact', section: 'School' }
 	];

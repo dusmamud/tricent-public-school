@@ -27,7 +27,8 @@
 	<div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 		{#each newsItems as n}
 			<Reveal>
-				<article class="h-full overflow-hidden rounded-xl border border-forest-900/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+				<a href="/news-events/{n.slug}" class="group block h-full">
+					<article class="h-full overflow-hidden rounded-xl border border-forest-900/10 bg-white shadow-sm transition group-hover:-translate-y-1 group-hover:shadow-lg">
 					<div class="relative aspect-[16/10] overflow-hidden">
 						<img src={n.image} alt={n.title} class="h-full w-full object-cover" loading="lazy" />
 						<span class="absolute top-3 left-3 rounded-sm bg-gold-500 px-2.5 py-1 text-[0.65rem] font-extrabold tracking-wider text-forest-950 uppercase">
@@ -39,10 +40,14 @@
 							<Icon name="calendar" cls="h-3.5 w-3.5" />
 							{n.date}
 						</p>
-						<h2 class="mt-2 font-display text-lg leading-snug font-bold text-forest-900">{n.title}</h2>
+						<h2 class="mt-2 font-display text-lg leading-snug font-bold text-forest-900 transition group-hover:text-forest-700">{n.title}</h2>
 						<p class="mt-2 text-sm leading-relaxed text-ink/65">{n.text}</p>
+						<p class="mt-3 inline-flex items-center gap-1.5 text-xs font-extrabold tracking-wider text-forest-800">
+							READ MORE <Icon name="arrow-right" cls="h-3.5 w-3.5" />
+						</p>
 					</div>
 				</article>
+				</a>
 			</Reveal>
 		{/each}
 	</div>

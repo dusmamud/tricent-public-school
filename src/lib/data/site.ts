@@ -16,7 +16,15 @@ export const school = {
 
 export const navLinks = [
 	{ label: 'Home', href: '/' },
-	{ label: 'About Us', href: '/about' },
+	{
+		label: 'About Us',
+		href: '/about',
+		children: [
+			{ label: 'Our Faculty', href: '/faculty' },
+			{ label: 'Mandatory Disclosure', href: '/mandatory-disclosure' },
+			{ label: 'Alumni', href: '/about#alumni' }
+		]
+	},
 	{
 		label: 'Academics',
 		href: '/academics',
@@ -25,7 +33,9 @@ export const navLinks = [
 			{ label: 'Primary (I – V)', href: '/academics#primary' },
 			{ label: 'Middle School (VI – VIII)', href: '/academics#middle' },
 			{ label: 'Secondary (IX – X)', href: '/academics#secondary' },
-			{ label: 'Senior Secondary (XI – XII)', href: '/academics#senior' }
+			{ label: 'Senior Secondary (XI – XII)', href: '/academics#senior' },
+			{ label: 'Board Results', href: '/results' },
+			{ label: 'Academic Calendar', href: '/academic-calendar' }
 		]
 	},
 	{
@@ -47,7 +57,10 @@ export const navLinks = [
 			{ label: 'Admission Process', href: '/admissions#process' },
 			{ label: 'Fee Structure', href: '/admissions#fees' },
 			{ label: 'Important Dates', href: '/admissions#dates' },
-			{ label: 'Enquire Now', href: '/admissions#enquire' }
+			{ label: 'Enquire Now', href: '/admissions#enquire' },
+			{ label: 'Downloads', href: '/downloads' },
+			{ label: 'Transport', href: '/transport' },
+			{ label: 'FAQ', href: '/faq' }
 		]
 	},
 	{ label: 'Gallery', href: '/gallery' },
@@ -57,8 +70,8 @@ export const navLinks = [
 export const stats = [
 	{ value: 'CBSE', label: 'Affiliation', icon: 'shield' },
 	{ value: '1:20', label: 'Teacher Ratio', icon: 'users' },
-	{ value: '20+', label: 'Years of Excellence', icon: 'award' },
-	{ value: '100%', label: 'Commitment', icon: 'target' }
+	{ value: '20+', label: 'Years of Excellence', icon: 'award', count: 20, suffix: '+' },
+	{ value: '100%', label: 'Commitment', icon: 'target', count: 100, suffix: '%' }
 ];
 
 export const features = [
@@ -247,6 +260,7 @@ export const galleryItems = [
 
 export const newsItems = [
 	{
+		slug: 'admissions-open-2026-27',
 		date: '12 Nov 2026',
 		tag: 'Admissions',
 		title: 'Admissions Open for Academic Year 2026–27',
@@ -254,6 +268,7 @@ export const newsItems = [
 		image: '/images/about-students.webp'
 	},
 	{
+		slug: 'class-x-results-100-percent',
 		date: '28 Oct 2026',
 		tag: 'Results',
 		title: 'Class X CBSE Results: 100% Pass, 32 Students Above 90%',
@@ -261,6 +276,7 @@ export const newsItems = [
 		image: '/images/academics-classroom.webp'
 	},
 	{
+		slug: 'basketball-championship-win',
 		date: '18 Oct 2026',
 		tag: 'Sports',
 		title: 'Tricent Wins Inter-School Basketball Championship',
@@ -268,6 +284,7 @@ export const newsItems = [
 		image: '/images/basketball.webp'
 	},
 	{
+		slug: 'annual-day-2026',
 		date: '02 Oct 2026',
 		tag: 'Cultural',
 		title: 'Annual Day 2026: A Grand Celebration of Talent',
@@ -275,6 +292,7 @@ export const newsItems = [
 		image: '/images/dance.png'
 	},
 	{
+		slug: 'science-exhibition-2nd-prize',
 		date: '14 Sep 2026',
 		tag: 'Academics',
 		title: 'National Science Exhibition: Our Model Wins 2nd Prize',
@@ -282,6 +300,7 @@ export const newsItems = [
 		image: '/images/science-lab.webp'
 	},
 	{
+		slug: 'teachers-day-celebrations',
 		date: '05 Sep 2026',
 		tag: 'Events',
 		title: "Teachers' Day Celebrations Across the Campus",
