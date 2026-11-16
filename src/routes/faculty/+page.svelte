@@ -2,7 +2,8 @@
 	import PageHero from '#lib/components/PageHero.svelte';
 	import Reveal from '#lib/components/Reveal.svelte';
 	import SectionHeading from '#lib/components/SectionHeading.svelte';
-	import { facultyDirectory } from '#lib/data/more';
+	import Icon from '#lib/components/Icon.svelte';
+	import { facultyDirectory, teacherSlug } from '#lib/data/more';
 
 	const departments = ['All', ...facultyDirectory.map((d) => d.department)];
 	let dept = $state('All');
@@ -48,18 +49,30 @@
 			<div class="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
 				{#each group.members as m}
 					<Reveal>
-						<article
-							class="h-full rounded-xl border border-forest-900/10 bg-white p-6 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
-						>
-							<span
-								class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-forest-900 font-display text-xl font-bold text-gold-400"
+						<a href="/faculty/{teacherSlug(m.name)}" class="group block h-full">
+							<article
+								class="h-full rounded-xl border border-forest-900/10 bg-white p-6 text-center shadow-sm transition group-hover:-translate-y-1 group-hover:shadow-lg"
 							>
-								{m.initials}
-							</span>
-							<h3 class="mt-4 font-display text-lg leading-snug font-bold text-forest-900">{m.name}</h3>
-							<p class="mt-1 text-sm font-bold text-gold-600">{m.role}</p>
-							<p class="mt-2 text-xs leading-relaxed text-ink/60">{m.note}</p>
-						</article>
+								<span
+									class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-forest-900 font-display text-xl font-bold text-gold-400"
+								>
+									{m.initials}
+								</span>
+								<h3
+									class="mt-4 font-display text-lg leading-snug font-bold text-forest-900 transition group-hover:text-forest-700"
+								>
+									{m.name}
+								</h3>
+								<p class="mt-1 text-sm font-bold text-gold-600">{m.role}</p>
+								<p class="mt-2 text-xs leading-relaxed text-ink/60">{m.note}</p>
+								<p
+									class="mt-3 inline-flex items-center gap-1.5 text-xs font-extrabold tracking-wider text-forest-800"
+								>
+									VIEW PROFILE
+									<Icon name="arrow-right" cls="h-3.5 w-3.5" />
+								</p>
+							</article>
+						</a>
 					</Reveal>
 				{/each}
 			</div>

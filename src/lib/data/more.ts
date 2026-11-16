@@ -117,80 +117,362 @@ export const calendarEvents = [
 	{ date: '31 Mar 2027', event: 'Session 2026–27 ends', category: 'Event' }
 ];
 
+export function teacherSlug(name: string) {
+	return name
+		.toLowerCase()
+		.replace(/[^a-z\s]/g, '')
+		.trim()
+		.replace(/\s+/g, '-');
+}
+
 export const facultyDirectory = [
 	{
 		department: 'Leadership',
 		members: [
-			{ initials: 'AS', name: 'Dr. Ananya Sharma', role: 'Principal', note: 'M.Ed., Ph.D. (Education) — 22 yrs' },
-			{ initials: 'RK', name: 'Mr. Rajesh Kumar', role: 'Vice Principal', note: 'M.Sc. Mathematics — 18 yrs' },
-			{ initials: 'SM', name: 'Mrs. Sunita Mishra', role: 'Head, Primary Wing', note: 'B.Ed., Montessori trained — 16 yrs' },
-			{ initials: 'AP', name: 'Mr. Amit Patel', role: 'Head, Science & Labs', note: 'M.Sc. Physics — 14 yrs' }
+			{
+				initials: 'AS',
+				name: 'Dr. Ananya Sharma',
+				role: 'Principal',
+				note: 'M.Ed., Ph.D. (Education) — 22 yrs',
+				bio: 'Dr. Sharma has led Tricent since 2012, shaping it from a 400-student school into a 1,800-strong CBSE institution. She believes a school runs on trust — between teachers, parents and children — and her door is open to every family.',
+				subjects: ['Educational Leadership', 'School Culture'],
+				achievements: ['CBSE Best Principal Award 2023 (demo)', '100% board results for 3 consecutive years'],
+				quote: 'Every child arrives with a gift — our job is to help them unwrap it.',
+				office: 'Mon – Fri, 10:00 AM – 12:00 PM'
+			},
+			{
+				initials: 'RK',
+				name: 'Mr. Rajesh Kumar',
+				role: 'Vice Principal',
+				note: 'M.Sc. Mathematics — 18 yrs',
+				bio: 'A mathematics teacher at heart, Mr. Kumar now leads academics and board preparation across the school. He designed the remedial programme that lifted the Class X mathematics average by 18% in two years.',
+				subjects: ['Mathematics', 'Academic Planning'],
+				achievements: ['Designed the school remedial programme', 'Mentor to 3 state-level maths Olympiad finalists'],
+				quote: 'Discipline is not restriction — it is the freedom to achieve.',
+				office: 'Mon – Sat, 9:00 – 11:00 AM'
+			},
+			{
+				initials: 'SM',
+				name: 'Mrs. Sunita Mishra',
+				role: 'Head, Primary Wing',
+				note: 'B.Ed., Montessori trained — 16 yrs',
+				bio: 'Mrs. Mishra champions joyful early learning. Under her, the Primary Wing moved to a play-way phonics programme where reading begins with stories, rhymes and sand trays — not with rote work.',
+				subjects: ['Early Childhood Education', 'Phonics'],
+				achievements: ['Built the play-way phonics programme', 'Primary Wing reading levels up 35% in 3 years'],
+				quote: 'Children learn best when they forget they are learning.',
+				office: 'Mon – Fri, 9:00 – 11:00 AM'
+			},
+			{
+				initials: 'AP',
+				name: 'Mr. Amit Patel',
+				role: 'Head, Science & Labs',
+				note: 'M.Sc. Physics — 14 yrs',
+				bio: 'Mr. Patel runs the three science laboratories, the robotics club and the school science fair. His students built the rainwater-harvesting model that won 2nd prize at the district science exhibition.',
+				subjects: ['Physics', 'Robotics'],
+				achievements: ['District science exhibition 2nd prize (2026)', 'Robotics club — 60 active members'],
+				quote: 'Science is not a subject — it is a way of asking questions.',
+				office: 'Tue & Thu, 2:00 – 4:00 PM'
+			}
 		]
 	},
 	{
 		department: 'English',
 		members: [
-			{ initials: 'RN', name: 'Mrs. Ritu Nair', role: 'PGT English', note: 'M.A. English, B.Ed. — 15 yrs' },
-			{ initials: 'DK', name: 'Mr. Deepak Kumar', role: 'TGT English', note: 'M.A. English — 9 yrs' },
-			{ initials: 'SK', name: 'Ms. Shreya Kapoor', role: 'PRT English', note: 'B.A., B.Ed. — 6 yrs' }
+			{
+				initials: 'RN',
+				name: 'Mrs. Ritu Nair',
+				role: 'PGT English',
+				note: 'M.A. English, B.Ed. — 15 yrs',
+				bio: 'Mrs. Nair teaches senior English and runs the debate and literary club. Her students have won the district debate championship two years running, and the school magazine she edits is read cover to cover.',
+				subjects: ['English Literature', 'Creative Writing'],
+				achievements: ['District debate champions 2025', 'Editor, school magazine “The Tricentian”'],
+				quote: 'Words build worlds.',
+				office: 'Mon & Wed, 1:00 – 3:00 PM'
+			},
+			{
+				initials: 'DK',
+				name: 'Mr. Deepak Kumar',
+				role: 'TGT English',
+				note: 'M.A. English — 9 yrs',
+				bio: 'Mr. Kumar makes grammar feel like a game and drama feel like life. He directs the annual day English musical and coaches the middle-school elocution team.',
+				subjects: ['English Grammar', 'Drama'],
+				achievements: ['Directed 5 annual day musicals', 'Elocution team — district winners 2024'],
+				quote: 'Read a hundred books, and you have lived a hundred lives.',
+				office: 'Tue & Fri, 1:00 – 3:00 PM'
+			},
+			{
+				initials: 'SK',
+				name: 'Ms. Shreya Kapoor',
+				role: 'PRT English',
+				note: 'B.A., B.Ed. — 6 yrs',
+				bio: 'Ms. Kapoor runs the Primary reading programme — a library period every week, a reading challenge every term, and a classroom library in every room. Library circulation is up 40% since she took charge.',
+				subjects: ['English', 'Phonics'],
+				achievements: ['Reading programme — circulation up 40%', 'Young Authors Day founder'],
+				quote: 'A child who reads will never be alone.',
+				office: 'Mon – Thu, 12:00 – 1:00 PM'
+			}
 		]
 	},
 	{
 		department: 'Hindi & Sanskrit',
 		members: [
-			{ initials: 'GT', name: 'Mrs. Geeta Tripathi', role: 'PGT Hindi', note: 'M.A. Hindi, B.Ed. — 17 yrs' },
-			{ initials: 'VS', name: 'Mr. Vinod Sharma', role: 'TGT Hindi & Sanskrit', note: 'M.A. Sanskrit — 11 yrs' }
+			{
+				initials: 'GT',
+				name: 'Mrs. Geeta Tripathi',
+				role: 'PGT Hindi',
+				note: 'M.A. Hindi, B.Ed. — 17 yrs',
+				bio: 'Mrs. Tripathi teaches senior Hindi literature and coaches the Hindi debate team to the state-level finals. Her classroom is famous for its poetry wall, where students pin their own verses.',
+				subjects: ['Hindi Literature', 'Debate'],
+				achievements: ['Hindi debate — state-level finalists', 'School poetry wall curator'],
+				quote: 'Bhasha hi sanskriti hai.',
+				office: 'Mon & Wed, 2:00 – 4:00 PM'
+			},
+			{
+				initials: 'VS',
+				name: 'Mr. Vinod Sharma',
+				role: 'TGT Hindi & Sanskrit',
+				note: 'M.A. Sanskrit — 11 yrs',
+				bio: 'Mr. Sharma keeps Sanskrit alive at Tricent — shloka recitation, Sanskrit week, and a small but passionate group of students who can chant the Bhagavad Gita from memory.',
+				subjects: ['Hindi', 'Sanskrit'],
+				achievements: ['Sanskrit shloka recitation — district winners', 'Sanskrit Week founder'],
+				quote: 'Sanskrit is the mother of clarity.',
+				office: 'Tue & Thu, 1:00 – 3:00 PM'
+			}
 		]
 	},
 	{
 		department: 'Mathematics',
 		members: [
-			{ initials: 'NP', name: 'Mr. Nitin Pandey', role: 'PGT Mathematics', note: 'M.Sc. Maths — 13 yrs' },
-			{ initials: 'KJ', name: 'Mrs. Kavita Jha', role: 'TGT Mathematics', note: 'M.Sc. Maths, B.Ed. — 10 yrs' },
-			{ initials: 'AR', name: 'Mr. Arjun Rao', role: 'PRT Mathematics', note: 'B.Sc., B.Ed. — 7 yrs' }
+			{
+				initials: 'NP',
+				name: 'Mr. Nitin Pandey',
+				role: 'PGT Mathematics',
+				note: 'M.Sc. Maths — 13 yrs',
+				bio: 'Mr. Pandey teaches senior mathematics and coaches the Olympiad group — 12 of his students qualified for Olympiad level 2 last year. His rule: no one leaves the class with a doubt.',
+				subjects: ['Mathematics', 'Statistics'],
+				achievements: ['12 students qualified for Olympiad level 2', 'Maths Olympiad coach, 6 years'],
+				quote: 'Maths is not about numbers — it is about patterns.',
+				office: 'Mon – Fri, 2:00 – 3:00 PM'
+			},
+			{
+				initials: 'KJ',
+				name: 'Mrs. Kavita Jha',
+				role: 'TGT Mathematics',
+				note: 'M.Sc. Maths, B.Ed. — 10 yrs',
+				bio: 'Mrs. Jha built the maths lab and the activity corners that turned fractions into board games and geometry into art. Her middle-school students now ask for extra maths periods.',
+				subjects: ['Mathematics', 'Mental Maths'],
+				achievements: ['Built the maths lab & activity corners', 'Mental maths championship organiser'],
+				quote: 'Every problem has a solution — sometimes you just need a new angle.',
+				office: 'Mon, Wed & Fri, 1:00 – 2:00 PM'
+			},
+			{
+				initials: 'AR',
+				name: 'Mr. Arjun Rao',
+				role: 'PRT Mathematics',
+				note: 'B.Sc., B.Ed. — 7 yrs',
+				bio: 'Mr. Rao founded the abacus club and teaches Vedic maths to Classes III–V. His students can multiply two-digit numbers faster than a calculator — and they love showing off.',
+				subjects: ['Mathematics', 'Vedic Maths'],
+				achievements: ['Abacus club founder', 'Vedic maths workshop for parents'],
+				quote: 'Make maths a game, and children will play to win.',
+				office: 'Tue & Thu, 12:00 – 1:00 PM'
+			}
 		]
 	},
 	{
 		department: 'Science',
 		members: [
-			{ initials: 'MB', name: 'Dr. Meera Bhatt', role: 'PGT Chemistry', note: 'M.Sc., Ph.D. Chemistry — 16 yrs' },
-			{ initials: 'SG', name: 'Mr. Sanjay Gupta', role: 'PGT Biology', note: 'M.Sc. Zoology — 12 yrs' },
-			{ initials: 'NS', name: 'Mrs. Neha Singh', role: 'TGT Science', note: 'M.Sc. Physics, B.Ed. — 8 yrs' },
-			{ initials: 'PK', name: 'Mr. Prakash Kumar', role: 'Lab Assistant', note: 'B.Sc. — 9 yrs' }
+			{
+				initials: 'MB',
+				name: 'Dr. Meera Bhatt',
+				role: 'PGT Chemistry',
+				note: 'M.Sc., Ph.D. Chemistry — 16 yrs',
+				bio: 'Dr. Bhatt brings a research lab’s rigour to school chemistry — and a storyteller’s warmth. Three of her students have qualified for NTSE, and her practical classes are the most awaited of the week.',
+				subjects: ['Chemistry'],
+				achievements: ['Ph.D. Chemistry', '3 NTSE qualifiers mentored'],
+				quote: 'Chemistry is the poetry of matter.',
+				office: 'Mon & Thu, 2:00 – 4:00 PM'
+			},
+			{
+				initials: 'SG',
+				name: 'Mr. Sanjay Gupta',
+				role: 'PGT Biology',
+				note: 'M.Sc. Zoology — 12 yrs',
+				bio: 'Mr. Gupta leads the eco-club and the school’s rainwater-harvesting project. His biology field trips — to the botanical garden, the river bank, the village pond — are where textbooks come alive.',
+				subjects: ['Biology', 'Environmental Science'],
+				achievements: ['Eco-club founder', 'Rainwater harvesting model — district prize'],
+				quote: 'Teach a child to love nature, and they will protect it forever.',
+				office: 'Wed & Fri, 2:00 – 4:00 PM'
+			},
+			{
+				initials: 'NS',
+				name: 'Mrs. Neha Singh',
+				role: 'TGT Science',
+				note: 'M.Sc. Physics, B.Ed. — 8 yrs',
+				bio: 'Mrs. Singh coordinates the school science fair and makes general science hands-on — every concept gets an experiment, every experiment gets a question to take home.',
+				subjects: ['General Science'],
+				achievements: ['Science fair coordinator', 'Hands-on science kit designer'],
+				quote: 'Curiosity is the beginning of all science.',
+				office: 'Mon – Fri, 1:00 – 2:00 PM'
+			},
+			{
+				initials: 'PK',
+				name: 'Mr. Prakash Kumar',
+				role: 'Lab Assistant',
+				note: 'B.Sc. — 9 yrs',
+				bio: 'Mr. Kumar keeps all three laboratories running — apparatus, chemicals, safety checks — with a zero-incident record for five straight years. Every practical class starts with his safety briefing.',
+				subjects: ['Lab Safety', 'Practical Support'],
+				achievements: ['Zero-incident lab record, 5 years', 'Lab safety trainer for new teachers'],
+				quote: 'A safe lab is a learning lab.',
+				office: 'Mon – Sat, 8:00 AM – 4:00 PM'
+			}
 		]
 	},
 	{
 		department: 'Social Science',
 		members: [
-			{ initials: 'AV', name: 'Mrs. Anita Verma', role: 'PGT History & Civics', note: 'M.A. History — 14 yrs' },
-			{ initials: 'RM', name: 'Mr. Rahul Mehta', role: 'TGT Geography', note: 'M.A. Geography, B.Ed. — 8 yrs' }
+			{
+				initials: 'AV',
+				name: 'Mrs. Anita Verma',
+				role: 'PGT History & Civics',
+				note: 'M.A. History — 14 yrs',
+				bio: 'Mrs. Verma mentors the Model UN team and teaches history as a living story — with debates, role play and field visits to Patna’s heritage sites. Her students argue like parliamentarians.',
+				subjects: ['History', 'Civics'],
+				achievements: ['Model UN team mentor', 'Heritage walk programme founder'],
+				quote: 'History is not the past — it is the mirror of the present.',
+				office: 'Tue & Thu, 2:00 – 4:00 PM'
+			},
+			{
+				initials: 'RM',
+				name: 'Mr. Rahul Mehta',
+				role: 'TGT Geography',
+				note: 'M.A. Geography, B.Ed. — 8 yrs',
+				bio: 'Mr. Mehta built the geography map lab and runs field trips that teach contour lines on real hillsides. His disaster-management workshops are now part of the school safety drill.',
+				subjects: ['Geography', 'Disaster Management'],
+				achievements: ['Geography map lab founder', 'Disaster-management workshop lead'],
+				quote: 'The world is the best classroom.',
+				office: 'Mon & Wed, 1:00 – 3:00 PM'
+			}
 		]
 	},
 	{
 		department: 'Computer Science',
 		members: [
-			{ initials: 'VK', name: 'Mr. Vikram Khanna', role: 'PGT Computer Science', note: 'MCA — 11 yrs' },
-			{ initials: 'PS', name: 'Ms. Pooja Sinha', role: 'TGT Computer Science', note: 'B.Tech., B.Ed. — 6 yrs' }
+			{
+				initials: 'VK',
+				name: 'Mr. Vikram Khanna',
+				role: 'PGT Computer Science',
+				note: 'MCA — 11 yrs',
+				bio: 'Mr. Khanna runs the coding club, where 40 students have built real apps — a library tracker, a bus-timing board, a quiz game. He teaches Python and AI to Classes XI–XII.',
+				subjects: ['Python', 'AI & Data'],
+				achievements: ['Coding club — 40 students built working apps', 'AI workshop for Classes IX–XII'],
+				quote: 'Code is the new handwriting.',
+				office: 'Mon – Fri, 2:00 – 3:00 PM'
+			},
+			{
+				initials: 'PS',
+				name: 'Ms. Pooja Sinha',
+				role: 'TGT Computer Science',
+				note: 'B.Tech., B.Ed. — 6 yrs',
+				bio: 'Ms. Sinha introduces the youngest students to computers — Scratch stories, robotics kits, and the rule that every child finishes the term having built something of their own.',
+				subjects: ['Computers', 'Scratch & Robotics'],
+				achievements: ['Robotics club junior winners', 'Scratch storytelling festival'],
+				quote: 'Every child can code — they just need the first hello world.',
+				office: 'Tue & Fri, 1:00 – 3:00 PM'
+			}
 		]
 	},
 	{
 		department: 'Arts, Music & Sports',
 		members: [
-			{ initials: 'RD', name: 'Mrs. Rina Das', role: 'Music Teacher', note: 'M.A. Music — 13 yrs' },
-			{ initials: 'FY', name: 'Mr. Farhan Yusuf', role: 'Dance & Drama', note: 'Diploma, NSD — 9 yrs' },
-			{ initials: 'BS', name: 'Mr. Bablu Singh', role: 'PET / Sports', note: 'B.P.Ed., Karate Black Belt — 12 yrs' }
+			{
+				initials: 'RD',
+				name: 'Mrs. Rina Das',
+				role: 'Music Teacher',
+				note: 'M.A. Music — 13 yrs',
+				bio: 'Mrs. Das leads the school choir and the vocal and instrumental programme. Her choir won the district cultural fest, and the morning assembly’s song is the sound of Tricent.',
+				subjects: ['Vocal Music', 'Instrumental Music'],
+				achievements: ['District cultural fest — choir winners', 'School orchestra founder'],
+				quote: 'Music is the soul of the school.',
+				office: 'Mon, Wed & Fri, 2:00 – 4:00 PM'
+			},
+			{
+				initials: 'FY',
+				name: 'Mr. Farhan Yusuf',
+				role: 'Dance & Drama',
+				note: 'Diploma, NSD — 9 yrs',
+				bio: 'Mr. Yusuf has choreographed the annual day for six years and runs the theatre society, where shy students become confident performers — and confident students become directors.',
+				subjects: ['Dance', 'Theatre'],
+				achievements: ['Annual day choreographer, 6 years', 'Theatre society — 3 inter-school wins'],
+				quote: 'The stage teaches what no textbook can.',
+				office: 'Tue & Thu, 2:00 – 4:00 PM'
+			},
+			{
+				initials: 'BS',
+				name: 'Mr. Bablu Singh',
+				role: 'PET / Sports',
+				note: 'B.P.Ed., Karate Black Belt — 12 yrs',
+				bio: 'Mr. Singh coaches basketball, athletics and karate, and runs the morning fitness programme. His U-16 basketball team won the district championship in 2026.',
+				subjects: ['Physical Education', 'Karate'],
+				achievements: ['District basketball champions 2026', 'Karate — 30 black belts trained'],
+				quote: 'A healthy body builds a focused mind.',
+				office: 'Mon – Sat, 7:00 – 8:00 AM'
+			}
 		]
 	},
 	{
 		department: 'Primary Wing',
 		members: [
-			{ initials: 'LC', name: 'Mrs. Lata Choudhary', role: 'PRT — Class I', note: 'B.Ed., NTT — 12 yrs' },
-			{ initials: 'MJ', name: 'Mrs. Manju Jha', role: 'PRT — Class II', note: 'B.Ed. — 10 yrs' },
-			{ initials: 'SK', name: 'Ms. Sara Khan', role: 'Pre-Primary Teacher', note: 'Montessori trained — 7 yrs' },
-			{ initials: 'DP', name: 'Mrs. Divya Prasad', role: 'Pre-Primary Teacher', note: 'NTT, B.A. — 8 yrs' }
+			{
+				initials: 'LC',
+				name: 'Mrs. Lata Choudhary',
+				role: 'PRT — Class I',
+				note: 'B.Ed., NTT — 12 yrs',
+				bio: 'Mrs. Choudhary welcomes every child into Class I with phonics reading corners and a “book of the week”. Her classroom is where reading begins — and where the love of it starts.',
+				subjects: ['English', 'EVS'],
+				achievements: ['Phonics reading corners founder', 'Class I reading levels — best in the wing'],
+				quote: 'First steps matter most.',
+				office: 'Mon – Thu, 12:00 – 1:00 PM'
+			},
+			{
+				initials: 'MJ',
+				name: 'Mrs. Manju Jha',
+				role: 'PRT — Class II',
+				note: 'B.Ed. — 10 yrs',
+				bio: 'Mrs. Jha teaches Class II with activity-based maths kits she designed herself — beads, blocks and games that make numbers feel like play.',
+				subjects: ['Mathematics', 'Hindi'],
+				achievements: ['Activity-based maths kits designer', 'Class II maths fair organiser'],
+				quote: 'Little hands, big ideas.',
+				office: 'Mon – Thu, 12:00 – 1:00 PM'
+			},
+			{
+				initials: 'SK',
+				name: 'Ms. Sara Khan',
+				role: 'Pre-Primary Teacher',
+				note: 'Montessori trained — 7 yrs',
+				bio: 'Ms. Khan runs the nursery rhyme festival and the play-way corners where the youngest Tricentians learn through sand, water, blocks and song.',
+				subjects: ['Play-way Learning', 'Rhymes'],
+				achievements: ['Nursery rhyme festival founder', 'Play-way corners designer'],
+				quote: 'Play is the work of childhood.',
+				office: 'Mon – Fri, 11:00 AM – 12:00 PM'
+			},
+			{
+				initials: 'DP',
+				name: 'Mrs. Divya Prasad',
+				role: 'Pre-Primary Teacher',
+				note: 'NTT, B.A. — 8 yrs',
+				bio: 'Mrs. Prasad runs the storytelling circle — 200 stories a year, told with puppets, props and voices that make the nursery fall silent and listen.',
+				subjects: ['Art & Craft', 'Storytelling'],
+				achievements: ['Storytelling circle — 200 stories a year', 'Pre-Primary art display curator'],
+				quote: 'Every story opens a door.',
+				office: 'Mon – Fri, 11:00 AM – 12:00 PM'
+			}
 		]
 	}
 ];
+
+export const allTeachers = facultyDirectory.flatMap((d) =>
+	d.members.map((m) => ({ ...m, department: d.department, slug: teacherSlug(m.name) }))
+);
 
 export const notices = [
 	{

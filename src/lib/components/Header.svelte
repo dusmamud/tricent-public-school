@@ -3,6 +3,7 @@
 	import Logo from '#lib/components/Logo.svelte';
 	import Icon from '#lib/components/Icon.svelte';
 	import { navLinks } from '#lib/data/site';
+	import { allTeachers } from '#lib/data/more';
 
 	let mobileOpen = $state(false);
 	let openSub = $state<string | null>(null);
@@ -41,7 +42,12 @@
 		{ label: 'FAQ', href: '/faq', section: 'School' },
 		{ label: 'Sitemap', href: '/sitemap', section: 'School' },
 		{ label: 'Careers', href: '/careers', section: 'School' },
-		{ label: 'Contact Us', href: '/contact', section: 'School' }
+		{ label: 'Contact Us', href: '/contact', section: 'School' },
+		...allTeachers.map((t) => ({
+			label: t.name,
+			href: `/faculty/${t.slug}`,
+			section: 'Faculty'
+		}))
 	];
 
 	const stem = (s: string) =>

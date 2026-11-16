@@ -4,6 +4,7 @@
 	import SectionHeading from '#lib/components/SectionHeading.svelte';
 	import PageHero from '#lib/components/PageHero.svelte';
 	import { stats, faculty, timeline, school } from '#lib/data/site';
+	import { teacherSlug } from '#lib/data/more';
 </script>
 
 <PageHero
@@ -150,14 +151,17 @@
 	<div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
 		{#each faculty as f}
 			<Reveal>
-				<div class="h-full rounded-xl border border-forest-900/10 bg-white p-6 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-					<span class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-forest-900 font-display text-2xl font-bold text-gold-400">
-						{f.initials}
-					</span>
-					<h3 class="mt-4 font-display text-lg font-bold text-forest-900">{f.name}</h3>
-					<p class="text-sm font-bold text-gold-600">{f.role}</p>
-					<p class="mt-2 text-sm leading-relaxed text-ink/65">{f.note}</p>
-				</div>
+				<a href="/faculty/{teacherSlug(f.name)}" class="group block h-full">
+					<div class="h-full rounded-xl border border-forest-900/10 bg-white p-6 text-center shadow-sm transition group-hover:-translate-y-1 group-hover:shadow-lg">
+						<span class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-forest-900 font-display text-2xl font-bold text-gold-400">
+							{f.initials}
+						</span>
+						<h3 class="mt-4 font-display text-lg font-bold text-forest-900 transition group-hover:text-forest-700">{f.name}</h3>
+						<p class="text-sm font-bold text-gold-600">{f.role}</p>
+						<p class="mt-2 text-sm leading-relaxed text-ink/65">{f.note}</p>
+						<p class="mt-3 text-xs font-extrabold tracking-wider text-forest-800">VIEW PROFILE →</p>
+					</div>
+				</a>
 			</Reveal>
 		{/each}
 	</div>
