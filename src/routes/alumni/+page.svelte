@@ -128,8 +128,8 @@
 
 	<!-- Register form -->
 	<div class="mt-16 grid gap-10 lg:grid-cols-5">
-		<Reveal>
-			<div class="lg:col-span-2">
+		<Reveal cls="lg:col-span-2">
+			<div>
 				<SectionHeading
 					eyebrow="Stay Connected"
 					text="Register with the Tricent Alumni Network to receive reunion invitations, school news and mentorship opportunities."
@@ -152,8 +152,8 @@
 			</div>
 		</Reveal>
 
-		<Reveal>
-			<div class="lg:col-span-3">
+		<Reveal cls="lg:col-span-3">
+			<div>
 				{#if submitted}
 					<div class="rounded-xl border border-forest-900/10 bg-white p-6 shadow-sm sm:p-8">
 						<span

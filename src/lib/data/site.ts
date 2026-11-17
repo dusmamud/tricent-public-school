@@ -271,10 +271,10 @@ export const galleryItems = [
 
 export const newsItems = [
 	{
-		slug: 'admissions-open-2026-27',
+		slug: 'admissions-open-2027-28',
 		date: '12 Nov 2026',
 		tag: 'Admissions',
-		title: 'Admissions Open for Academic Year 2026–27',
+		title: 'Admissions Open for Academic Year 2027–28',
 		text: 'Applications for Nursery to Class IX and XI are now open. Limited seats — early applicants get priority for the entrance interaction.',
 		image: '/images/about-students.webp'
 	},

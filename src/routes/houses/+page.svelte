@@ -161,8 +161,8 @@
 
 	<!-- Fixtures -->
 	<div class="mt-16 grid gap-10 lg:grid-cols-5">
-		<Reveal>
-			<div class="lg:col-span-3">
+		<Reveal cls="lg:col-span-3">
+			<div>
 				<SectionHeading
 					eyebrow="Coming Up"
 					text="Inter-house fixtures for the rest of the 2026–27 session. Parents are welcome at all outdoor events."
@@ -199,8 +199,8 @@
 			</div>
 		</Reveal>
 
-		<Reveal>
-			<div class="lg:col-span-2">
+		<Reveal cls="lg:col-span-2">
+			<div>
 				<div class="overflow-hidden rounded-xl shadow-sm">
 					<img
 						src="/images/sports-day.jpg"

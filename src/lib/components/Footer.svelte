@@ -122,7 +122,7 @@
 		<div
 			class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-4 text-xs text-white/60 sm:flex-row sm:px-6 lg:px-8"
 		>
-			<p>© 2025 Tricent Public School. All Rights Reserved.</p>
+			<p>© 2026 Tricent Public School. All Rights Reserved.</p>
 			<p class="flex gap-4">
 				<a href="/privacy-policy" class="transition hover:text-gold-300">Privacy Policy</a>
 				<span aria-hidden="true">|</span>

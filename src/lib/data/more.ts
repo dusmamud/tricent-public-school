@@ -650,9 +650,9 @@ export const extraTestimonials = [
 ];
 
 export const newsBodies: Record<string, string[]> = {
-	'admissions-open-2026-27': [
-		'Tricent Public School invites applications for Nursery to Class IX and Class XI for the academic year 2026–27. Application forms are available at the school office and through the online enquiry form on the Admissions page.',
-		'Admission to Nursery to Class V is through a friendly interaction with the child, while Classes VI to IX and XI have a simple written assessment in English, Mathematics and Science. The first list of selected students will be published on 22 February 2026.',
+	'admissions-open-2027-28': [
+		'Tricent Public School invites applications for Nursery to Class IX and Class XI for the academic year 2027–28. Application forms are available at the school office and through the online enquiry form on the Admissions page.',
+		'Admission to Nursery to Class V is through a friendly interaction with the child, while Classes VI to IX and XI have a simple written assessment in English, Mathematics and Science. The first list of selected students will be published on 22 February 2027.',
 		'Parents are encouraged to apply early — seats are limited in every class, and early applicants get priority for the entrance interaction. For any help, call the admissions office at +91 75440 00044 between 8:00 AM and 4:00 PM, Monday to Saturday.'
 	],
 	'class-x-results-100-percent': [
@@ -1275,7 +1275,7 @@ export const tourSpots = [
 		id: 'playground',
 		name: 'Playground',
 		x: 85,
-		y: 65,
+		y: 50,
 		photo: '/images/sports-day.jpg',
 		desc: 'The sports ground with a basketball court, cricket nets and an athletics track, where morning fitness, house matches and the Annual Sports Day take place.',
 		fact: 'Basketball court, cricket nets and athletics track'
