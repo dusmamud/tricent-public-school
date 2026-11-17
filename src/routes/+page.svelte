@@ -41,6 +41,24 @@
 	let slide = $state(0);
 	let quote = $state(0);
 
+	// Admissions countdown — last date to submit forms, 31 Jan 2027 (IST)
+	const deadline = new Date('2027-01-31T23:59:59+05:30').getTime();
+	let now = $state(Date.now());
+
+	$effect(() => {
+		const t = setInterval(() => {
+			now = Date.now();
+		}, 1000);
+		return () => clearInterval(t);
+	});
+
+	const cd = $derived({
+		days: Math.max(0, Math.floor((deadline - now) / 86400000)),
+		hours: Math.max(0, Math.floor(((deadline - now) / 3600000) % 24)),
+		mins: Math.max(0, Math.floor(((deadline - now) / 60000) % 60)),
+		secs: Math.max(0, Math.floor(((deadline - now) / 1000) % 60))
+	});
+
 	$effect(() => {
 		const t = setInterval(() => {
 			slide = (slide + 1) % slides.length;
@@ -60,12 +78,12 @@
 	<title>Tricent Public School, Patna | Inspiring Excellence, Building Futures</title>
 	<meta
 		name="description"
-		content="Tricent Public School, Beldari, Simri Bakhtiyarpur, Patna — CBSE co-educational school from Nursery to Class XII. Admissions open for 2026–27."
+		content="Tricent Public School, Beldari, Simri Bakhtiyarpur, Patna — CBSE co-educational school from Nursery to Class XII. Admissions open for 2027–28."
 	/>
 	<meta property="og:title" content="Tricent Public School, Patna" />
 	<meta
 		property="og:description"
-		content="Inspiring Excellence, Building Futures — CBSE school from Nursery to Class XII. Admissions open for 2026–27."
+		content="Inspiring Excellence, Building Futures — CBSE school from Nursery to Class XII. Admissions open for 2027–28."
 	/>
 	<meta property="og:type" content="website" />
 	<meta property="og:image" content="/images/hero-campus.webp" />
@@ -179,22 +197,6 @@
 	</div>
 </section>
 
-<!-- ============ NOTICE TICKER ============ -->
-<div class="marquee overflow-hidden border-b border-forest-900/10 bg-gold-500 py-2.5" aria-label="Latest notices">
-	<div class="marquee-track flex w-max items-center gap-8">
-		{#each [...notices.slice(0, 4), ...notices.slice(0, 4)] as n}
-			<a
-				href="/notices"
-				class="flex shrink-0 items-center gap-2 text-xs font-extrabold tracking-wide whitespace-nowrap text-forest-950 transition hover:text-forest-800"
-			>
-				<Icon name="megaphone" cls="h-4 w-4" />
-				{n.title}
-			</a>
-			<span class="shrink-0 text-gold-600" aria-hidden="true">✦</span>
-		{/each}
-	</div>
-</div>
-
 <!-- ============ FEATURE STRIP ============ -->
 <section class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:-mt-10 lg:px-8">
 	<Reveal>
@@ -221,6 +223,22 @@
 		</div>
 	</Reveal>
 </section>
+
+<!-- ============ NOTICE TICKER ============ -->
+<div class="marquee overflow-hidden border-b border-forest-900/10 bg-gold-500 py-2.5" aria-label="Latest notices">
+	<div class="marquee-track flex w-max items-center gap-8">
+		{#each [...notices.slice(0, 4), ...notices.slice(0, 4)] as n}
+			<a
+				href="/notices"
+				class="flex shrink-0 items-center gap-2 text-xs font-extrabold tracking-wide whitespace-nowrap text-forest-950 transition hover:text-forest-800"
+			>
+				<Icon name="megaphone" cls="h-4 w-4" />
+				{n.title}
+			</a>
+			<span class="shrink-0 text-gold-600" aria-hidden="true">✦</span>
+		{/each}
+	</div>
+</div>
 
 <!-- ============ WELCOME / ABOUT ============ -->
 <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
@@ -290,7 +308,7 @@
 	<div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
 		<Reveal>
 			<div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
-				{#each [{ icon: 'file', label: 'Mandatory Disclosure', href: '/mandatory-disclosure' }, { icon: 'trophy', label: 'Board Results', href: '/results' }, { icon: 'calendar', label: 'Academic Calendar', href: '/academic-calendar' }, { icon: 'download', label: 'Downloads', href: '/downloads' }, { icon: 'megaphone', label: 'Notice Board', href: '/notices' }, { icon: 'bus', label: 'Transport', href: '/transport' }, { icon: 'users', label: 'Our Faculty', href: '/faculty' }, { icon: 'alert-circle', label: 'FAQ', href: '/faq' }] as q}
+				{#each [{ icon: 'file', label: 'Mandatory Disclosure', href: '/mandatory-disclosure' }, { icon: 'trophy', label: 'Board Results', href: '/results' }, { icon: 'calendar', label: 'Academic Calendar', href: '/academic-calendar' }, { icon: 'download', label: 'Downloads', href: '/downloads' }, { icon: 'megaphone', label: 'Notice Board', href: '/notices' }, { icon: 'bus', label: 'Transport', href: '/transport' }, { icon: 'users', label: 'Our Faculty', href: '/faculty' }, { icon: 'alert-circle', label: 'FAQ', href: '/faq' }, { icon: 'calculator', label: 'Pay Fees Online', href: '/pay-fees' }, { icon: 'map', label: 'Virtual Tour', href: '/virtual-tour' }, { icon: 'users', label: 'Alumni', href: '/alumni' }, { icon: 'book', label: 'Prospectus', href: '/prospectus' }] as q}
 					<a
 						href={q.href}
 						class="group flex items-center gap-3 rounded-xl border border-forest-900/10 bg-cream px-4 py-4 transition hover:-translate-y-0.5 hover:border-gold-500/50 hover:shadow-md"
@@ -458,7 +476,7 @@
 <div class="marquee overflow-hidden bg-forest-950 py-4" aria-hidden="true">
 	<div class="marquee-track flex w-max items-center gap-10">
 		{#each Array(2) as _}
-			{#each ['ADMISSIONS OPEN 2026–27', 'CBSE AFFILIATION', '100% BOARD RESULTS', '20+ YEARS OF EXCELLENCE', 'NURSERY TO CLASS XII', 'GPS-ENABLED SCHOOL BUSES'] as m}
+			{#each ['ADMISSIONS OPEN 2027–28', 'CBSE AFFILIATION', '100% BOARD RESULTS', '20+ YEARS OF EXCELLENCE', 'NURSERY TO CLASS XII', 'GPS-ENABLED SCHOOL BUSES'] as m}
 				<span class="flex shrink-0 items-center gap-10 text-sm font-extrabold tracking-[0.2em] whitespace-nowrap text-gold-400">
 					{m}
 					<span class="text-gold-500">✦</span>
@@ -572,9 +590,29 @@
 				</span>
 				<div>
 					<h2 class="font-display text-2xl font-bold text-gold-400 sm:text-3xl">
-						Admissions Open for Academic Year 2026–27
+						Admissions Open for Academic Year 2027–28
 					</h2>
 					<p class="mt-1 text-white/75">Give your child the best start for a bright tomorrow.</p>
+					<div class="mt-5 flex flex-wrap items-center gap-3">
+						<span class="text-xs font-extrabold tracking-[0.2em] text-gold-400 uppercase">
+							Applications close in
+						</span>
+						<div class="flex gap-2" aria-label="Countdown to last date for applications">
+							{#each [{ v: cd.days, l: 'Days' }, { v: cd.hours, l: 'Hrs' }, { v: cd.mins, l: 'Min' }, { v: cd.secs, l: 'Sec' }] as u}
+								<span
+									class="flex min-w-14 flex-col items-center rounded-lg bg-white/10 px-2 py-1.5 ring-1 ring-white/15"
+								>
+									<span class="font-display text-xl leading-none font-bold text-white tabular-nums"
+										>{String(u.v).padStart(2, '0')}</span
+									>
+									<span class="mt-1 text-[0.6rem] font-extrabold tracking-widest text-gold-400 uppercase"
+										>{u.l}</span
+									>
+								</span>
+							{/each}
+						</div>
+						<span class="text-xs text-white/60">Last date: 31 January 2027</span>
+					</div>
 				</div>
 			</div>
 			<a

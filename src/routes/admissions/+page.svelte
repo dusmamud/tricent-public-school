@@ -31,7 +31,7 @@
 
 <PageHero
 	title="Admissions"
-	subtitle="Admissions open for Academic Year 2026–27 — Nursery to Class IX and Class XI. Limited seats, early applicants get priority."
+	subtitle="Admissions open for Academic Year 2027–28 — Nursery to Class IX and Class XI. Limited seats, early applicants get priority."
 	crumb={[{ label: 'Home', href: '/' }, { label: 'Admissions' }]}
 />
 
@@ -64,7 +64,7 @@
 	<div class="mx-auto max-w-5xl scroll-mt-28 px-4 py-16 sm:px-6 lg:px-8">
 		<Reveal>
 			<SectionHeading eyebrow="Important Dates" center>
-				Admission Calendar <span class="text-gold-600 italic">2026–27</span>
+				Admission Calendar <span class="text-gold-600 italic">2027–28</span>
 			</SectionHeading>
 		</Reveal>
 		<Reveal>
@@ -94,7 +94,7 @@
 <section id="fees" class="mx-auto max-w-7xl scroll-mt-28 px-4 py-16 sm:px-6 lg:px-8">
 	<Reveal>
 		<SectionHeading eyebrow="Fee Structure" text="Transparent fees, no hidden charges. Sibling and alumni concessions apply — see the FAQ below.">
-			Fee Structure <span class="text-gold-600 italic">2026–27</span>
+			Fee Structure <span class="text-gold-600 italic">2027–28</span>
 		</SectionHeading>
 	</Reveal>
 	<Reveal>
@@ -123,7 +123,7 @@
 			</table>
 		</div>
 		<p class="mt-3 text-xs text-ink/50">
-			Fees shown are indicative (demo) for the 2026–27 session. Please confirm the current fee
+			Fees shown are indicative (demo) for the 2027–28 session. Please confirm the current fee
 			schedule at the school office before payment.
 		</p>
 	</Reveal>

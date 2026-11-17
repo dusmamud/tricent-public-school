@@ -9,9 +9,19 @@
 	let openSub = $state<string | null>(null);
 	let searchOpen = $state(false);
 	let query = $state('');
+	let scrolled = $state(false);
+
+	$effect(() => {
+		const onScroll = () => {
+			scrolled = window.scrollY > 24;
+		};
+		onScroll();
+		window.addEventListener('scroll', onScroll, { passive: true });
+		return () => window.removeEventListener('scroll', onScroll);
+	});
 
 	const searchIndex = [
-		{ label: 'Admissions Open 2026–27', href: '/admissions', section: 'Admissions' },
+		{ label: 'Admissions Open 2027–28', href: '/admissions', section: 'Admissions' },
 		{ label: 'Admission Process', href: '/admissions#process', section: 'Admissions' },
 		{ label: 'Fee Structure', href: '/admissions#fees', section: 'Admissions' },
 		{ label: 'Important Dates', href: '/admissions#dates', section: 'Admissions' },
@@ -43,6 +53,18 @@
 		{ label: 'Sitemap', href: '/sitemap', section: 'School' },
 		{ label: 'Careers', href: '/careers', section: 'School' },
 		{ label: 'Contact Us', href: '/contact', section: 'School' },
+		{ label: 'Alumni', href: '/alumni', section: 'School' },
+		{ label: 'Houses', href: '/houses', section: 'School' },
+		{ label: 'Student Life', href: '/student-life', section: 'School' },
+		{ label: 'Sports', href: '/sports', section: 'School' },
+		{ label: 'Library', href: '/library', section: 'Facilities' },
+		{ label: 'Scholarships', href: '/scholarships', section: 'Admissions' },
+		{ label: 'Book List', href: '/book-list', section: 'Academics' },
+		{ label: 'School Timings', href: '/school-timings', section: 'School' },
+		{ label: 'Pay Fees Online', href: '/pay-fees', section: 'Parents' },
+		{ label: 'Virtual Tour', href: '/virtual-tour', section: 'Facilities' },
+		{ label: 'Prospectus', href: '/prospectus', section: 'Admissions' },
+		{ label: 'Admissions in Hindi', href: '/admissions-hindi', section: 'Admissions' },
 		...allTeachers.map((t) => ({
 			label: t.name,
 			href: `/faculty/${t.slug}`,
@@ -83,8 +105,16 @@
 	}}
 />
 
-<header class="sticky top-0 z-40 border-b border-forest-900/10 bg-white/95 shadow-sm backdrop-blur">
-	<div class="mx-auto flex max-w-7xl items-center justify-between gap-2 px-4 py-3 sm:px-6 lg:px-8">
+<header
+	class="sticky top-0 z-40 border-b border-forest-900/10 bg-white/95 backdrop-blur transition-shadow {scrolled
+		? 'shadow-md'
+		: 'shadow-sm'}"
+>
+	<div
+		class="mx-auto flex max-w-7xl items-center justify-between gap-2 px-4 transition-all sm:px-6 lg:px-8 {scrolled
+			? 'py-2'
+			: 'py-3'}"
+	>
 		<Logo />
 
 		<nav class="hidden items-center gap-1 lg:flex" aria-label="Main navigation">

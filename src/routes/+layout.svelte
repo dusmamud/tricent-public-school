@@ -51,13 +51,24 @@
 	</a>
 </div>
 
+<!-- WhatsApp chat -->
+<a
+	href="https://wa.me/917544000044?text=Hello%20Tricent%20Public%20School%2C%20I%20want%20to%20enquire%20about%20admissions%20for%20Academic%20Year%202027-28"
+	target="_blank"
+	rel="noopener noreferrer"
+	aria-label="Chat with us on WhatsApp"
+	class="fixed right-4 bottom-20 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-[#25d366] text-white shadow-lg transition hover:scale-105 lg:bottom-6"
+>
+	<Icon name="whatsapp" cls="h-6 w-6" />
+</a>
+
 <!-- Back to top -->
 {#if showTop}
 	<button
 		type="button"
 		aria-label="Back to top"
 		onclick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-		class="fixed right-4 bottom-20 z-50 flex h-11 w-11 items-center justify-center rounded-full bg-forest-900 text-gold-400 shadow-lg transition hover:bg-forest-800 lg:bottom-6"
+		class="fixed right-4 bottom-[7.5rem] z-50 flex h-11 w-11 items-center justify-center rounded-full bg-forest-900 text-gold-400 shadow-lg transition hover:bg-forest-800 lg:bottom-24"
 	>
 		<Icon name="arrow-up" cls="h-5 w-5" />
 	</button>

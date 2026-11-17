@@ -477,7 +477,7 @@ export const allTeachers = facultyDirectory.flatMap((d) =>
 export const notices = [
 	{
 		date: '12 Nov 2026',
-		title: 'Admissions Open for Academic Year 2026–27 — forms available at the school office and online',
+		title: 'Admissions Open for Academic Year 2027–28 — forms available at the school office and online',
 		category: 'Admissions',
 		pinned: true
 	},
@@ -527,7 +527,7 @@ export const notices = [
 
 export const downloads = [
 	{
-		title: 'Admission Application Form 2026–27',
+		title: 'Admission Application Form 2027–28',
 		desc: 'For Nursery to Class IX and XI — fill and submit with documents at the school office.',
 		file: '/downloads/admission-form.pdf',
 		pages: '2 pages',
@@ -681,3 +681,621 @@ export const newsBodies: Record<string, string[]> = {
 		'Principal Dr. Ananya Sharma thanked the students: "A teacher’s best gift is a student who keeps learning. Today, you gave us that gift."'
 	]
 };
+
+// Tricent Public School — alumni & houses data (to be appended to src/lib/data/more.ts).
+// All demo/mock content for client presentation.
+
+export const alumniProfiles = [
+	{
+		initials: 'AK',
+		name: 'Aarav Kumar',
+		batch: 'Batch of 2012',
+		role: 'IAS Officer — District Magistrate, Patna',
+		detail:
+			'Cleared the UPSC Civil Services Examination 2018 with AIR 47 and now serves as District Magistrate, Patna, Bihar.',
+		quote: 'Tricent taught me discipline before ambition — the morning assembly, the house duties, the teachers who never let me settle.'
+	},
+	{
+		initials: 'PS',
+		name: 'Dr. Priya Sharma',
+		batch: 'Batch of 2015',
+		role: 'Resident Doctor — AIIMS, New Delhi',
+		detail:
+			'MBBS from AIIMS New Delhi (NEET UG AIR 112); now a resident doctor in the Department of Internal Medicine.',
+		quote: 'The science labs at Tricent were where I first fell in love with medicine — every experiment felt like a discovery.'
+	},
+	{
+		initials: 'VS',
+		name: 'Vikram Singh',
+		batch: 'Batch of 2013',
+		role: 'Software Engineer — Bengaluru',
+		detail:
+			'B.Tech from IIT Delhi; builds payment systems at a leading fintech company in Bengaluru and mentors Tricent coders online.',
+		quote: 'My first program ran in the Tricent computer lab. That one working line of code decided my career.'
+	},
+	{
+		initials: 'AS',
+		name: 'Ananya Singh',
+		batch: 'Batch of 2017',
+		role: 'Advocate — Patna High Court',
+		detail:
+			'BA LLB (Hons.) from NLSIU Bengaluru; practises constitutional and education law at the Patna High Court.',
+		quote: 'Debate club gave me my voice. I still argue the way Mrs. Mishra taught us to — evidence first, emotion second.'
+	},
+	{
+		initials: 'RK',
+		name: 'Rohit Kumar',
+		batch: 'Batch of 2011',
+		role: 'Founder — Agri-tech Startup, Patna',
+		detail:
+			'Founded a farm-to-market agri-tech startup that now works with 4,000+ farmers across Bihar and Jharkhand.',
+		quote: 'Tricent is a school in a farming district — it taught me to solve problems for the people around me, not far away.'
+	},
+	{
+		initials: 'SK',
+		name: 'Sneha Kumari',
+		batch: 'Batch of 2019',
+		role: 'Research Scholar — IISc Bengaluru',
+		detail:
+			'Integrated M.Sc. in Physics from IISc Bengaluru; researches quantum materials and has published two papers as co-author.',
+		quote: 'The annual science exhibition was my first conference. I presented a volcano model; today I present at real ones.'
+	},
+	{
+		initials: 'AR',
+		name: 'Lt. Cdr. Aditya Raj',
+		batch: 'Batch of 2016',
+		role: 'Indian Navy — Lieutenant Commander',
+		detail:
+			'Commissioned into the Indian Navy through the NDA; serves as a Lieutenant Commander on a frontline warship.',
+		quote: 'Sports day, NCC drills, house captaincy — Tricent trained my body and my leadership long before the Navy did.'
+	},
+	{
+		initials: 'MG',
+		name: 'Meera Gupta',
+		batch: 'Batch of 2014',
+		role: 'Chartered Accountant — Partner, Audit Firm, Delhi',
+		detail:
+			'Qualified as a Chartered Accountant in 2020; now a partner at a Delhi audit firm and a visiting mentor for Tricent commerce students.',
+		quote: 'Commerce at Tricent was never just balance sheets — it was learning to be honest with numbers and with people.'
+	}
+];
+
+export const houses = [
+	{
+		name: 'Ashoka',
+		colour: '#C0392B',
+		motto: 'Courage Before Comfort',
+		captain: 'Arjun Verma (Class XII)',
+		viceCaptain: 'Kavya Singh (Class XI)',
+		points: 486,
+		members: 612,
+		eventsWon: 14
+	},
+	{
+		name: 'Raman',
+		colour: '#1D4ED8',
+		motto: 'Curiosity Lights the Way',
+		captain: 'Ishita Roy (Class XII)',
+		viceCaptain: 'Dev Patel (Class X)',
+		points: 512,
+		members: 598,
+		eventsWon: 16
+	},
+	{
+		name: 'Tagore',
+		colour: '#15803D',
+		motto: 'Where the Mind is Without Fear',
+		captain: 'Nandini Jha (Class XII)',
+		viceCaptain: 'Ayaan Khan (Class XI)',
+		points: 468,
+		members: 605,
+		eventsWon: 12
+	},
+	{
+		name: 'Teresa',
+		colour: '#D97706',
+		motto: 'Service Above Self',
+		captain: 'Sara Thomas (Class XII)',
+		viceCaptain: 'Kabir Das (Class X)',
+		points: 441,
+		members: 590,
+		eventsWon: 10
+	}
+];
+
+export const houseFixtures = [
+	{
+		date: '21 Nov 2026',
+		event: 'Inter-House Cricket Final',
+		houses: 'Raman vs Ashoka',
+		venue: 'Main Cricket Ground'
+	},
+	{
+		date: '28 Nov 2026',
+		event: 'Inter-House Debate — "Should AI be taught in schools?"',
+		houses: 'All four houses',
+		venue: 'School Auditorium'
+	},
+	{
+		date: '05 Dec 2026',
+		event: 'Annual Sports Day',
+		houses: 'All four houses',
+		venue: 'Athletics Track & Main Ground'
+	},
+	{
+		date: '12 Dec 2026',
+		event: 'Inter-House Science Quiz',
+		houses: 'Tagore vs Teresa',
+		venue: 'Senior Science Lab'
+	},
+	{
+		date: '19 Dec 2026',
+		event: 'Inter-House Basketball Tournament',
+		houses: 'Ashoka vs Teresa',
+		venue: 'Basketball Court'
+	},
+	{
+		date: '16 Jan 2027',
+		event: 'Inter-House Cultural Fest — Music, Dance & Drama',
+		houses: 'All four houses',
+		venue: 'School Auditorium'
+	},
+	{
+		date: '24 Jan 2027',
+		event: 'Inter-House Football Semi-Final',
+		houses: 'Raman vs Tagore',
+		venue: 'Main Football Ground'
+	},
+	{
+		date: '06 Feb 2027',
+		event: 'Inter-House Chess Championship',
+		houses: 'All four houses',
+		venue: 'Library Reading Hall'
+	}
+];
+
+// Student life & sports — demo data for client presentation.
+// To be appended to src/lib/data/more.ts by the coordinator.
+
+export const clubs = [
+	{
+		name: 'Science & Robotics Club',
+		category: 'Academic',
+		desc: 'Hands-on experiments, working models and robotics kits — members build projects for the National Science Exhibition every year.',
+		day: 'Monday',
+		members: 42
+	},
+	{
+		name: 'Mathematics Club',
+		category: 'Academic',
+		desc: 'Olympiad practice, puzzles and mental-maths challenges for Classes VI to XII, guided by the senior maths faculty.',
+		day: 'Wednesday',
+		members: 36
+	},
+	{
+		name: 'Literary & Debating Society',
+		category: 'Academic',
+		desc: 'Debates, elocution, creative writing and the school magazine — the home of Tricent’s young writers and speakers.',
+		day: 'Friday',
+		members: 48
+	},
+	{
+		name: 'Quiz Club',
+		category: 'Academic',
+		desc: 'Weekly quizzes on current affairs, science and general knowledge, with inter-house and inter-school quiz teams.',
+		day: 'Tuesday',
+		members: 30
+	},
+	{
+		name: 'Music & Choir',
+		category: 'Arts',
+		desc: 'Vocal and instrumental training in classical and contemporary music, performing at assembly, Annual Day and community events.',
+		day: 'Tuesday',
+		members: 54
+	},
+	{
+		name: 'Dance Troupe',
+		category: 'Arts',
+		desc: 'Classical, folk and contemporary dance — the troupe opens every major school celebration and competes at district level.',
+		day: 'Thursday',
+		members: 46
+	},
+	{
+		name: 'Art & Craft Studio',
+		category: 'Arts',
+		desc: 'Painting, sketching, pottery and craft — members exhibit their work in the annual art exhibition and decorate the campus.',
+		day: 'Saturday',
+		members: 38
+	},
+	{
+		name: 'Drama & Theatre Club',
+		category: 'Arts',
+		desc: 'Stage plays, street theatre and mime — the club stages one full production every term, in Hindi and English.',
+		day: 'Friday',
+		members: 34
+	},
+	{
+		name: 'Sports & Fitness Club',
+		category: 'Sports',
+		desc: 'Morning fitness, athletics training and inter-house tournaments — open to every student who wants to stay active.',
+		day: 'Monday',
+		members: 72
+	},
+	{
+		name: 'NCC & Scouts',
+		category: 'Service',
+		desc: 'Discipline, drill, camping and community service — Tricent’s NCC cadets and scouts lead the school’s social outreach.',
+		day: 'Saturday',
+		members: 58
+	},
+	{
+		name: 'Eco Club',
+		category: 'Service',
+		desc: 'Tree plantation, waste segregation and the school kitchen garden — students run Tricent’s green campus programme.',
+		day: 'Wednesday',
+		members: 44
+	},
+	{
+		name: 'Interact & Community Service',
+		category: 'Service',
+		desc: 'Volunteering, donation drives and literacy camps in nearby villages — service hours count toward the house championship.',
+		day: 'Thursday',
+		members: 40
+	}
+];
+
+export const studentCouncil = [
+	{ role: 'Head Boy', name: 'Aarav Verma', class: 'XII-A' },
+	{ role: 'Head Girl', name: 'Priya Sharma', class: 'XII-B' },
+	{ role: 'Vice Head Boy', name: 'Rohan Kumar', class: 'XI-A' },
+	{ role: 'Vice Head Girl', name: 'Sneha Kumari', class: 'XI-B' },
+	{ role: 'Captain — Ashoka House', name: 'Aditya Raj', class: 'X-A' },
+	{ role: 'Captain — Raman House', name: 'Ananya Singh', class: 'X-B' },
+	{ role: 'Captain — Tagore House', name: 'Vikram Singh', class: 'IX-A' },
+	{ role: 'Captain — Teresa House', name: 'Meera Nair', class: 'IX-B' }
+];
+
+export const sportsTeams = [
+	{
+		sport: 'Cricket',
+		coach: 'Mr. Rajesh Kumar',
+		captain: 'Aarav Verma (XII-A)',
+		ageGroup: 'U-17 & U-14',
+		training: 'Mon, Wed & Fri — 6:30 AM'
+	},
+	{
+		sport: 'Football',
+		coach: 'Mr. Amit Patel',
+		captain: 'Rohan Kumar (XI-A)',
+		ageGroup: 'U-17 & U-14',
+		training: 'Tue & Thu — 6:30 AM'
+	},
+	{
+		sport: 'Basketball',
+		coach: 'Mrs. Sunita Mishra',
+		captain: 'Priya Sharma (XII-B)',
+		ageGroup: 'U-17 (Girls & Boys)',
+		training: 'Mon, Wed & Sat — 4:00 PM'
+	},
+	{
+		sport: 'Athletics',
+		coach: 'Mr. Rakesh Kumar',
+		captain: 'Vikram Singh (IX-A)',
+		ageGroup: 'U-19, U-17 & U-14',
+		training: 'Mon – Sat — 6:00 AM'
+	},
+	{
+		sport: 'Karate',
+		coach: 'Ms. Kavita Singh',
+		captain: 'Ananya Singh (X-B)',
+		ageGroup: 'U-17 & U-14',
+		training: 'Tue, Thu & Sat — 4:30 PM'
+	}
+];
+
+export const sportsFixtures = [
+	{ date: '28 Nov 2026', event: 'Inter-School Cricket — Quarter Final', opponent: 'Delhi Public School, Patna', result: 'Upcoming', venue: 'Tricent Cricket Ground' },
+	{ date: '05 Dec 2026', event: 'Annual Sports Day', opponent: 'Inter-House Athletics Meet', result: 'Upcoming', venue: 'Tricent Main Ground' },
+	{ date: '12 Dec 2026', event: 'District Basketball Championship — Final', opponent: 'St. Xavier’s School, Patna', result: 'Upcoming', venue: 'Patliputra Sports Complex' },
+	{ date: '19 Dec 2026', event: 'Inter-School Football — Semi Final', opponent: 'Loyola High School, Patna', result: 'Upcoming', venue: 'Tricent Football Field' },
+	{ date: '08 Nov 2026', event: 'Inter-School Basketball — League', opponent: 'Notre Dame Academy, Patna', result: 'Won 42–38', venue: 'Tricent Basketball Court' },
+	{ date: '01 Nov 2026', event: 'District Athletics Meet — 100 m Final', opponent: 'District Schools', result: 'Won — Gold', venue: 'Moin-ul-Haq Stadium' },
+	{ date: '25 Oct 2026', event: 'Inter-School Cricket — League', opponent: 'B. D. Public School, Patna', result: 'Won by 6 wickets', venue: 'Tricent Cricket Ground' },
+	{ date: '18 Oct 2026', event: 'State Karate Championship', opponent: 'State Schools', result: 'Won — 3 Gold, 2 Silver', venue: 'Patliputra Sports Complex' }
+];
+
+export const sportsAchievements = [
+	{
+		title: 'District Basketball Champions 2026',
+		detail: 'U-17 boys’ team won the district championship, beating St. Xavier’s 42–38 in the final.'
+	},
+	{
+		title: 'State Karate — 3 Gold Medals',
+		detail: 'Tricent karatekas won 3 gold and 2 silver medals at the Bihar State School Karate Championship 2026.'
+	},
+	{
+		title: 'District Athletics — Overall Runners-Up',
+		detail: '14 medals across sprints, long jump and relays at the Patna District Athletics Meet 2026.'
+	},
+	{
+		title: 'Best Emerging Cricket Team 2025',
+		detail: 'U-14 cricket team reached the semi-finals of the CBSE Cluster Cricket Tournament in its debut season.'
+	}
+];
+
+// Tricent Public School — library, scholarships & book-list data
+// All demo/mock content for client presentation.
+
+export const librarySections = [
+	{
+		section: 'Fiction',
+		count: 3400,
+		desc: 'Novels, short stories and classics for young readers — from Indian authors to world literature.'
+	},
+	{
+		section: 'Reference',
+		count: 2100,
+		desc: 'Encyclopaedias, dictionaries, atlases and yearbooks for project work and quick fact-checking.'
+	},
+	{
+		section: 'Science',
+		count: 1800,
+		desc: 'Popular science, biographies of scientists and experiment guides for curious minds.'
+	},
+	{
+		section: 'Hindi',
+		count: 1600,
+		desc: 'Hindi novels, poetry, stories and reference books that celebrate Indian literature.'
+	},
+	{
+		section: "Children's",
+		count: 2200,
+		desc: 'Picture books, fairy tales and early readers for Nursery to Class V, with a dedicated junior corner.'
+	},
+	{
+		section: 'Digital',
+		count: 900,
+		desc: 'E-books, audiobooks and learning CDs/DVDs available on the library computers and reading tablets.'
+	}
+];
+
+export const libraryProgrammes = [
+	{
+		name: 'Reading Challenge',
+		desc: 'Students read a set number of books each term and earn badges and certificates at the Annual Day.',
+		forClasses: 'Classes III – VIII'
+	},
+	{
+		name: 'Story Circle',
+		desc: 'A weekly storytelling session in the junior library — puppets, props and voices that make stories come alive.',
+		forClasses: 'Nursery – Class II'
+	},
+	{
+		name: 'Book Club',
+		desc: 'Senior students meet every Friday to discuss a book of the month, debate its ideas and review it for the school magazine.',
+		forClasses: 'Classes IX – XII'
+	},
+	{
+		name: 'Author Week',
+		desc: 'A week-long celebration every November with author talks, book fairs, quizzes and a young-authors showcase.',
+		forClasses: 'All classes'
+	}
+];
+
+export const scholarships = [
+	{
+		name: 'Merit Scholarship',
+		desc: 'Awarded to the Class X and Class XII board toppers and the top three students of every class in the annual examination.',
+		benefit: 'Up to 50% tuition fee waiver',
+		eligibility: 'Class X / XII board toppers and class toppers',
+		criteria: '90% or above in the board / annual examination'
+	},
+	{
+		name: 'Sports Scholarship',
+		desc: 'For students who represent the school at district, state or national level in any recognised sport.',
+		benefit: 'Up to 25% tuition fee waiver',
+		eligibility: 'District, state or national level sportspersons',
+		criteria: 'Medal or selection at district level or above'
+	},
+	{
+		name: 'Sibling Concession',
+		desc: 'A concession on tuition fee when two or more children from the same family study at Tricent.',
+		benefit: '10% tuition fee concession',
+		eligibility: 'Second and subsequent siblings',
+		criteria: 'Both siblings enrolled in the same academic year'
+	},
+	{
+		name: 'Staff Ward Concession',
+		desc: 'A concession for children of permanent teaching and non-teaching staff of the school.',
+		benefit: '25% tuition fee concession',
+		eligibility: 'Wards of permanent school staff',
+		criteria: 'Parent employed with the school for at least 2 years'
+	},
+	{
+		name: 'Single Girl Child Scholarship',
+		desc: 'Encouraging education of the single girl child — awarded to meritorious single girl children of the family.',
+		benefit: 'Up to 25% tuition fee waiver',
+		eligibility: 'Single girl child of the family',
+		criteria: '75% or above in the previous annual examination'
+	}
+];
+
+export const bookList = [
+	// Nursery
+	{ cls: 'Nursery', subject: 'English', title: 'My First Alphabet Book', publisher: 'Ratna Sagar' },
+	{ cls: 'Nursery', subject: 'Rhymes', title: 'Nursery Rhymes & Songs', publisher: 'Viva Education' },
+	{ cls: 'Nursery', subject: 'Art & Craft', title: 'Little Hands Art Book', publisher: 'Madhubun' },
+	// KG
+	{ cls: 'KG', subject: 'English', title: 'Phonics Fun — Level 1', publisher: 'Ratna Sagar' },
+	{ cls: 'KG', subject: 'Mathematics', title: 'Numbers & Shapes', publisher: 'Viva Education' },
+	{ cls: 'KG', subject: 'Hindi', title: 'Hindi Varnmala', publisher: 'Goyal Brothers' },
+	// Class I
+	{ cls: 'I', subject: 'English', title: 'New Oxford Modern English — Primer', publisher: 'Oxford University Press' },
+	{ cls: 'I', subject: 'Mathematics', title: 'Maths Mate — Class 1', publisher: 'Ratna Sagar' },
+	{ cls: 'I', subject: 'Hindi', title: 'Hindi Pathmala — 1', publisher: 'Goyal Brothers' },
+	{ cls: 'I', subject: 'EVS', title: 'My World Around Me — 1', publisher: 'Viva Education' },
+	// Class II
+	{ cls: 'II', subject: 'English', title: 'New Oxford Modern English — 2', publisher: 'Oxford University Press' },
+	{ cls: 'II', subject: 'Mathematics', title: 'Maths Mate — Class 2', publisher: 'Ratna Sagar' },
+	{ cls: 'II', subject: 'Hindi', title: 'Hindi Pathmala — 2', publisher: 'Goyal Brothers' },
+	{ cls: 'II', subject: 'EVS', title: 'My World Around Me — 2', publisher: 'Viva Education' },
+	// Class III
+	{ cls: 'III', subject: 'English', title: 'New Oxford Modern English — 3', publisher: 'Oxford University Press' },
+	{ cls: 'III', subject: 'Mathematics', title: 'Maths Mate — Class 3', publisher: 'Ratna Sagar' },
+	{ cls: 'III', subject: 'Hindi', title: 'Hindi Pathmala — 3', publisher: 'Goyal Brothers' },
+	{ cls: 'III', subject: 'EVS', title: 'Looking Around — 3', publisher: 'NCERT' },
+	// Class IV
+	{ cls: 'IV', subject: 'English', title: 'New Oxford Modern English — 4', publisher: 'Oxford University Press' },
+	{ cls: 'IV', subject: 'Mathematics', title: 'Maths Mate — Class 4', publisher: 'Ratna Sagar' },
+	{ cls: 'IV', subject: 'Hindi', title: 'Hindi Pathmala — 4', publisher: 'Goyal Brothers' },
+	{ cls: 'IV', subject: 'EVS', title: 'Looking Around — 4', publisher: 'NCERT' },
+	// Class V
+	{ cls: 'V', subject: 'English', title: 'New Oxford Modern English — 5', publisher: 'Oxford University Press' },
+	{ cls: 'V', subject: 'Mathematics', title: 'Maths Mate — Class 5', publisher: 'Ratna Sagar' },
+	{ cls: 'V', subject: 'Hindi', title: 'Hindi Pathmala — 5', publisher: 'Goyal Brothers' },
+	{ cls: 'V', subject: 'EVS', title: 'Looking Around — 5', publisher: 'NCERT' },
+	// Class VI
+	{ cls: 'VI', subject: 'English', title: 'Honeysuckle — English Textbook', publisher: 'NCERT' },
+	{ cls: 'VI', subject: 'Mathematics', title: 'Mathematics — Class VI', publisher: 'NCERT' },
+	{ cls: 'VI', subject: 'Science', title: 'Science — Class VI', publisher: 'NCERT' },
+	{ cls: 'VI', subject: 'Social Science', title: 'Our Pasts, Our Environment — VI', publisher: 'NCERT' },
+	// Class VII
+	{ cls: 'VII', subject: 'English', title: 'Honeycomb — English Textbook', publisher: 'NCERT' },
+	{ cls: 'VII', subject: 'Mathematics', title: 'Mathematics — Class VII', publisher: 'NCERT' },
+	{ cls: 'VII', subject: 'Science', title: 'Science — Class VII', publisher: 'NCERT' },
+	{ cls: 'VII', subject: 'Social Science', title: 'Our Pasts II, Our Environment — VII', publisher: 'NCERT' },
+	// Class VIII
+	{ cls: 'VIII', subject: 'English', title: 'Honeydew — English Textbook', publisher: 'NCERT' },
+	{ cls: 'VIII', subject: 'Mathematics', title: 'Mathematics — Class VIII', publisher: 'NCERT' },
+	{ cls: 'VIII', subject: 'Science', title: 'Science — Class VIII', publisher: 'NCERT' },
+	{ cls: 'VIII', subject: 'Social Science', title: 'Our Pasts III, Social & Political Life — VIII', publisher: 'NCERT' },
+	// Class IX
+	{ cls: 'IX', subject: 'English', title: 'Beehive — English Textbook', publisher: 'NCERT' },
+	{ cls: 'IX', subject: 'Mathematics', title: 'Mathematics — Class IX', publisher: 'NCERT' },
+	{ cls: 'IX', subject: 'Science', title: 'Science — Class IX', publisher: 'NCERT' },
+	{ cls: 'IX', subject: 'Social Science', title: 'India and the Contemporary World — IX', publisher: 'NCERT' },
+	// Class X
+	{ cls: 'X', subject: 'English', title: 'First Flight — English Textbook', publisher: 'NCERT' },
+	{ cls: 'X', subject: 'Mathematics', title: 'Mathematics — Class X', publisher: 'NCERT' },
+	{ cls: 'X', subject: 'Science', title: 'Science — Class X', publisher: 'NCERT' },
+	{ cls: 'X', subject: 'Social Science', title: 'India and the Contemporary World II — X', publisher: 'NCERT' },
+	// Class XI
+	{ cls: 'XI', subject: 'English', title: 'Hornbill — English Textbook', publisher: 'NCERT' },
+	{ cls: 'XI', subject: 'Accountancy', title: 'Accountancy — Class XI (Part I & II)', publisher: 'NCERT' },
+	// Class XII
+	{ cls: 'XII', subject: 'English', title: 'Flamingo — English Textbook', publisher: 'NCERT' },
+	{ cls: 'XII', subject: 'Accountancy', title: 'Accountancy — Class XII (Part I & II)', publisher: 'NCERT' }
+];
+
+// Tricent Public School — school timings and fee data (demo figures for client presentation).
+// Tuition matches the Admissions page fee structure: Nursery–KG ₹1,800, Classes I–V ₹2,200,
+// Classes VI–VIII ₹2,800, Classes IX–XII ₹3,500 per month; transport ₹1,200 per month (optional).
+
+export const bellSchedule = [
+	{ period: 'Assembly', time: '8:00 – 8:20 AM', activity: 'Morning assembly — prayer, thought of the day, news and announcements' },
+	{ period: 'Period 1', time: '8:20 – 9:00 AM', activity: 'First teaching period' },
+	{ period: 'Period 2', time: '9:00 – 9:40 AM', activity: 'Second teaching period' },
+	{ period: 'Period 3', time: '9:40 – 10:20 AM', activity: 'Third teaching period' },
+	{ period: 'Period 4', time: '10:20 – 11:00 AM', activity: 'Fourth teaching period' },
+	{ period: 'Short Break', time: '11:00 – 11:10 AM', activity: 'Short break' },
+	{ period: 'Period 5', time: '11:10 – 11:50 AM', activity: 'Fifth teaching period' },
+	{ period: 'Period 6', time: '11:50 AM – 12:30 PM', activity: 'Sixth teaching period' },
+	{ period: 'Lunch Break', time: '12:30 – 1:00 PM', activity: 'Lunch break' },
+	{ period: 'Period 7', time: '1:00 – 1:40 PM', activity: 'Seventh teaching period' },
+	{ period: 'Period 8', time: '1:40 – 2:20 PM', activity: 'Eighth teaching period' },
+	{ period: 'Dispersal', time: '2:20 – 2:30 PM', activity: 'Dispersal — buses leave campus by 2:45 PM' }
+];
+
+export const termTimings = [
+	{
+		term: 'Summer Timings',
+		schoolHours: '8:00 AM – 2:30 PM',
+		assembly: '8:00 AM',
+		dispersal: '2:30 PM',
+		note: 'April to October. Pre-Primary dispersal at 12:30 PM. Buses leave campus by 2:45 PM.'
+	},
+	{
+		term: 'Winter Timings',
+		schoolHours: '8:30 AM – 3:00 PM',
+		assembly: '8:30 AM',
+		dispersal: '3:00 PM',
+		note: 'November to March. Winter uniform is compulsory from 1 December. Pre-Primary dispersal at 1:00 PM.'
+	}
+];
+
+export const feeByClass = [
+	{ cls: 'Nursery', tuition: 1800, transport: 1200, termMonths: 3 },
+	{ cls: 'KG', tuition: 1800, transport: 1200, termMonths: 3 },
+	{ cls: 'I', tuition: 2200, transport: 1200, termMonths: 3 },
+	{ cls: 'II', tuition: 2200, transport: 1200, termMonths: 3 },
+	{ cls: 'III', tuition: 2200, transport: 1200, termMonths: 3 },
+	{ cls: 'IV', tuition: 2200, transport: 1200, termMonths: 3 },
+	{ cls: 'V', tuition: 2200, transport: 1200, termMonths: 3 },
+	{ cls: 'VI', tuition: 2800, transport: 1200, termMonths: 3 },
+	{ cls: 'VII', tuition: 2800, transport: 1200, termMonths: 3 },
+	{ cls: 'VIII', tuition: 2800, transport: 1200, termMonths: 3 },
+	{ cls: 'IX', tuition: 3500, transport: 1200, termMonths: 3 },
+	{ cls: 'X', tuition: 3500, transport: 1200, termMonths: 3 },
+	{ cls: 'XI', tuition: 3500, transport: 1200, termMonths: 3 },
+	{ cls: 'XII', tuition: 3500, transport: 1200, termMonths: 3 }
+];
+
+// Virtual tour spots for Tricent Public School (demo data for client presentation).
+// x / y are percent coordinates (0-100) within the campus map container.
+
+export const tourSpots = [
+	{
+		id: 'main-building',
+		name: 'Main Building',
+		x: 26,
+		y: 27,
+		photo: '/images/hero-campus.webp',
+		desc: 'The heart of the campus — 48 classrooms across three floors, the school office, the Principal’s room and the staff rooms, all arranged around a shaded central courtyard.',
+		fact: '48 classrooms, average size 20 x 24 ft'
+	},
+	{
+		id: 'library',
+		name: 'Library',
+		x: 63,
+		y: 24,
+		photo: '/images/library.webp',
+		desc: 'A quiet reading hall with over 12,000 books, a reference section, newspapers and magazines, and a weekly library period for every class from I to XII.',
+		fact: '12,000+ books and a dedicated reading hall'
+	},
+	{
+		id: 'science-labs',
+		name: 'Science Labs',
+		x: 63,
+		y: 52,
+		photo: '/images/science-lab.webp',
+		desc: 'Three separate laboratories for Physics, Chemistry and Biology, each with a demonstration bench, safety equipment and a lab assistant — plus the robotics club workshop.',
+		fact: '3 labs with a zero-incident safety record for 5 years'
+	},
+	{
+		id: 'playground',
+		name: 'Playground',
+		x: 85,
+		y: 65,
+		photo: '/images/sports-day.jpg',
+		desc: 'The sports ground with a basketball court, cricket nets and an athletics track, where morning fitness, house matches and the Annual Sports Day take place.',
+		fact: 'Basketball court, cricket nets and athletics track'
+	},
+	{
+		id: 'auditorium',
+		name: 'Auditorium',
+		x: 21,
+		y: 59,
+		photo: '/images/assembly.jpg',
+		desc: 'A 500-seat auditorium with a stage, lighting and sound, home to morning assembly on special days, the Annual Day, debates, concerts and prize distributions.',
+		fact: '500 seats with stage, lighting and sound'
+	},
+	{
+		id: 'bus-bay',
+		name: 'Bus Bay',
+		x: 50,
+		y: 89,
+		photo: '/images/school-bus.jpg',
+		desc: 'The covered bus bay where the school’s 15 GPS-enabled buses pick up and drop off students, supervised by teachers and a lady attendant on every bus.',
+		fact: '15 GPS-enabled buses on 6 routes'
+	}
+];

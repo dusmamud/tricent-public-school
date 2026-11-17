@@ -106,7 +106,7 @@
 			href="/admissions"
 			class="inline-flex min-h-12 items-center gap-2 rounded-sm bg-forest-900 px-7 text-sm font-extrabold tracking-wide text-white transition hover:bg-forest-800"
 		>
-			ADMISSIONS OPEN 2026–27
+			ADMISSIONS OPEN 2027–28
 			<Icon name="arrow-right" cls="h-4 w-4 text-gold-400" />
 		</a>
 	</div>

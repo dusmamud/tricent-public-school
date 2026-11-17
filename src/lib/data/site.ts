@@ -22,7 +22,8 @@ export const navLinks = [
 		children: [
 			{ label: 'Our Faculty', href: '/faculty' },
 			{ label: 'Mandatory Disclosure', href: '/mandatory-disclosure' },
-			{ label: 'Alumni', href: '/about#alumni' }
+			{ label: 'Alumni', href: '/alumni' },
+			{ label: 'Houses', href: '/houses' }
 		]
 	},
 	{
@@ -35,7 +36,10 @@ export const navLinks = [
 			{ label: 'Secondary (IX – X)', href: '/academics#secondary' },
 			{ label: 'Senior Secondary (XI – XII)', href: '/academics#senior' },
 			{ label: 'Board Results', href: '/results' },
-			{ label: 'Academic Calendar', href: '/academic-calendar' }
+			{ label: 'Academic Calendar', href: '/academic-calendar' },
+			{ label: 'Book List', href: '/book-list' },
+			{ label: 'Scholarships', href: '/scholarships' },
+			{ label: 'School Timings', href: '/school-timings' }
 		]
 	},
 	{
@@ -47,7 +51,11 @@ export const navLinks = [
 			{ label: 'Library', href: '/facilities#library' },
 			{ label: 'Computer Lab', href: '/facilities#computer-lab' },
 			{ label: 'Transport', href: '/facilities#transport' },
-			{ label: 'Sports & Activities', href: '/facilities#sports' }
+			{ label: 'Sports & Activities', href: '/facilities#sports' },
+			{ label: 'Library', href: '/library' },
+			{ label: 'Sports', href: '/sports' },
+			{ label: 'Virtual Tour', href: '/virtual-tour' },
+			{ label: 'Student Life', href: '/student-life' }
 		]
 	},
 	{
@@ -60,7 +68,10 @@ export const navLinks = [
 			{ label: 'Enquire Now', href: '/admissions#enquire' },
 			{ label: 'Downloads', href: '/downloads' },
 			{ label: 'Transport', href: '/transport' },
-			{ label: 'FAQ', href: '/faq' }
+			{ label: 'FAQ', href: '/faq' },
+			{ label: 'Pay Fees Online', href: '/pay-fees' },
+			{ label: 'Prospectus', href: '/prospectus' },
+			{ label: 'हिंदी में प्रवेश', href: '/admissions-hindi' }
 		]
 	},
 	{ label: 'Gallery', href: '/gallery' },
@@ -197,15 +208,6 @@ export const facilities = [
 		image: '/images/library.webp'
 	},
 	{
-		id: 'computer-lab',
-		icon: 'laptop',
-		title: 'Computer Lab',
-		text: 'Hands-on computing, coding and digital literacy for every class.',
-		detail:
-			'40 networked computers with high-speed internet, coding and robotics kits, and digital-literacy lessons from Class I — preparing students for a digital world, safely.',
-		image: '/images/computer-lab.jpg'
-	},
-	{
 		id: 'transport',
 		icon: 'bus',
 		title: 'Transport',
@@ -213,6 +215,15 @@ export const facilities = [
 		detail:
 			'15 GPS-enabled buses cover Simri Bakhtiyarpur, Patna and nearby towns, each with a trained driver, a lady attendant and live tracking shared with parents.',
 		image: '/images/school-bus.jpg'
+	},
+	{
+		id: 'computer-lab',
+		icon: 'laptop',
+		title: 'Computer Lab',
+		text: 'Hands-on computing, coding and digital literacy for every class.',
+		detail:
+			'40 networked computers with high-speed internet, coding and robotics kits, and digital-literacy lessons from Class I — preparing students for a digital world, safely.',
+		image: '/images/computer-lab.jpg'
 	},
 	{
 		id: 'sports',
@@ -355,13 +366,13 @@ export const admissionSteps = [
 ];
 
 export const importantDates = [
-	{ event: 'Application forms available', date: '01 Dec 2025' },
-	{ event: 'Last date to submit forms', date: '31 Jan 2026' },
-	{ event: 'Interaction / assessment (Nursery – V)', date: '08 – 14 Feb 2026' },
-	{ event: 'Entrance test (VI – IX, XI)', date: '15 Feb 2026' },
-	{ event: 'First list of selected students', date: '22 Feb 2026' },
-	{ event: 'Fee payment & confirmation', date: 'By 10 Mar 2026' },
-	{ event: 'New session begins', date: '01 Apr 2026' }
+	{ event: 'Application forms available', date: '01 Dec 2026' },
+	{ event: 'Last date to submit forms', date: '31 Jan 2027' },
+	{ event: 'Interaction / assessment (Nursery – V)', date: '08 – 14 Feb 2027' },
+	{ event: 'Entrance test (VI – IX, XI)', date: '15 Feb 2027' },
+	{ event: 'First list of selected students', date: '22 Feb 2027' },
+	{ event: 'Fee payment & confirmation', date: 'By 10 Mar 2027' },
+	{ event: 'New session begins', date: '01 Apr 2027' }
 ];
 
 export const feeStructure = [
