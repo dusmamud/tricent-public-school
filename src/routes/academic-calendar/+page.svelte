@@ -92,11 +92,11 @@
 						</span>
 					</div>
 				{:else}
-					<p class="px-5 py-8 text-center text-sm text-ink/60">No dates in this category.</p>
+					<p class="px-5 py-8 text-center text-sm text-ink/70">No dates in this category.</p>
 				{/each}
 			</div>
 		</Reveal>
-		<p class="mt-4 text-sm text-ink/60">
+		<p class="mt-4 text-sm text-ink/70">
 			Dates are indicative (demo) and may change with CBSE / state government circulars. The school office
 			confirms the final dates each term — call
 			<a href="tel:+917544000044" class="font-bold text-forest-800">+91 75440 00044</a>.

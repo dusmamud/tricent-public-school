@@ -48,7 +48,7 @@
 						</span>
 					</div>
 					<div class="p-5">
-						<p class="flex items-center gap-1.5 text-xs font-semibold text-ink/50">
+						<p class="flex items-center gap-1.5 text-xs font-semibold text-ink/70">
 							<Icon name="calendar" cls="h-3.5 w-3.5" />
 							{n.date}
 						</p>

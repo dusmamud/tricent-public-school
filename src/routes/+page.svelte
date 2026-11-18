@@ -246,7 +246,7 @@
 					</span>
 					<span>
 						<span class="block text-sm font-bold text-forest-900">{f.title}</span>
-						<span class="mt-0.5 block text-xs leading-snug text-ink/60">{f.text}</span>
+						<span class="mt-0.5 block text-xs leading-snug text-ink/70">{f.text}</span>
 					</span>
 				</div>
 			{/each}
@@ -331,7 +331,7 @@
 									{s.value}
 								{/if}
 							</p>
-							<p class="text-xs font-semibold tracking-wide text-ink/55 uppercase">{s.label}</p>
+							<p class="text-xs font-semibold tracking-wide text-ink/70 uppercase">{s.label}</p>
 						</div>
 					{/each}
 				</div>
@@ -617,7 +617,7 @@
 							</span>
 						</div>
 						<div class="p-5">
-							<p class="flex items-center gap-1.5 text-xs font-semibold text-ink/50">
+							<p class="flex items-center gap-1.5 text-xs font-semibold text-ink/70">
 								<Icon name="calendar" cls="h-3.5 w-3.5" />
 								{n.date}
 							</p>

@@ -39,7 +39,7 @@
 				</button>
 			{/each}
 		</div>
-		<p class="mt-4 text-sm text-ink/60">
+		<p class="mt-4 text-sm text-ink/70">
 			Showing <strong class="text-forest-900">{shownCount} book{shownCount === 1 ? '' : 's'}</strong>
 			{#if filter === 'All'}
 				across all classes for session 2027–28.
@@ -107,7 +107,7 @@
 	</Reveal>
 
 	<Reveal>
-		<p class="mt-10 text-sm text-ink/60">
+		<p class="mt-10 text-sm text-ink/70">
 			All book titles, editions and publishers on this page are demo entries for client presentation.
 			The school will publish the final prescribed book list for session 2027–28 before the new session
 			begins.

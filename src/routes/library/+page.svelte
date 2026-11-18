@@ -208,7 +208,7 @@
 	</Reveal>
 
 	<Reveal>
-		<p class="mt-10 text-sm text-ink/60">
+		<p class="mt-10 text-sm text-ink/70">
 			All figures on this page — book counts, timings and fines — are demo entries for client
 			presentation. The school will confirm the final library details before the website launch.
 		</p>

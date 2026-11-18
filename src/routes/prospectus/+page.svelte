@@ -75,12 +75,12 @@
 				<dl class="mt-5 divide-y divide-forest-900/10">
 					{#each facts as f}
 						<div class="flex items-center justify-between gap-4 py-3">
-							<dt class="text-sm font-bold text-ink/60">{f.label}</dt>
+							<dt class="text-sm font-bold text-ink/70">{f.label}</dt>
 							<dd class="text-right text-sm font-extrabold text-forest-900">{f.value}</dd>
 						</div>
 					{/each}
 				</dl>
-				<p class="mt-4 flex items-start gap-2 text-sm leading-relaxed text-ink/60">
+				<p class="mt-4 flex items-start gap-2 text-sm leading-relaxed text-ink/70">
 					<Icon name="phone" cls="mt-0.5 h-4 w-4 shrink-0 text-gold-600" />
 					<span>
 						Questions? Call
@@ -134,7 +134,7 @@
 	</Reveal>
 
 	<Reveal>
-		<p class="mt-8 border-t border-forest-900/10 pt-5 text-sm text-ink/60">
+		<p class="mt-8 border-t border-forest-900/10 pt-5 text-sm text-ink/70">
 			The prospectus is demo content for client presentation. All details — including the affiliation number
 			330000, fees and dates — are illustrative and will be replaced with the school’s official figures before
 			publication.

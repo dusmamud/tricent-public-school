@@ -94,7 +94,7 @@
 						Thank you for applying for <strong>{role}</strong>. Our HR team will contact you at {email}
 						if your profile is shortlisted.
 					</p>
-					<p class="mt-2 text-xs text-ink/50">Demo form — no application is actually sent.</p>
+					<p class="mt-2 text-xs text-ink/70">Demo form — no application is actually sent.</p>
 				</div>
 			{:else}
 				<form class="mt-8 space-y-5 rounded-xl border border-forest-900/10 bg-white p-6 shadow-sm sm:p-8" onsubmit={apply} novalidate>

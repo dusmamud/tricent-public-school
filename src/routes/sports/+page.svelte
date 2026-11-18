@@ -52,17 +52,17 @@
 					<dl class="mt-4 flex-1 space-y-3 border-t border-forest-900/10 pt-4 text-sm">
 						<div class="flex items-center gap-3">
 							<Icon name="user" cls="h-4 w-4 shrink-0 text-gold-600" />
-							<dt class="w-16 shrink-0 font-bold text-ink/50">Coach</dt>
+							<dt class="w-16 shrink-0 font-bold text-ink/70">Coach</dt>
 							<dd class="font-semibold text-forest-900">{team.coach}</dd>
 						</div>
 						<div class="flex items-center gap-3">
 							<Icon name="star" cls="h-4 w-4 shrink-0 text-gold-600" />
-							<dt class="w-16 shrink-0 font-bold text-ink/50">Captain</dt>
+							<dt class="w-16 shrink-0 font-bold text-ink/70">Captain</dt>
 							<dd class="font-semibold text-forest-900">{team.captain}</dd>
 						</div>
 						<div class="flex items-center gap-3">
 							<Icon name="clock" cls="h-4 w-4 shrink-0 text-gold-600" />
-							<dt class="w-16 shrink-0 font-bold text-ink/50">Training</dt>
+							<dt class="w-16 shrink-0 font-bold text-ink/70">Training</dt>
 							<dd class="font-semibold text-forest-900">{team.training}</dd>
 						</div>
 					</dl>
@@ -159,7 +159,7 @@
 	</Reveal>
 
 	<Reveal>
-		<p class="mt-12 text-sm text-ink/60">
+		<p class="mt-12 text-sm text-ink/70">
 			All teams, coaches, fixtures and results above are demo entries for client presentation. The school
 			will publish its official sports calendar and match results here each season.
 		</p>

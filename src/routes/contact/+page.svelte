@@ -62,7 +62,7 @@
 						<p class="mt-2 text-sm leading-relaxed text-ink/65">
 							Thank you for writing to us. Our office will reply to {email} within 24 hours.
 						</p>
-						<p class="mt-2 text-xs text-ink/50">Demo form — no message is actually sent.</p>
+						<p class="mt-2 text-xs text-ink/70">Demo form — no message is actually sent.</p>
 					</div>
 				{:else}
 					<form class="mt-8 space-y-5" onsubmit={submit} novalidate>
@@ -114,7 +114,7 @@
 					allowfullscreen
 				></iframe>
 			</div>
-			<p class="mt-3 text-sm text-ink/60">
+			<p class="mt-3 text-sm text-ink/70">
 				Map not loading?
 				<a
 					href="https://www.google.com/maps/search/?api=1&query=Simri+Bakhtiyarpur,+Patna,+Bihar"

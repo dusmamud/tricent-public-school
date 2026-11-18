@@ -173,7 +173,7 @@
 						BOOK A MEETING
 						<Icon name="arrow-right" cls="h-4 w-4 text-gold-400" />
 					</a>
-					<p class="mt-3 text-center text-xs leading-relaxed text-ink/50">
+					<p class="mt-3 text-center text-xs leading-relaxed text-ink/70">
 						Parents can request a meeting through the school office or the contact form.
 					</p>
 				</div>
@@ -199,7 +199,7 @@
 										</span>
 										<span>
 											<span class="block group-hover:underline">{s.name}</span>
-											<span class="block text-xs font-normal text-ink/50">{s.role}</span>
+											<span class="block text-xs font-normal text-ink/70">{s.role}</span>
 										</span>
 									</a>
 								</li>
@@ -223,7 +223,7 @@
 			>
 				<Icon name="arrow-left" cls="h-5 w-5 shrink-0 text-forest-800" />
 				<span>
-					<span class="block text-[0.65rem] font-extrabold tracking-wider text-ink/50 uppercase"
+					<span class="block text-[0.65rem] font-extrabold tracking-wider text-ink/70 uppercase"
 						>Previous teacher</span
 					>
 					<span class="block font-bold text-forest-900 group-hover:underline">{prev.name}</span>
@@ -238,7 +238,7 @@
 				class="group flex items-center gap-3 rounded-xl border border-forest-900/10 bg-white px-5 py-4 text-right shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
 			>
 				<span>
-					<span class="block text-[0.65rem] font-extrabold tracking-wider text-ink/50 uppercase"
+					<span class="block text-[0.65rem] font-extrabold tracking-wider text-ink/70 uppercase"
 						>Next teacher</span
 					>
 					<span class="block font-bold text-forest-900 group-hover:underline">{next.name}</span>

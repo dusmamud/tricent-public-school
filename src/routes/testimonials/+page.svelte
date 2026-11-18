@@ -70,7 +70,7 @@
 						</span>
 						<span>
 							<span class="block text-sm font-bold text-forest-900">{t.name}</span>
-							<span class="block text-xs text-ink/55">{t.role}</span>
+							<span class="block text-xs text-ink/70">{t.role}</span>
 						</span>
 						<span class="ml-auto flex gap-0.5" aria-label="5 out of 5 stars">
 							{#each Array(5) as _}

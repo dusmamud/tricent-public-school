@@ -158,7 +158,7 @@
 						/>
 					</picture>
 				</div>
-				<p class="mt-4 flex items-start gap-2 text-sm leading-relaxed text-ink/60">
+				<p class="mt-4 flex items-start gap-2 text-sm leading-relaxed text-ink/70">
 					<Icon name="shield" cls="mt-0.5 h-5 w-5 shrink-0 text-forest-700" />
 					Your details are kept only in this browser for this demo and are never shared. The school office
 					will confirm registrations by email.
@@ -251,7 +251,7 @@
 							</div>
 							<div class="sm:col-span-2">
 								<label for="alumni-message" class="text-sm font-bold text-forest-900">
-									Message <span class="font-normal text-ink/50">(optional)</span>
+									Message <span class="font-normal text-ink/70">(optional)</span>
 								</label>
 								<textarea
 									id="alumni-message"
@@ -269,7 +269,7 @@
 							<Icon name="send" cls="h-4 w-4 text-gold-400" />
 							REGISTER AS ALUMNI
 						</button>
-						<p class="mt-3 text-xs text-ink/50">
+						<p class="mt-3 text-xs text-ink/70">
 							Fields marked * are required. Demo form — entries are saved only in your browser.
 						</p>
 					</form>
@@ -315,7 +315,7 @@
 	</div>
 
 	<Reveal>
-		<p class="mt-12 text-sm text-ink/60">
+		<p class="mt-12 text-sm text-ink/70">
 			All alumni profiles, statistics and achievements on this page are demo entries for client presentation.
 			The school will publish verified alumni stories here after launch.
 		</p>

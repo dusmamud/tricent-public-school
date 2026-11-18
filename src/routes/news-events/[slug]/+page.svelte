@@ -48,7 +48,7 @@
 
 <article class="mx-auto max-w-4xl px-4 py-14 sm:px-6 lg:px-8">
 	<Reveal>
-		<nav aria-label="Breadcrumb" class="flex flex-wrap items-center gap-1.5 text-xs font-semibold tracking-wider text-ink/50">
+		<nav aria-label="Breadcrumb" class="flex flex-wrap items-center gap-1.5 text-xs font-semibold tracking-wider text-ink/70">
 			<a href="/" class="transition hover:text-gold-700">HOME</a>
 			<span aria-hidden="true">/</span>
 			<a href="/news-events" class="transition hover:text-gold-700">NEWS &amp; EVENTS</a>
@@ -61,7 +61,7 @@
 			>
 				{item.tag}
 			</span>
-			<span class="flex items-center gap-1.5 text-sm font-semibold text-ink/50">
+			<span class="flex items-center gap-1.5 text-sm font-semibold text-ink/70">
 				<Icon name="calendar" cls="h-4 w-4" />
 				{item.date}
 			</span>
@@ -146,7 +146,7 @@
 									/>
 								</picture>
 								<div class="p-4">
-									<p class="text-xs font-semibold text-ink/50">{r.date}</p>
+									<p class="text-xs font-semibold text-ink/70">{r.date}</p>
 									<h3 class="mt-1.5 leading-snug font-bold text-forest-900 transition group-hover:text-forest-700">
 										{r.title}
 									</h3>

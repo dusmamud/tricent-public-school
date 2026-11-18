@@ -159,7 +159,7 @@
 						{#each disclosure.smc as m}
 							<li class="flex justify-between gap-3 border-b border-forest-900/5 pb-2 last:border-0">
 								<span class="font-semibold text-forest-900">{m.name}</span>
-								<span class="text-right text-ink/60">{m.role}</span>
+								<span class="text-right text-ink/70">{m.role}</span>
 							</li>
 						{/each}
 					</ul>
@@ -172,7 +172,7 @@
 						{#each disclosure.pta as m}
 							<li class="flex justify-between gap-3 border-b border-forest-900/5 pb-2 last:border-0">
 								<span class="font-semibold text-forest-900">{m.name}</span>
-								<span class="text-right text-ink/60">{m.role}</span>
+								<span class="text-right text-ink/70">{m.role}</span>
 							</li>
 						{/each}
 					</ul>
@@ -200,7 +200,7 @@
 				{/each}
 			</div>
 		</Reveal>
-		<p class="mt-4 text-sm text-ink/60">
+		<p class="mt-4 text-sm text-ink/70">
 			Full staff directory with names, subjects and qualifications is on the
 			<a href="/faculty" class="font-bold text-forest-800 underline decoration-gold-500 underline-offset-4"
 				>Faculty page</a
@@ -227,7 +227,7 @@
 				{/each}
 			</div>
 		</Reveal>
-		<p class="mt-4 text-sm text-ink/60">
+		<p class="mt-4 text-sm text-ink/70">
 			Photographs of the campus are on the
 			<a href="/facilities" class="font-bold text-forest-800 underline decoration-gold-500 underline-offset-4"
 				>Facilities page</a

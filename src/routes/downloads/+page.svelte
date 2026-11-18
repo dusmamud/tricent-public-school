@@ -35,7 +35,7 @@
 					</span>
 					<h3 class="mt-4 font-display text-lg leading-snug font-bold text-forest-900">{d.title}</h3>
 					<p class="mt-2 flex-1 text-sm leading-relaxed text-ink/65">{d.desc}</p>
-					<p class="mt-3 text-xs font-semibold text-ink/50">
+					<p class="mt-3 text-xs font-semibold text-ink/70">
 						PDF · {d.pages} · {d.size}
 					</p>
 					<a

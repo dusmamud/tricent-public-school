@@ -109,7 +109,7 @@
 				</span>
 				<p class="mt-5 font-display text-xl font-bold text-forest-900">Dr. Ananya Sharma</p>
 				<p class="text-sm font-semibold text-gold-700">Principal, Tricent Public School</p>
-				<p class="mt-3 text-sm leading-relaxed text-ink/60">
+				<p class="mt-3 text-sm leading-relaxed text-ink/70">
 					M.Ed., Ph.D. (Education) — 22 years in school leadership, and still happiest standing at
 					the school gate every morning.
 				</p>

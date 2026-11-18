@@ -96,7 +96,7 @@
 				</tbody>
 			</table>
 		</div>
-		<p class="mt-4 text-center text-sm text-ink/60">
+		<p class="mt-4 text-center text-sm text-ink/70">
 			आवेदन जमा करने की अंतिम तिथि: <strong class="text-forest-900">31 जनवरी 2027</strong>
 		</p>
 	</section>
@@ -132,7 +132,7 @@
 				</tbody>
 			</table>
 		</div>
-		<p class="mt-4 text-center text-sm text-ink/60">
+		<p class="mt-4 text-center text-sm text-ink/70">
 			शुल्क सांकेतिक (डेमो) है। ऑनलाइन शुल्क भुगतान के लिए
 			<a href="/pay-fees" class="font-bold text-forest-800 underline">Pay Fees</a> पृष्ठ देखें।
 		</p>

@@ -53,7 +53,7 @@
 				</tbody>
 			</table>
 		</div>
-		<p class="mt-3 text-xs text-ink/50">
+		<p class="mt-3 text-xs text-ink/70">
 			Pre-Primary (Nursery – KG) runs 8:30 AM – 12:30 PM in summer and 9:00 AM – 1:00 PM in
 			winter, with its own shorter day.
 		</p>
@@ -89,11 +89,11 @@
 						<p class="mt-4 font-display text-3xl font-bold text-forest-900">{t.schoolHours}</p>
 						<dl class="mt-6 space-y-3 border-t border-forest-900/10 pt-5 text-sm">
 							<div class="flex items-center justify-between gap-3">
-								<dt class="font-bold text-ink/60">Assembly</dt>
+								<dt class="font-bold text-ink/70">Assembly</dt>
 								<dd class="font-bold text-forest-900">{t.assembly} daily</dd>
 							</div>
 							<div class="flex items-center justify-between gap-3">
-								<dt class="font-bold text-ink/60">Dispersal</dt>
+								<dt class="font-bold text-ink/70">Dispersal</dt>
 								<dd class="font-bold text-forest-900">{t.dispersal}</dd>
 							</div>
 						</dl>
@@ -118,19 +118,19 @@
 				<h3 class="mt-4 font-display text-2xl font-bold text-forest-900">Office Hours</h3>
 				<dl class="mt-6 space-y-4 text-sm">
 					<div class="flex items-start justify-between gap-3 border-b border-forest-900/5 pb-4">
-						<dt class="font-bold text-ink/60">School Office</dt>
+						<dt class="font-bold text-ink/70">School Office</dt>
 						<dd class="text-right font-bold text-forest-900">Mon – Sat<br />8:00 AM – 4:00 PM</dd>
 					</div>
 					<div class="flex items-start justify-between gap-3 border-b border-forest-900/5 pb-4">
-						<dt class="font-bold text-ink/60">Accounts Office</dt>
+						<dt class="font-bold text-ink/70">Accounts Office</dt>
 						<dd class="text-right font-bold text-forest-900">Mon – Sat<br />9:00 AM – 1:00 PM</dd>
 					</div>
 					<div class="flex items-start justify-between gap-3 border-b border-forest-900/5 pb-4">
-						<dt class="font-bold text-ink/60">Principal's Office</dt>
+						<dt class="font-bold text-ink/70">Principal's Office</dt>
 						<dd class="text-right font-bold text-forest-900">Mon – Fri<br />10:00 AM – 12:00 PM</dd>
 					</div>
 					<div class="flex items-start justify-between gap-3">
-						<dt class="font-bold text-ink/60">Parent Meeting Hours</dt>
+						<dt class="font-bold text-ink/70">Parent Meeting Hours</dt>
 						<dd class="text-right font-bold text-forest-900">2:30 – 3:30 PM<br />on working days</dd>
 					</div>
 				</dl>

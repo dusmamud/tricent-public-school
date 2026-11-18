@@ -80,7 +80,7 @@
 					<h3 class="mt-4 font-display text-lg leading-snug font-bold text-forest-900">{s.name}</h3>
 					<p class="mt-2 flex-1 text-sm leading-relaxed text-ink/65">{s.desc}</p>
 					<p class="mt-4 rounded-lg bg-cream px-4 py-3 text-sm font-bold text-forest-900">{s.benefit}</p>
-					<p class="mt-3 text-xs leading-relaxed text-ink/55">
+					<p class="mt-3 text-xs leading-relaxed text-ink/70">
 						<span class="font-bold text-forest-800">Who can apply:</span>
 						{s.eligibility}
 					</p>
@@ -267,7 +267,7 @@
 						<Icon name="send" cls="h-4 w-4 text-gold-400" />
 						SUBMIT APPLICATION
 					</button>
-					<p class="mt-4 text-xs leading-relaxed text-ink/55">
+					<p class="mt-4 text-xs leading-relaxed text-ink/70">
 						Applications for the 2027–28 session close on 31 January 2027. One scholarship per student —
 						if a student qualifies for more than one scheme, the higher benefit applies.
 					</p>
@@ -277,7 +277,7 @@
 	</Reveal>
 
 	<Reveal>
-		<p class="mt-10 text-sm text-ink/60">
+		<p class="mt-10 text-sm text-ink/70">
 			All scholarship names, benefits and criteria on this page are demo entries for client presentation.
 			The school will confirm the final schemes, percentages and deadlines before the website launch.
 		</p>

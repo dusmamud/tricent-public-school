@@ -44,7 +44,7 @@
 					<Icon name="lock" cls="h-6 w-6" />
 				</span>
 				<h2 class="mt-4 text-center font-display text-2xl font-bold text-forest-900">Parent Portal</h2>
-				<p class="mt-1 text-center text-sm text-ink/60">
+				<p class="mt-1 text-center text-sm text-ink/70">
 					Demo login — use any email and a 4+ character password.
 				</p>
 				<form class="mt-7 space-y-5" onsubmit={login} novalidate>
@@ -90,7 +90,7 @@
 						LOGIN
 						<Icon name="arrow-right" cls="h-4 w-4 text-gold-400" />
 					</button>
-					<p class="text-center text-xs text-ink/50">
+					<p class="text-center text-xs text-ink/70">
 						Forgot password? Contact the school office at +91 75440 00044.
 					</p>
 				</form>
@@ -103,7 +103,7 @@
 					<h2 class="font-display text-2xl font-bold text-forest-900 sm:text-3xl">
 						Welcome back, Parent
 					</h2>
-					<p class="mt-1 text-sm text-ink/60">Signed in as {email} · Demo dashboard — sample data only.</p>
+					<p class="mt-1 text-sm text-ink/70">Signed in as {email} · Demo dashboard — sample data only.</p>
 				</div>
 				<button
 					type="button"
@@ -120,24 +120,24 @@
 						<span class="flex h-16 w-16 items-center justify-center rounded-full bg-forest-900 font-display text-xl font-bold text-gold-400">AV</span>
 						<div>
 							<p class="font-display text-lg font-bold text-forest-900">Aarav Verma</p>
-							<p class="text-sm text-ink/60">Class VI-B · Roll No. 12</p>
+							<p class="text-sm text-ink/70">Class VI-B · Roll No. 12</p>
 						</div>
 					</div>
 					<dl class="mt-5 space-y-3 text-sm">
 						<div class="flex justify-between border-b border-forest-900/5 pb-2.5">
-							<dt class="text-ink/60">Attendance (Nov)</dt>
+							<dt class="text-ink/70">Attendance (Nov)</dt>
 							<dd class="font-bold text-forest-800">96%</dd>
 						</div>
 						<div class="flex justify-between border-b border-forest-900/5 pb-2.5">
-							<dt class="text-ink/60">Fee status</dt>
+							<dt class="text-ink/70">Fee status</dt>
 							<dd class="font-bold text-forest-800">Paid till Mar 2026</dd>
 						</div>
 						<div class="flex justify-between border-b border-forest-900/5 pb-2.5">
-							<dt class="text-ink/60">Class teacher</dt>
+							<dt class="text-ink/70">Class teacher</dt>
 							<dd class="font-bold text-forest-800">Mrs. Sunita Mishra</dd>
 						</div>
 						<div class="flex justify-between">
-							<dt class="text-ink/60">Bus route</dt>
+							<dt class="text-ink/70">Bus route</dt>
 							<dd class="font-bold text-forest-800">Route 4 · GPS live</dd>
 						</div>
 					</dl>

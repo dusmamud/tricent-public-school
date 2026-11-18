@@ -122,7 +122,7 @@
 				</tbody>
 			</table>
 		</div>
-		<p class="mt-3 text-xs text-ink/50">
+		<p class="mt-3 text-xs text-ink/70">
 			Fees shown are indicative (demo) for the 2027–28 session. Please confirm the current fee
 			schedule at the school office before payment.
 		</p>
@@ -194,7 +194,7 @@
 						Your enquiry for <strong>Class {childClass}</strong> has been received. Our admissions
 						team will call you on <strong>{phone}</strong> within 24 hours.
 					</p>
-					<p class="mt-3 text-xs text-ink/50">Demo form — no data is sent anywhere.</p>
+					<p class="mt-3 text-xs text-ink/70">Demo form — no data is sent anywhere.</p>
 					<button
 						type="button"
 						onclick={() => {

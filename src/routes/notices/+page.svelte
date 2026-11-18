@@ -113,12 +113,12 @@
 					</span>
 				</div>
 			{:else}
-				<p class="px-5 py-10 text-center text-sm text-ink/60">
+				<p class="px-5 py-10 text-center text-sm text-ink/70">
 					No notices match your search — try another keyword or category.
 				</p>
 			{/each}
 		</div>
-		<p class="mt-4 text-sm text-ink/60">
+		<p class="mt-4 text-sm text-ink/70">
 			Notices are demo entries for client presentation. The school office publishes real circulars here and
 			on the parent portal.
 		</p>

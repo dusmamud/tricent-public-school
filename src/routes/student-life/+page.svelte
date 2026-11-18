@@ -90,7 +90,7 @@
 					</div>
 					<h3 class="mt-4 font-display text-lg leading-snug font-bold text-forest-900">{club.name}</h3>
 					<p class="mt-2 flex-1 text-sm leading-relaxed text-ink/65">{club.desc}</p>
-					<div class="mt-4 flex flex-wrap gap-x-5 gap-y-1 border-t border-forest-900/10 pt-4 text-xs font-semibold text-ink/60">
+					<div class="mt-4 flex flex-wrap gap-x-5 gap-y-1 border-t border-forest-900/10 pt-4 text-xs font-semibold text-ink/70">
 						<span class="inline-flex items-center gap-1.5">
 							<Icon name="calendar" cls="h-4 w-4 text-gold-600" />
 							Meets {club.day}s
@@ -165,7 +165,7 @@
 						</span>
 						<h3 class="mt-4 font-display text-lg leading-snug font-bold text-forest-900">{member.name}</h3>
 						<p class="mt-1 text-sm font-bold text-gold-700">{member.role}</p>
-						<p class="mt-1 text-xs font-semibold text-ink/50">Class {member.class}</p>
+						<p class="mt-1 text-xs font-semibold text-ink/70">Class {member.class}</p>
 					</article>
 				{/each}
 			</div>
@@ -173,7 +173,7 @@
 	</Reveal>
 
 	<Reveal>
-		<p class="mt-12 text-sm text-ink/60">
+		<p class="mt-12 text-sm text-ink/70">
 			All club memberships, meeting days and council names above are demo entries for client presentation.
 			The school will publish its official clubs list and elected council here each academic session.
 		</p>

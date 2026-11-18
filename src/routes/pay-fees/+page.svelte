@@ -133,31 +133,31 @@
 					class="mx-auto mt-7 max-w-md space-y-3 rounded-xl bg-cream px-5 py-5 text-left text-sm"
 				>
 					<div class="flex items-center justify-between gap-3">
-						<dt class="font-bold text-ink/60">Receipt No.</dt>
+						<dt class="font-bold text-ink/70">Receipt No.</dt>
 						<dd class="font-bold text-forest-900">{receiptNo}</dd>
 					</div>
 					<div class="flex items-center justify-between gap-3">
-						<dt class="font-bold text-ink/60">Amount Paid</dt>
+						<dt class="font-bold text-ink/70">Amount Paid</dt>
 						<dd class="font-display text-xl font-bold text-forest-900">{inr(total)}</dd>
 					</div>
 					<div class="flex items-center justify-between gap-3">
-						<dt class="font-bold text-ink/60">Admission No.</dt>
+						<dt class="font-bold text-ink/70">Admission No.</dt>
 						<dd class="font-bold text-forest-900">{admNo.trim().toUpperCase()}</dd>
 					</div>
 					<div class="flex items-center justify-between gap-3">
-						<dt class="font-bold text-ink/60">Class</dt>
+						<dt class="font-bold text-ink/70">Class</dt>
 						<dd class="font-bold text-forest-900">{classLabel(cls)}</dd>
 					</div>
 					<div class="flex items-center justify-between gap-3">
-						<dt class="font-bold text-ink/60">Session</dt>
+						<dt class="font-bold text-ink/70">Session</dt>
 						<dd class="font-bold text-forest-900">{sessionLabel}</dd>
 					</div>
 					<div class="flex items-center justify-between gap-3">
-						<dt class="font-bold text-ink/60">Term</dt>
+						<dt class="font-bold text-ink/70">Term</dt>
 						<dd class="font-bold text-forest-900">{termLabel}</dd>
 					</div>
 					<div class="flex items-center justify-between gap-3">
-						<dt class="font-bold text-ink/60">Paid Via</dt>
+						<dt class="font-bold text-ink/70">Paid Via</dt>
 						<dd class="font-bold text-forest-900">{payMethod === 'upi' ? 'UPI' : 'Card'}</dd>
 					</div>
 				</dl>
@@ -224,7 +224,7 @@
 					<input type="checkbox" bind:checked={transportOpted} class="h-5 w-5 accent-forest-800" />
 					<span>
 						<span class="font-bold text-forest-900">Include school transport</span>
-						<span class="text-ink/60"> — ₹1,200 per month (optional)</span>
+						<span class="text-ink/70"> — ₹1,200 per month (optional)</span>
 					</span>
 				</label>
 				<button
@@ -283,7 +283,7 @@
 							<dd class="font-bold text-forest-900">{dueDate}</dd>
 						</div>
 					</dl>
-					<p class="mt-4 text-xs text-ink/50">
+					<p class="mt-4 text-xs text-ink/70">
 						Tuition matches the fee structure on the Admissions page. A 10% sibling concession on
 						tuition applies to the second sibling — please contact the accounts office to apply it.
 					</p>
@@ -352,7 +352,7 @@
 								class="w-full rounded-md border border-forest-900/20 px-4 py-3 text-sm focus:border-forest-700 focus:outline-none"
 							/>
 							{#if payErrors.upiId}<p class="mt-1.5 text-xs text-red-600">{payErrors.upiId}</p>{/if}
-							<p class="mt-1.5 text-xs text-ink/50">
+							<p class="mt-1.5 text-xs text-ink/70">
 								Demo only — enter a sample UPI ID in the format name@bank, never a real one.
 							</p>
 						</div>
@@ -404,7 +404,7 @@
 								{#if payErrors.cvv}<p class="mt-1.5 text-xs text-red-600">{payErrors.cvv}</p>{/if}
 							</div>
 						</div>
-						<p class="mt-4 flex items-start gap-2 text-xs leading-relaxed text-ink/50">
+						<p class="mt-4 flex items-start gap-2 text-xs leading-relaxed text-ink/70">
 							<Icon name="lock" cls="mt-0.5 h-4 w-4 shrink-0 text-forest-700" />
 							Demo only — never enter a real card number, expiry or CVV. Nothing you type here is
 							sent anywhere or stored.
@@ -423,7 +423,7 @@
 							Pay {inr(total)} (Demo)
 						{/if}
 					</button>
-					<p class="mt-3 text-center text-xs text-ink/50">
+					<p class="mt-3 text-center text-xs text-ink/70">
 						No payment is processed. Prefer offline payment? Pay at the accounts office
 						(Mon – Sat, 9:00 AM – 1:00 PM) or call
 						<a href="tel:+917544000044" class="font-bold text-forest-800">+91 75440 00044</a>.

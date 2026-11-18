@@ -51,26 +51,26 @@
 							</span>
 						</div>
 						<h3 class="mt-4 font-display text-2xl font-bold text-forest-900">{h.name} House</h3>
-						<p class="mt-1 text-sm font-bold text-ink/60 italic">“{h.motto}”</p>
+						<p class="mt-1 text-sm font-bold text-ink/70 italic">“{h.motto}”</p>
 						<dl class="mt-5 flex-1 space-y-3 border-t border-forest-900/10 pt-5 text-sm">
 							<div class="flex items-start gap-2">
 								<Icon name="star" cls="mt-0.5 h-4 w-4 shrink-0 text-gold-600" />
 								<div>
-									<dt class="text-xs font-bold tracking-wider text-ink/50 uppercase">Captain</dt>
+									<dt class="text-xs font-bold tracking-wider text-ink/70 uppercase">Captain</dt>
 									<dd class="font-semibold text-forest-900">{h.captain}</dd>
 								</div>
 							</div>
 							<div class="flex items-start gap-2">
 								<Icon name="users" cls="mt-0.5 h-4 w-4 shrink-0 text-gold-600" />
 								<div>
-									<dt class="text-xs font-bold tracking-wider text-ink/50 uppercase">Vice-Captain</dt>
+									<dt class="text-xs font-bold tracking-wider text-ink/70 uppercase">Vice-Captain</dt>
 									<dd class="font-semibold text-forest-900">{h.viceCaptain}</dd>
 								</div>
 							</div>
 							<div class="flex items-start gap-2">
 								<Icon name="trophy" cls="mt-0.5 h-4 w-4 shrink-0 text-gold-600" />
 								<div>
-									<dt class="text-xs font-bold tracking-wider text-ink/50 uppercase">Events Won</dt>
+									<dt class="text-xs font-bold tracking-wider text-ink/70 uppercase">Events Won</dt>
 									<dd class="font-semibold text-forest-900">
 										{h.eventsWon} events · {h.members} members
 									</dd>
@@ -255,7 +255,7 @@
 	</div>
 
 	<Reveal>
-		<p class="mt-12 text-sm text-ink/60">
+		<p class="mt-12 text-sm text-ink/70">
 			All house points, captains, members and fixtures on this page are demo entries for client presentation.
 			The school will publish the official house standings here during the session.
 		</p>

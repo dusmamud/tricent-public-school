@@ -74,15 +74,15 @@
 
 						<dl class="mt-7 grid grid-cols-3 gap-4 border-t border-forest-900/10 pt-6 text-center">
 							<div>
-								<dt class="text-[0.65rem] font-bold tracking-wider text-ink/50 uppercase">Appeared</dt>
+								<dt class="text-[0.65rem] font-bold tracking-wider text-ink/70 uppercase">Appeared</dt>
 								<dd class="mt-1 font-display text-2xl font-bold text-forest-900">{c.data.appeared}</dd>
 							</div>
 							<div>
-								<dt class="text-[0.65rem] font-bold tracking-wider text-ink/50 uppercase">Passed</dt>
+								<dt class="text-[0.65rem] font-bold tracking-wider text-ink/70 uppercase">Passed</dt>
 								<dd class="mt-1 font-display text-2xl font-bold text-forest-900">{c.data.passed}</dd>
 							</div>
 							<div>
-								<dt class="text-[0.65rem] font-bold tracking-wider text-ink/50 uppercase">Above 90%</dt>
+								<dt class="text-[0.65rem] font-bold tracking-wider text-ink/70 uppercase">Above 90%</dt>
 								<dd class="mt-1 font-display text-2xl font-bold text-forest-900">{c.data.above90}</dd>
 							</div>
 						</dl>
@@ -91,7 +91,7 @@
 							<Icon name="award" cls="h-6 w-6 shrink-0 text-gold-600" />
 							<p class="text-sm">
 								<span class="font-bold text-forest-900">School Topper: {c.data.topper}</span>
-								<span class="text-ink/60"> — {c.data.topScore}</span>
+								<span class="text-ink/70"> — {c.data.topScore}</span>
 							</p>
 						</div>
 					</article>
@@ -127,7 +127,7 @@
 					</tbody>
 				</table>
 			</div>
-			<p class="mt-4 text-sm text-ink/60">
+			<p class="mt-4 text-sm text-ink/70">
 				All results above are demo figures for client presentation. The school will publish its official
 				board results here after each examination.
 			</p>

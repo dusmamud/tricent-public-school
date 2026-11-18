@@ -263,7 +263,7 @@
 	</Reveal>
 
 	<Reveal>
-		<p class="mt-12 border-t border-forest-900/10 pt-5 text-sm text-ink/60">
+		<p class="mt-12 border-t border-forest-900/10 pt-5 text-sm text-ink/70">
 			All tour stops, photos and facts on this page are demo content for client presentation. Visit the
 			school to see the real campus — call
 			<a href="tel:+917544000044" class="font-bold text-forest-800">+91 75440 00044</a>
