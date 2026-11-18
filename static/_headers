@@ -1,5 +1,6 @@
 /*:
   Cache-Control: public, max-age=0, must-revalidate
+  X-Tricent-Headers-Test: active
 
 /_app/immutable/*:
   ! Cache-Control
