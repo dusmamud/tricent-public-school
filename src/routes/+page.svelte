@@ -9,6 +9,7 @@
 	const slides = [
 		{
 			image: '/images/hero-campus.webp',
+			alt: 'Tricent Public School campus, Beldari, Patna',
 			kicker: 'TRICENT PUBLIC SCHOOL · PATNA',
 			titleA: 'Inspiring Excellence,',
 			titleB: 'Building Futures',
@@ -16,6 +17,7 @@
 		},
 		{
 			image: '/images/about-students.webp',
+			alt: 'Students of Tricent Public School in class',
 			kicker: 'NURSERY TO CLASS XII · CBSE',
 			titleA: 'Where Young Minds',
 			titleB: 'Grow with Values',
@@ -23,6 +25,7 @@
 		},
 		{
 			image: '/images/library.webp',
+			alt: 'School library at Tricent Public School',
 			kicker: 'LEARNING BEYOND CLASSROOMS',
 			titleA: 'Curiosity, Creativity',
 			titleB: 'and Character',
@@ -75,7 +78,7 @@
 </script>
 
 <svelte:head>
-	<title>Tricent Public School, Patna | Inspiring Excellence, Building Futures</title>
+	<title>Tricent Public School, Patna | Inspiring Excellence</title>
 	<meta
 		name="description"
 		content="Tricent Public School, Beldari, Simri Bakhtiyarpur, Patna — CBSE co-educational school from Nursery to Class XII. Admissions open for 2027–28."
@@ -86,12 +89,25 @@
 		content="Inspiring Excellence, Building Futures — CBSE school from Nursery to Class XII. Admissions open for 2027–28."
 	/>
 	<meta property="og:type" content="website" />
-	<meta property="og:image" content="/images/hero-campus.webp" />
+	<meta property="og:image" content="https://tricent-public-school.pages.dev/images/og-default.jpg" />
+	<meta property="og:url" content="https://tricent-public-school.pages.dev/" />
+	<meta property="og:site_name" content="Tricent Public School" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Tricent Public School, Patna" />
+	<meta
+		name="twitter:description"
+		content="Inspiring Excellence, Building Futures — CBSE school from Nursery to Class XII. Admissions open for 2027–28."
+	/>
+	<meta name="twitter:image" content="https://tricent-public-school.pages.dev/images/og-default.jpg" />
 	<link rel="canonical" href="https://tricent-public-school.pages.dev/" />
 	{@html `<script type="application/ld+json">${JSON.stringify({
 		'@context': 'https://schema.org',
 		'@type': 'School',
 		name: 'Tricent Public School',
+		url: 'https://tricent-public-school.pages.dev/',
+		logo: 'https://tricent-public-school.pages.dev/favicon.svg',
+		image: 'https://tricent-public-school.pages.dev/images/og-default.jpg',
+		openingHours: 'Mo-Sa 08:00-16:00',
 		address: {
 			'@type': 'PostalAddress',
 			streetAddress: 'Beldari, Simri Bakhtiyarpur',
@@ -115,12 +131,26 @@
 					: 'pointer-events-none opacity-0'}"
 				aria-hidden={i !== slide}
 			>
-				<img
-					src={s.image}
-					alt=""
-					class="h-full w-full object-cover {i === slide ? 'hero-kenburns' : ''}"
-					fetchpriority={i === 0 ? 'high' : 'low'}
-				/>
+				<picture class="contents">
+					<source
+						type="image/avif"
+						srcset={({ 'school-bus': [480], dance: [480], 'sports-day': [480], 'computer-lab': [480, 800], 'smart-classroom': [480, 800] }[s.image.replace('/images/', '').replace(/\.[^.]+$/, '')] ?? [480, 800, 1200]).map((w) => `/images/responsive/${s.image.replace('/images/', '').replace(/\.[^.]+$/, '')}-${w}.avif ${w}w`).join(', ')}
+						sizes="100vw"
+					/>
+					<source
+						type="image/webp"
+						srcset={({ 'school-bus': [480], dance: [480], 'sports-day': [480], 'computer-lab': [480, 800], 'smart-classroom': [480, 800] }[s.image.replace('/images/', '').replace(/\.[^.]+$/, '')] ?? [480, 800, 1200]).map((w) => `/images/responsive/${s.image.replace('/images/', '').replace(/\.[^.]+$/, '')}-${w}.webp ${w}w`).join(', ')}
+						sizes="100vw"
+					/>
+					<img
+						src={s.image}
+						alt={s.alt}
+						width="1920"
+						height="1280"
+						class="h-full w-full object-cover {i === slide ? 'hero-kenburns' : ''}"
+						fetchpriority={i === 0 ? 'high' : 'low'}
+					/>
+				</picture>
 				<div
 					class="absolute inset-0 bg-gradient-to-r from-forest-950/85 via-forest-950/45 to-transparent"
 				></div>
@@ -235,7 +265,7 @@
 				<Icon name="megaphone" cls="h-4 w-4" />
 				{n.title}
 			</a>
-			<span class="shrink-0 text-gold-600" aria-hidden="true">✦</span>
+			<span class="shrink-0 text-gold-700" aria-hidden="true">✦</span>
 		{/each}
 	</div>
 </div>
@@ -245,12 +275,26 @@
 	<div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
 		<Reveal>
 			<div class="relative">
-				<img
-					src="/images/about-students.webp"
-					alt="Students of Tricent Public School in maroon uniforms with the school bus"
-					class="aspect-[4/3] w-full rounded-xl object-cover shadow-lg"
-					loading="lazy"
-				/>
+				<picture class="contents">
+					<source
+						type="image/avif"
+						srcset="/images/responsive/about-students-480.avif 480w, /images/responsive/about-students-800.avif 800w, /images/responsive/about-students-1200.avif 1200w"
+						sizes="(max-width: 1024px) 100vw, 50vw"
+					/>
+					<source
+						type="image/webp"
+						srcset="/images/responsive/about-students-480.webp 480w, /images/responsive/about-students-800.webp 800w, /images/responsive/about-students-1200.webp 1200w"
+						sizes="(max-width: 1024px) 100vw, 50vw"
+					/>
+					<img
+						src="/images/about-students.webp"
+						alt="Students of Tricent Public School in maroon uniforms with the school bus"
+						width="1920"
+						height="1280"
+						class="aspect-[4/3] w-full rounded-xl object-cover shadow-lg"
+						loading="lazy"
+					/>
+				</picture>
 				<div
 					class="absolute -bottom-5 left-4 flex items-center gap-3 rounded-lg bg-forest-900 px-5 py-4 text-white shadow-xl sm:left-6"
 				>
@@ -263,7 +307,7 @@
 		</Reveal>
 		<Reveal>
 			<div>
-				<p class="text-xs font-extrabold tracking-[0.28em] text-gold-600 uppercase">Welcome to</p>
+				<p class="text-xs font-extrabold tracking-[0.28em] text-gold-700 uppercase">Welcome to</p>
 				<h2 class="mt-2 font-display text-3xl leading-tight font-bold text-forest-900 sm:text-4xl">
 					Tricent Public School
 				</h2>
@@ -355,7 +399,7 @@
 				</div>
 				<a
 					href="/academics"
-					class="mt-6 inline-flex items-center gap-2 text-sm font-extrabold tracking-wide text-forest-800 transition hover:text-gold-600"
+					class="mt-6 inline-flex items-center gap-2 text-sm font-extrabold tracking-wide text-forest-800 transition hover:text-gold-700"
 				>
 					EXPLORE ACADEMICS
 					<Icon name="arrow-right" cls="h-4 w-4" />
@@ -364,12 +408,26 @@
 			<div class="lg:col-span-2">
 				<Reveal>
 					<div class="relative mx-auto max-w-md pb-10">
-						<img
-							src="/images/academics-classroom.webp"
-							alt="Students learning together in a bright classroom"
-							class="aspect-square w-full rounded-full object-cover ring-8 ring-white shadow-xl"
-							loading="lazy"
-						/>
+						<picture class="contents">
+							<source
+								type="image/avif"
+								srcset="/images/responsive/academics-classroom-480.avif 480w, /images/responsive/academics-classroom-800.avif 800w, /images/responsive/academics-classroom-1200.avif 1200w"
+								sizes="(max-width: 1024px) 90vw, 448px"
+							/>
+							<source
+								type="image/webp"
+								srcset="/images/responsive/academics-classroom-480.webp 480w, /images/responsive/academics-classroom-800.webp 800w, /images/responsive/academics-classroom-1200.webp 1200w"
+								sizes="(max-width: 1024px) 90vw, 448px"
+							/>
+							<img
+								src="/images/academics-classroom.webp"
+								alt="Students learning together in a bright classroom"
+								width="1920"
+								height="1280"
+								class="aspect-square w-full rounded-full object-cover ring-8 ring-white shadow-xl"
+								loading="lazy"
+							/>
+						</picture>
 						<div
 							class="absolute right-1/2 bottom-0 translate-x-1/2 rounded-xl bg-forest-900 px-6 py-4 text-center text-white shadow-xl"
 						>
@@ -409,12 +467,24 @@
 						class="h-full overflow-hidden rounded-xl border border-forest-900/10 bg-white shadow-sm transition group-hover:-translate-y-1 group-hover:shadow-lg"
 					>
 						<div class="relative aspect-[4/3] overflow-hidden">
-							<img
-								src={f.image}
-								alt={f.title}
-								class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-								loading="lazy"
-							/>
+							<picture class="contents">
+								<source
+									type="image/avif"
+									srcset={({ 'school-bus': [480], dance: [480], 'sports-day': [480], 'computer-lab': [480, 800], 'smart-classroom': [480, 800] }[f.image.replace('/images/', '').replace(/\.[^.]+$/, '')] ?? [480, 800, 1200]).map((w) => `/images/responsive/${f.image.replace('/images/', '').replace(/\.[^.]+$/, '')}-${w}.avif ${w}w`).join(', ')}
+									sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+								/>
+								<source
+									type="image/webp"
+									srcset={({ 'school-bus': [480], dance: [480], 'sports-day': [480], 'computer-lab': [480, 800], 'smart-classroom': [480, 800] }[f.image.replace('/images/', '').replace(/\.[^.]+$/, '')] ?? [480, 800, 1200]).map((w) => `/images/responsive/${f.image.replace('/images/', '').replace(/\.[^.]+$/, '')}-${w}.webp ${w}w`).join(', ')}
+									sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+								/>
+								<img
+									src={f.image}
+									alt={f.title}
+									class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+									loading="lazy"
+								/>
+							</picture>
 							<span
 								class="absolute -bottom-5 left-4 flex h-11 w-11 items-center justify-center rounded-full bg-forest-900 text-gold-400 ring-4 ring-white"
 							>
@@ -453,14 +523,26 @@
 			{#each lifeImages as img, i}
 				<Reveal cls={i === 0 ? 'col-span-2 row-span-2' : ''}>
 					<a href="/gallery" class="group relative block h-full overflow-hidden rounded-xl">
-						<img
-							src={img.src}
-							alt={img.title}
-							class="h-full min-h-40 w-full object-cover transition duration-500 group-hover:scale-105 {i === 0
-								? 'aspect-[4/3] lg:aspect-auto lg:h-full'
-								: 'aspect-[4/3]'}"
-							loading="lazy"
-						/>
+						<picture class="contents">
+							<source
+								type="image/avif"
+								srcset={({ 'school-bus': [480], dance: [480], 'sports-day': [480], 'computer-lab': [480, 800], 'smart-classroom': [480, 800] }[img.src.replace('/images/', '').replace(/\.[^.]+$/, '')] ?? [480, 800, 1200]).map((w) => `/images/responsive/${img.src.replace('/images/', '').replace(/\.[^.]+$/, '')}-${w}.avif ${w}w`).join(', ')}
+								sizes="(max-width: 1024px) 50vw, 40vw"
+							/>
+							<source
+								type="image/webp"
+								srcset={({ 'school-bus': [480], dance: [480], 'sports-day': [480], 'computer-lab': [480, 800], 'smart-classroom': [480, 800] }[img.src.replace('/images/', '').replace(/\.[^.]+$/, '')] ?? [480, 800, 1200]).map((w) => `/images/responsive/${img.src.replace('/images/', '').replace(/\.[^.]+$/, '')}-${w}.webp ${w}w`).join(', ')}
+								sizes="(max-width: 1024px) 50vw, 40vw"
+							/>
+							<img
+								src={img.src}
+								alt={img.title}
+								class="h-full min-h-40 w-full object-cover transition duration-500 group-hover:scale-105 {i === 0
+									? 'aspect-[4/3] lg:aspect-auto lg:h-full'
+									: 'aspect-[4/3]'}"
+								loading="lazy"
+							/>
+						</picture>
 						<span
 							class="absolute inset-0 bg-gradient-to-t from-forest-950/70 via-transparent to-transparent opacity-80 transition group-hover:opacity-100"
 						></span>
@@ -510,12 +592,24 @@
 						class="h-full overflow-hidden rounded-xl border border-forest-900/10 bg-white shadow-sm transition group-hover:-translate-y-1 group-hover:shadow-lg"
 					>
 						<div class="relative aspect-[16/10] overflow-hidden">
-							<img
-								src={n.image}
-								alt={n.title}
-								class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-								loading="lazy"
-							/>
+							<picture class="contents">
+								<source
+									type="image/avif"
+									srcset={({ 'school-bus': [480], dance: [480], 'sports-day': [480], 'computer-lab': [480, 800], 'smart-classroom': [480, 800] }[n.image.replace('/images/', '').replace(/\.[^.]+$/, '')] ?? [480, 800, 1200]).map((w) => `/images/responsive/${n.image.replace('/images/', '').replace(/\.[^.]+$/, '')}-${w}.avif ${w}w`).join(', ')}
+									sizes="(max-width: 768px) 100vw, 33vw"
+								/>
+								<source
+									type="image/webp"
+									srcset={({ 'school-bus': [480], dance: [480], 'sports-day': [480], 'computer-lab': [480, 800], 'smart-classroom': [480, 800] }[n.image.replace('/images/', '').replace(/\.[^.]+$/, '')] ?? [480, 800, 1200]).map((w) => `/images/responsive/${n.image.replace('/images/', '').replace(/\.[^.]+$/, '')}-${w}.webp ${w}w`).join(', ')}
+									sizes="(max-width: 768px) 100vw, 33vw"
+								/>
+								<img
+									src={n.image}
+									alt={n.title}
+									class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+									loading="lazy"
+								/>
+							</picture>
 							<span
 								class="absolute top-3 left-3 rounded-sm bg-gold-500 px-2.5 py-1 text-[0.65rem] font-extrabold tracking-wider text-forest-950 uppercase"
 							>

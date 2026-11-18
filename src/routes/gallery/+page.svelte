@@ -66,12 +66,24 @@
 					onclick={() => open(i)}
 					class="group relative block w-full overflow-hidden rounded-xl text-left"
 				>
-					<img
-						src={g.src}
-						alt={g.title}
-						class="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105"
-						loading="lazy"
-					/>
+					<picture class="contents">
+						<source
+							type="image/avif"
+							srcset={({ 'school-bus': [480], dance: [480], 'sports-day': [480], 'computer-lab': [480, 800], 'smart-classroom': [480, 800] }[g.src.replace('/images/', '').replace(/\.[^.]+$/, '')] ?? [480, 800, 1200]).map((w) => `/images/responsive/${g.src.replace('/images/', '').replace(/\.[^.]+$/, '')}-${w}.avif ${w}w`).join(', ')}
+							sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+						/>
+						<source
+							type="image/webp"
+							srcset={({ 'school-bus': [480], dance: [480], 'sports-day': [480], 'computer-lab': [480, 800], 'smart-classroom': [480, 800] }[g.src.replace('/images/', '').replace(/\.[^.]+$/, '')] ?? [480, 800, 1200]).map((w) => `/images/responsive/${g.src.replace('/images/', '').replace(/\.[^.]+$/, '')}-${w}.webp ${w}w`).join(', ')}
+							sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+						/>
+						<img
+							src={g.src}
+							alt={g.title}
+							class="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105"
+							loading="lazy"
+						/>
+					</picture>
 					<span
 						class="absolute inset-0 bg-gradient-to-t from-forest-950/75 via-transparent to-transparent"
 					></span>
@@ -112,11 +124,23 @@
 			<Icon name="chevron-left" cls="h-6 w-6" />
 		</button>
 		<figure class="max-w-4xl text-center">
-			<img
-				src={visible[lightbox].src}
-				alt={visible[lightbox].title}
-				class="max-h-[75vh] w-auto rounded-lg object-contain shadow-2xl"
-			/>
+			<picture class="contents">
+				<source
+					type="image/avif"
+					srcset={({ 'school-bus': [480], dance: [480], 'sports-day': [480], 'computer-lab': [480, 800], 'smart-classroom': [480, 800] }[visible[lightbox].src.replace('/images/', '').replace(/\.[^.]+$/, '')] ?? [480, 800, 1200]).map((w) => `/images/responsive/${visible[lightbox].src.replace('/images/', '').replace(/\.[^.]+$/, '')}-${w}.avif ${w}w`).join(', ')}
+					sizes="(max-width: 896px) 100vw, 896px"
+				/>
+				<source
+					type="image/webp"
+					srcset={({ 'school-bus': [480], dance: [480], 'sports-day': [480], 'computer-lab': [480, 800], 'smart-classroom': [480, 800] }[visible[lightbox].src.replace('/images/', '').replace(/\.[^.]+$/, '')] ?? [480, 800, 1200]).map((w) => `/images/responsive/${visible[lightbox].src.replace('/images/', '').replace(/\.[^.]+$/, '')}-${w}.webp ${w}w`).join(', ')}
+					sizes="(max-width: 896px) 100vw, 896px"
+				/>
+				<img
+					src={visible[lightbox].src}
+					alt={visible[lightbox].title}
+					class="max-h-[75vh] w-auto rounded-lg object-contain shadow-2xl"
+				/>
+			</picture>
 			<figcaption class="mt-4 flex items-center justify-center gap-3 text-white">
 				<span class="font-bold">{visible[lightbox].title}</span>
 				<span class="text-white/50">·</span>

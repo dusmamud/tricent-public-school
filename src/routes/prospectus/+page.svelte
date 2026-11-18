@@ -70,7 +70,7 @@
 
 		<Reveal cls="lg:col-span-2">
 			<article class="h-full rounded-xl border border-forest-900/10 bg-white p-6 shadow-sm sm:p-8">
-				<p class="text-xs font-extrabold tracking-[0.25em] text-gold-600 uppercase">At a Glance</p>
+				<p class="text-xs font-extrabold tracking-[0.25em] text-gold-700 uppercase">At a Glance</p>
 				<h2 class="mt-2 font-display text-2xl font-bold text-forest-900">Key facts from the prospectus</h2>
 				<dl class="mt-5 divide-y divide-forest-900/10">
 					{#each facts as f}

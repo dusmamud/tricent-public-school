@@ -43,7 +43,7 @@
 							<Icon name={teamIcon[team.sport] ?? 'trophy'} cls="h-6 w-6" />
 						</span>
 						<span
-							class="rounded-full bg-gold-500/15 px-3 py-1 text-[0.7rem] font-extrabold tracking-wider text-gold-600 uppercase"
+							class="rounded-full bg-gold-500/15 px-3 py-1 text-[0.7rem] font-extrabold tracking-wider text-gold-700 uppercase"
 						>
 							{team.ageGroup}
 						</span>
@@ -118,7 +118,7 @@
 								<td class="px-5 py-3.5">
 									{#if f.result === 'Upcoming'}
 										<span
-											class="inline-block rounded-full bg-gold-500/15 px-3 py-1 text-xs font-extrabold tracking-wide text-gold-600 uppercase"
+											class="inline-block rounded-full bg-gold-500/15 px-3 py-1 text-xs font-extrabold tracking-wide text-gold-700 uppercase"
 										>
 											Upcoming
 										</span>

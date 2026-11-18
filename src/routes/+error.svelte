@@ -5,6 +5,7 @@
 
 <svelte:head>
 	<title>Page Not Found | Tricent Public School</title>
+	<meta name="robots" content="noindex" />
 </svelte:head>
 
 <section class="mx-auto max-w-3xl px-4 py-24 text-center sm:px-6">

@@ -274,7 +274,7 @@ export const newsItems = [
 		slug: 'admissions-open-2027-28',
 		date: '12 Nov 2026',
 		tag: 'Admissions',
-		title: 'Admissions Open for Academic Year 2027–28',
+		title: 'Admissions Open 2027–28',
 		text: 'Applications for Nursery to Class IX and XI are now open. Limited seats — early applicants get priority for the entrance interaction.',
 		image: '/images/about-students.webp'
 	},
@@ -282,7 +282,7 @@ export const newsItems = [
 		slug: 'class-x-results-100-percent',
 		date: '28 Oct 2026',
 		tag: 'Results',
-		title: 'Class X CBSE Results: 100% Pass, 32 Students Above 90%',
+		title: 'Class X CBSE Results: 100% Pass',
 		text: 'Our Class X batch recorded a 100% pass rate with the school topper scoring 98.2%. Congratulations to our students and teachers.',
 		image: '/images/academics-classroom.webp'
 	},
@@ -290,7 +290,7 @@ export const newsItems = [
 		slug: 'basketball-championship-win',
 		date: '18 Oct 2026',
 		tag: 'Sports',
-		title: 'Tricent Wins Inter-School Basketball Championship',
+		title: 'Tricent Wins Basketball Championship',
 		text: 'Our U-16 basketball team lifted the district inter-school trophy after a thrilling 42–38 final. Well played, champions!',
 		image: '/images/basketball.webp'
 	},
@@ -298,7 +298,7 @@ export const newsItems = [
 		slug: 'annual-day-2026',
 		date: '02 Oct 2026',
 		tag: 'Cultural',
-		title: 'Annual Day 2026: A Grand Celebration of Talent',
+		title: 'Annual Day 2026: A Grand Celebration',
 		text: 'Dance, drama, music and awards — our Annual Day filled the auditorium with colour, applause and proud parents.',
 		image: '/images/dance.png'
 	},
@@ -306,7 +306,7 @@ export const newsItems = [
 		slug: 'science-exhibition-2nd-prize',
 		date: '14 Sep 2026',
 		tag: 'Academics',
-		title: 'National Science Exhibition: Our Model Wins 2nd Prize',
+		title: 'Science Model Wins 2nd Prize',
 		text: 'A working model on rainwater harvesting by Class IX students won second prize at the district science exhibition.',
 		image: '/images/science-lab.webp'
 	},
@@ -314,7 +314,7 @@ export const newsItems = [
 		slug: 'teachers-day-celebrations',
 		date: '05 Sep 2026',
 		tag: 'Events',
-		title: "Teachers' Day Celebrations Across the Campus",
+		title: "Teachers' Day Celebrations",
 		text: 'Students honoured their teachers with cards, performances and a heartfelt assembly — thank you to every mentor at Tricent.',
 		image: '/images/assembly.jpg'
 	}

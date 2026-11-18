@@ -63,7 +63,7 @@
 								>
 									{m.name}
 								</h3>
-								<p class="mt-1 text-sm font-bold text-gold-600">{m.role}</p>
+								<p class="mt-1 text-sm font-bold text-gold-700">{m.role}</p>
 								<p class="mt-2 text-xs leading-relaxed text-ink/60">{m.note}</p>
 								<p
 									class="mt-3 inline-flex items-center gap-1.5 text-xs font-extrabold tracking-wider text-forest-800"

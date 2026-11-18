@@ -107,7 +107,7 @@
 							</span>
 							<div class="min-w-0">
 								<h3 class="font-display text-lg leading-snug font-bold text-forest-900">{a.name}</h3>
-								<p class="mt-0.5 text-xs font-bold tracking-wide text-gold-600 uppercase">{a.batch}</p>
+								<p class="mt-0.5 text-xs font-bold tracking-wide text-gold-700 uppercase">{a.batch}</p>
 							</div>
 						</div>
 						<p class="mt-4 flex items-center gap-2 text-sm font-bold text-forest-800">
@@ -137,12 +137,26 @@
 					Join the Alumni <span class="text-gold-600 italic">Register</span>
 				</SectionHeading>
 				<div class="mt-8 overflow-hidden rounded-xl shadow-sm">
-					<img
-						src="/images/assembly.jpg"
-						alt="Students assembled for the morning assembly at Tricent Public School"
-						class="h-56 w-full object-cover sm:h-64"
-						loading="lazy"
-					/>
+					<picture class="contents">
+						<source
+							type="image/avif"
+							srcset="/images/responsive/assembly-480.avif 480w, /images/responsive/assembly-800.avif 800w, /images/responsive/assembly-1200.avif 1200w"
+							sizes="(max-width: 1024px) 100vw, 40vw"
+						/>
+						<source
+							type="image/webp"
+							srcset="/images/responsive/assembly-480.webp 480w, /images/responsive/assembly-800.webp 800w, /images/responsive/assembly-1200.webp 1200w"
+							sizes="(max-width: 1024px) 100vw, 40vw"
+						/>
+						<img
+							src="/images/assembly.jpg"
+							alt="Students assembled for the morning assembly at Tricent Public School"
+							width="1600"
+							height="628"
+							class="h-56 w-full object-cover sm:h-64"
+							loading="lazy"
+						/>
+					</picture>
 				</div>
 				<p class="mt-4 flex items-start gap-2 text-sm leading-relaxed text-ink/60">
 					<Icon name="shield" cls="mt-0.5 h-5 w-5 shrink-0 text-forest-700" />

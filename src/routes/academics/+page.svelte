@@ -42,7 +42,7 @@
 					class="grid scroll-mt-32 gap-6 rounded-2xl border border-forest-900/10 bg-white p-6 shadow-sm sm:p-8 lg:grid-cols-3"
 				>
 					<div class={i % 2 === 1 ? 'lg:order-2' : ''}>
-						<p class="text-xs font-extrabold tracking-[0.25em] text-gold-600 uppercase">
+						<p class="text-xs font-extrabold tracking-[0.25em] text-gold-700 uppercase">
 							{s.classes}
 						</p>
 						<h2 class="mt-2 font-display text-2xl font-bold text-forest-900 sm:text-3xl">{s.stage}</h2>

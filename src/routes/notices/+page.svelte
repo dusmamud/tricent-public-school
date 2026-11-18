@@ -81,7 +81,7 @@
 								<Icon name="megaphone" cls="h-5 w-5" />
 							</span>
 							<div class="min-w-0">
-								<p class="text-xs font-bold tracking-wider text-gold-600 uppercase">
+								<p class="text-xs font-bold tracking-wider text-gold-700 uppercase">
 									{n.date} · {n.category}
 								</p>
 								<h3 class="mt-1.5 leading-snug font-bold text-forest-900">{n.title}</h3>

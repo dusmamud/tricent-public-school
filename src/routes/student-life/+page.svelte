@@ -83,7 +83,7 @@
 							<Icon name={clubIcon[club.name] ?? 'star'} cls="h-6 w-6" />
 						</span>
 						<span
-							class="rounded-full bg-gold-500/15 px-3 py-1 text-[0.7rem] font-extrabold tracking-wider text-gold-600 uppercase"
+							class="rounded-full bg-gold-500/15 px-3 py-1 text-[0.7rem] font-extrabold tracking-wider text-gold-700 uppercase"
 						>
 							{club.category}
 						</span>
@@ -116,7 +116,19 @@
 			<div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
 				{#each gallery as g}
 					<figure class="overflow-hidden rounded-xl border border-forest-900/10 bg-white shadow-sm">
-						<img src={g.src} alt={g.alt} loading="lazy" class="aspect-[4/3] w-full object-cover" />
+						<picture class="contents">
+							<source
+								type="image/avif"
+								srcset={({ 'school-bus': [480], dance: [480], 'sports-day': [480], 'computer-lab': [480, 800], 'smart-classroom': [480, 800] }[g.src.replace('/images/', '').replace(/\.[^.]+$/, '')] ?? [480, 800, 1200]).map((w) => `/images/responsive/${g.src.replace('/images/', '').replace(/\.[^.]+$/, '')}-${w}.avif ${w}w`).join(', ')}
+								sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+							/>
+							<source
+								type="image/webp"
+								srcset={({ 'school-bus': [480], dance: [480], 'sports-day': [480], 'computer-lab': [480, 800], 'smart-classroom': [480, 800] }[g.src.replace('/images/', '').replace(/\.[^.]+$/, '')] ?? [480, 800, 1200]).map((w) => `/images/responsive/${g.src.replace('/images/', '').replace(/\.[^.]+$/, '')}-${w}.webp ${w}w`).join(', ')}
+								sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+							/>
+							<img src={g.src} alt={g.alt} loading="lazy" class="aspect-[4/3] w-full object-cover" />
+						</picture>
 						<figcaption class="px-4 py-3 text-sm font-bold text-forest-900">{g.caption}</figcaption>
 					</figure>
 				{/each}
@@ -152,7 +164,7 @@
 							<Icon name="user" cls="h-7 w-7" />
 						</span>
 						<h3 class="mt-4 font-display text-lg leading-snug font-bold text-forest-900">{member.name}</h3>
-						<p class="mt-1 text-sm font-bold text-gold-600">{member.role}</p>
+						<p class="mt-1 text-sm font-bold text-gold-700">{member.role}</p>
 						<p class="mt-1 text-xs font-semibold text-ink/50">Class {member.class}</p>
 					</article>
 				{/each}

@@ -110,7 +110,7 @@
 					</div>
 					<a
 						href="/admissions#fees"
-						class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-forest-800 transition hover:text-gold-600"
+						class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-forest-800 transition hover:text-gold-700"
 					>
 						SEE FULL FEE TABLE <Icon name="arrow-right" cls="h-4 w-4" />
 					</a>
@@ -136,13 +136,13 @@
 					<div class="mt-5 flex flex-wrap gap-3">
 						<a
 							href="/results"
-							class="inline-flex items-center gap-2 text-sm font-extrabold text-forest-800 transition hover:text-gold-600"
+							class="inline-flex items-center gap-2 text-sm font-extrabold text-forest-800 transition hover:text-gold-700"
 						>
 							SEE DETAILED RESULTS <Icon name="arrow-right" cls="h-4 w-4" />
 						</a>
 						<a
 							href="/academic-calendar"
-							class="inline-flex items-center gap-2 text-sm font-extrabold text-forest-800 transition hover:text-gold-600"
+							class="inline-flex items-center gap-2 text-sm font-extrabold text-forest-800 transition hover:text-gold-700"
 						>
 							ACADEMIC CALENDAR <Icon name="arrow-right" cls="h-4 w-4" />
 						</a>

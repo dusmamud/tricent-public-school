@@ -27,7 +27,19 @@
 					class="h-full scroll-mt-32 overflow-hidden rounded-xl border border-forest-900/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
 				>
 					<div class="relative aspect-[16/10] overflow-hidden">
-						<img src={f.image} alt={f.title} class="h-full w-full object-cover" loading="lazy" />
+						<picture class="contents">
+							<source
+								type="image/avif"
+								srcset={({ 'school-bus': [480], dance: [480], 'sports-day': [480], 'computer-lab': [480, 800], 'smart-classroom': [480, 800] }[f.image.replace('/images/', '').replace(/\.[^.]+$/, '')] ?? [480, 800, 1200]).map((w) => `/images/responsive/${f.image.replace('/images/', '').replace(/\.[^.]+$/, '')}-${w}.avif ${w}w`).join(', ')}
+								sizes="(max-width: 768px) 100vw, 33vw"
+							/>
+							<source
+								type="image/webp"
+								srcset={({ 'school-bus': [480], dance: [480], 'sports-day': [480], 'computer-lab': [480, 800], 'smart-classroom': [480, 800] }[f.image.replace('/images/', '').replace(/\.[^.]+$/, '')] ?? [480, 800, 1200]).map((w) => `/images/responsive/${f.image.replace('/images/', '').replace(/\.[^.]+$/, '')}-${w}.webp ${w}w`).join(', ')}
+								sizes="(max-width: 768px) 100vw, 33vw"
+							/>
+							<img src={f.image} alt={f.title} class="h-full w-full object-cover" loading="lazy" />
+						</picture>
 						<span
 							class="absolute top-3 left-3 flex h-11 w-11 items-center justify-center rounded-full bg-forest-900 text-gold-400 ring-4 ring-white/80"
 						>

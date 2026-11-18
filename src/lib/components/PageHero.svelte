@@ -1,13 +1,55 @@
 <script lang="ts">
+	import { page } from '$app/state';
+
 	let {
 		title,
 		subtitle,
-		crumb
-	}: { title: string; subtitle?: string; crumb: { label: string; href?: string }[] } = $props();
+		crumb,
+		image = '/images/og-default.jpg',
+		meta = true
+	}: {
+		title: string;
+		subtitle?: string;
+		crumb: { label: string; href?: string }[];
+		image?: string;
+		meta?: boolean;
+	} = $props();
+
+	const site = 'https://tricent-public-school.pages.dev';
+	const url = $derived(`${site}${page.url.pathname}`);
+	const ogImage = $derived(image.startsWith('http') ? image : `${site}${image}`);
+	const description = $derived(
+		subtitle ??
+			'Tricent Public School, Beldari, Simri Bakhtiyarpur, Patna — CBSE co-educational school from Nursery to Class XII.'
+	);
+	const breadcrumbJson = $derived({
+		'@context': 'https://schema.org',
+		'@type': 'BreadcrumbList',
+		itemListElement: crumb.map((c, i) => ({
+			'@type': 'ListItem',
+			position: i + 1,
+			name: c.label,
+			item: c.href ? `${site}${c.href}` : url
+		}))
+	});
 </script>
 
 <svelte:head>
 	<title>{title} | Tricent Public School</title>
+	{#if meta}
+		<link rel="canonical" href={url} />
+		<meta property="og:title" content="{title} | Tricent Public School" />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:url" content={url} />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Tricent Public School" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="{title} | Tricent Public School" />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
+		{@html `<script type="application/ld+json">${JSON.stringify(breadcrumbJson)}</script>`}
+	{/if}
 </svelte:head>
 
 <section class="relative overflow-hidden bg-forest-900">

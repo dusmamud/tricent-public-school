@@ -75,7 +75,7 @@
 					>
 						<div class="flex items-start justify-between gap-3">
 							<div>
-								<p class="text-xs font-extrabold tracking-[0.25em] text-gold-600 uppercase">
+								<p class="text-xs font-extrabold tracking-[0.25em] text-gold-700 uppercase">
 									{t.term === 'Summer Timings' ? 'Apr – Oct' : 'Nov – Mar'}
 								</p>
 								<h3 class="mt-2 font-display text-2xl font-bold text-forest-900">{t.term}</h3>
@@ -143,12 +143,26 @@
 
 		<Reveal>
 			<article class="h-full overflow-hidden rounded-xl border border-forest-900/10 bg-white shadow-sm">
-				<img
-					src="/images/assembly.jpg"
-					alt="Morning assembly at Tricent Public School"
-					class="aspect-[16/9] w-full object-cover"
-					loading="lazy"
-				/>
+				<picture class="contents">
+					<source
+						type="image/avif"
+						srcset="/images/responsive/assembly-480.avif 480w, /images/responsive/assembly-800.avif 800w, /images/responsive/assembly-1200.avif 1200w"
+						sizes="(max-width: 1024px) 100vw, 50vw"
+					/>
+					<source
+						type="image/webp"
+						srcset="/images/responsive/assembly-480.webp 480w, /images/responsive/assembly-800.webp 800w, /images/responsive/assembly-1200.webp 1200w"
+						sizes="(max-width: 1024px) 100vw, 50vw"
+					/>
+					<img
+						src="/images/assembly.jpg"
+						alt="Morning assembly at Tricent Public School"
+						width="1600"
+						height="628"
+						class="aspect-[16/9] w-full object-cover"
+						loading="lazy"
+					/>
+				</picture>
 				<div class="p-6 sm:p-8">
 					<span
 						class="flex h-12 w-12 items-center justify-center rounded-full bg-forest-50 text-forest-800"

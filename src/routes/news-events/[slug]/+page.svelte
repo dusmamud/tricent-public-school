@@ -6,6 +6,9 @@
 	const item = $derived(data.item);
 	const body = $derived(data.body);
 	const related = $derived(data.related);
+	const absoluteImage = $derived(`https://tricent-public-school.pages.dev${item.image}`);
+	const canonical = $derived(`https://tricent-public-school.pages.dev/news-events/${item.slug}`);
+	const published = $derived(new Date(item.date).toISOString().slice(0, 10));
 </script>
 
 <svelte:head>
@@ -13,18 +16,44 @@
 	<meta name="description" content={item.text} />
 	<meta property="og:title" content={item.title} />
 	<meta property="og:description" content={item.text} />
-	<meta property="og:image" content={item.image} />
-	<link rel="canonical" href="https://tricent-public-school.pages.dev/news-events/{item.slug}" />
+	<meta property="og:image" content={absoluteImage} />
+	<meta property="og:url" content={canonical} />
+	<meta property="og:type" content="article" />
+	<meta property="og:site_name" content="Tricent Public School" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content={item.title} />
+	<meta name="twitter:description" content={item.text} />
+	<meta name="twitter:image" content={absoluteImage} />
+	<link rel="canonical" href={canonical} />
+	{@html `<script type="application/ld+json">${JSON.stringify({
+		'@context': 'https://schema.org',
+		'@type': 'Article',
+		headline: item.title,
+		description: item.text,
+		image: absoluteImage,
+		datePublished: published,
+		author: {
+			'@type': 'Organization',
+			name: 'Tricent Public School',
+			url: 'https://tricent-public-school.pages.dev/'
+		},
+		publisher: {
+			'@type': 'Organization',
+			name: 'Tricent Public School',
+			url: 'https://tricent-public-school.pages.dev/'
+		},
+		mainEntityOfPage: canonical
+	})}</script>`}
 </svelte:head>
 
 <article class="mx-auto max-w-4xl px-4 py-14 sm:px-6 lg:px-8">
 	<Reveal>
 		<nav aria-label="Breadcrumb" class="flex flex-wrap items-center gap-1.5 text-xs font-semibold tracking-wider text-ink/50">
-			<a href="/" class="transition hover:text-gold-600">HOME</a>
+			<a href="/" class="transition hover:text-gold-700">HOME</a>
 			<span aria-hidden="true">/</span>
-			<a href="/news-events" class="transition hover:text-gold-600">NEWS &amp; EVENTS</a>
+			<a href="/news-events" class="transition hover:text-gold-700">NEWS &amp; EVENTS</a>
 			<span aria-hidden="true">/</span>
-			<span class="text-gold-600">{item.tag.toUpperCase()}</span>
+			<span class="text-gold-700">{item.tag.toUpperCase()}</span>
 		</nav>
 		<p class="mt-6 flex flex-wrap items-center gap-3">
 			<span
@@ -43,11 +72,23 @@
 	</Reveal>
 
 	<Reveal>
-		<img
-			src={item.image}
-			alt={item.title}
-			class="mt-8 aspect-[16/9] w-full rounded-xl object-cover shadow-lg"
-		/>
+		<picture class="contents">
+			<source
+				type="image/avif"
+				srcset={({ 'school-bus': [480], dance: [480], 'sports-day': [480], 'computer-lab': [480, 800], 'smart-classroom': [480, 800] }[item.image.replace('/images/', '').replace(/\.[^.]+$/, '')] ?? [480, 800, 1200]).map((w) => `/images/responsive/${item.image.replace('/images/', '').replace(/\.[^.]+$/, '')}-${w}.avif ${w}w`).join(', ')}
+				sizes="(max-width: 896px) 100vw, 896px"
+			/>
+			<source
+				type="image/webp"
+				srcset={({ 'school-bus': [480], dance: [480], 'sports-day': [480], 'computer-lab': [480, 800], 'smart-classroom': [480, 800] }[item.image.replace('/images/', '').replace(/\.[^.]+$/, '')] ?? [480, 800, 1200]).map((w) => `/images/responsive/${item.image.replace('/images/', '').replace(/\.[^.]+$/, '')}-${w}.webp ${w}w`).join(', ')}
+				sizes="(max-width: 896px) 100vw, 896px"
+			/>
+			<img
+				src={item.image}
+				alt={item.title}
+				class="mt-8 aspect-[16/9] w-full rounded-xl object-cover shadow-lg"
+			/>
+		</picture>
 	</Reveal>
 
 	<Reveal>
@@ -86,12 +127,24 @@
 							<article
 								class="h-full overflow-hidden rounded-xl border border-forest-900/10 bg-white shadow-sm transition group-hover:-translate-y-1 group-hover:shadow-lg"
 							>
-								<img
-									src={r.image}
-									alt={r.title}
-									class="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-105"
-									loading="lazy"
-								/>
+								<picture class="contents">
+									<source
+										type="image/avif"
+										srcset={({ 'school-bus': [480], dance: [480], 'sports-day': [480], 'computer-lab': [480, 800], 'smart-classroom': [480, 800] }[r.image.replace('/images/', '').replace(/\.[^.]+$/, '')] ?? [480, 800, 1200]).map((w) => `/images/responsive/${r.image.replace('/images/', '').replace(/\.[^.]+$/, '')}-${w}.avif ${w}w`).join(', ')}
+										sizes="(max-width: 768px) 100vw, 33vw"
+									/>
+									<source
+										type="image/webp"
+										srcset={({ 'school-bus': [480], dance: [480], 'sports-day': [480], 'computer-lab': [480, 800], 'smart-classroom': [480, 800] }[r.image.replace('/images/', '').replace(/\.[^.]+$/, '')] ?? [480, 800, 1200]).map((w) => `/images/responsive/${r.image.replace('/images/', '').replace(/\.[^.]+$/, '')}-${w}.webp ${w}w`).join(', ')}
+										sizes="(max-width: 768px) 100vw, 33vw"
+									/>
+									<img
+										src={r.image}
+										alt={r.title}
+										class="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-105"
+										loading="lazy"
+									/>
+								</picture>
 								<div class="p-4">
 									<p class="text-xs font-semibold text-ink/50">{r.date}</p>
 									<h3 class="mt-1.5 leading-snug font-bold text-forest-900 transition group-hover:text-forest-700">

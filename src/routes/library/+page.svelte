@@ -18,12 +18,26 @@
 	<!-- Intro with photo -->
 	<div class="grid items-center gap-8 lg:grid-cols-2">
 		<Reveal>
-			<img
-				src="/images/library.webp"
-				alt="Students reading in the Tricent Public School library"
-				class="h-auto w-full rounded-xl object-cover shadow-sm"
-				loading="lazy"
-			/>
+			<picture class="contents">
+				<source
+					type="image/avif"
+					srcset="/images/responsive/library-480.avif 480w, /images/responsive/library-800.avif 800w, /images/responsive/library-1200.avif 1200w"
+					sizes="(max-width: 1024px) 100vw, 50vw"
+				/>
+				<source
+					type="image/webp"
+					srcset="/images/responsive/library-480.webp 480w, /images/responsive/library-800.webp 800w, /images/responsive/library-1200.webp 1200w"
+					sizes="(max-width: 1024px) 100vw, 50vw"
+				/>
+				<img
+					src="/images/library.webp"
+					alt="Students reading in the Tricent Public School library"
+					width="1920"
+					height="1280"
+					class="h-auto w-full rounded-xl object-cover shadow-sm"
+					loading="lazy"
+				/>
+			</picture>
 		</Reveal>
 		<Reveal>
 			<div>

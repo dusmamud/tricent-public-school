@@ -202,12 +202,26 @@
 		<Reveal cls="lg:col-span-2">
 			<div>
 				<div class="overflow-hidden rounded-xl shadow-sm">
-					<img
-						src="/images/sports-day.jpg"
-						alt="Students competing on sports day at Tricent Public School"
-						class="h-56 w-full object-cover sm:h-64"
-						loading="lazy"
-					/>
+					<picture class="contents">
+						<source
+							type="image/avif"
+							srcset="/images/responsive/sports-day-480.avif 480w"
+							sizes="(max-width: 1024px) 100vw, 40vw"
+						/>
+						<source
+							type="image/webp"
+							srcset="/images/responsive/sports-day-480.webp 480w"
+							sizes="(max-width: 1024px) 100vw, 40vw"
+						/>
+						<img
+							src="/images/sports-day.jpg"
+							alt="Students competing on sports day at Tricent Public School"
+							width="768"
+							height="512"
+							class="h-56 w-full object-cover sm:h-64"
+							loading="lazy"
+						/>
+					</picture>
 				</div>
 				<div class="mt-6 rounded-xl border border-forest-900/10 bg-cream px-6 py-5">
 					<h3 class="flex items-center gap-2 font-display text-lg font-bold text-forest-900">

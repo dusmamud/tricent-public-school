@@ -243,7 +243,7 @@
 				<div class="mt-8 rounded-xl border border-forest-900/10 bg-white p-6 shadow-sm sm:p-8">
 					<div class="flex items-start justify-between gap-3">
 						<div>
-							<p class="text-xs font-extrabold tracking-[0.25em] text-gold-600 uppercase">
+							<p class="text-xs font-extrabold tracking-[0.25em] text-gold-700 uppercase">
 								Fee Summary · Session {sessionLabel} · Term {termLabel}
 							</p>
 							<h3 class="mt-2 font-display text-2xl font-bold text-forest-900">

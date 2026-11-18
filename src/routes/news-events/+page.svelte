@@ -30,7 +30,19 @@
 				<a href="/news-events/{n.slug}" class="group block h-full">
 					<article class="h-full overflow-hidden rounded-xl border border-forest-900/10 bg-white shadow-sm transition group-hover:-translate-y-1 group-hover:shadow-lg">
 					<div class="relative aspect-[16/10] overflow-hidden">
-						<img src={n.image} alt={n.title} class="h-full w-full object-cover" loading="lazy" />
+						<picture class="contents">
+							<source
+								type="image/avif"
+								srcset={({ 'school-bus': [480], dance: [480], 'sports-day': [480], 'computer-lab': [480, 800], 'smart-classroom': [480, 800] }[n.image.replace('/images/', '').replace(/\.[^.]+$/, '')] ?? [480, 800, 1200]).map((w) => `/images/responsive/${n.image.replace('/images/', '').replace(/\.[^.]+$/, '')}-${w}.avif ${w}w`).join(', ')}
+								sizes="(max-width: 768px) 100vw, 33vw"
+							/>
+							<source
+								type="image/webp"
+								srcset={({ 'school-bus': [480], dance: [480], 'sports-day': [480], 'computer-lab': [480, 800], 'smart-classroom': [480, 800] }[n.image.replace('/images/', '').replace(/\.[^.]+$/, '')] ?? [480, 800, 1200]).map((w) => `/images/responsive/${n.image.replace('/images/', '').replace(/\.[^.]+$/, '')}-${w}.webp ${w}w`).join(', ')}
+								sizes="(max-width: 768px) 100vw, 33vw"
+							/>
+							<img src={n.image} alt={n.title} class="h-full w-full object-cover" loading="lazy" />
+						</picture>
 						<span class="absolute top-3 left-3 rounded-sm bg-gold-500 px-2.5 py-1 text-[0.65rem] font-extrabold tracking-wider text-forest-950 uppercase">
 							{n.tag}
 						</span>

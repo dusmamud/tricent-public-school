@@ -11,6 +11,7 @@
 	title="About Us"
 	subtitle="Twenty years of nurturing confident, compassionate and responsible young citizens in the heart of Bihar."
 	crumb={[{ label: 'Home', href: '/' }, { label: 'About Us' }]}
+	image="/images/hero-campus.webp"
 />
 
 <!-- STORY -->
@@ -43,11 +44,25 @@
 			</div>
 		</Reveal>
 		<Reveal>
-			<img
-				src="/images/hero-campus.webp"
-				alt="Aerial view of the Tricent Public School campus"
-				class="aspect-[4/3] w-full rounded-xl object-cover shadow-lg"
-			/>
+			<picture class="contents">
+				<source
+					type="image/avif"
+					srcset="/images/responsive/hero-campus-480.avif 480w, /images/responsive/hero-campus-800.avif 800w, /images/responsive/hero-campus-1200.avif 1200w"
+					sizes="(max-width: 1024px) 100vw, 50vw"
+				/>
+				<source
+					type="image/webp"
+					srcset="/images/responsive/hero-campus-480.webp 480w, /images/responsive/hero-campus-800.webp 800w, /images/responsive/hero-campus-1200.webp 1200w"
+					sizes="(max-width: 1024px) 100vw, 50vw"
+				/>
+				<img
+					src="/images/hero-campus.webp"
+					alt="Aerial view of the Tricent Public School campus"
+					width="1920"
+					height="1280"
+					class="aspect-[4/3] w-full rounded-xl object-cover shadow-lg"
+				/>
+			</picture>
 		</Reveal>
 	</div>
 </section>
@@ -93,7 +108,7 @@
 					AS
 				</span>
 				<p class="mt-5 font-display text-xl font-bold text-forest-900">Dr. Ananya Sharma</p>
-				<p class="text-sm font-semibold text-gold-600">Principal, Tricent Public School</p>
+				<p class="text-sm font-semibold text-gold-700">Principal, Tricent Public School</p>
 				<p class="mt-3 text-sm leading-relaxed text-ink/60">
 					M.Ed., Ph.D. (Education) — 22 years in school leadership, and still happiest standing at
 					the school gate every morning.
@@ -157,7 +172,7 @@
 							{f.initials}
 						</span>
 						<h3 class="mt-4 font-display text-lg font-bold text-forest-900 transition group-hover:text-forest-700">{f.name}</h3>
-						<p class="text-sm font-bold text-gold-600">{f.role}</p>
+						<p class="text-sm font-bold text-gold-700">{f.role}</p>
 						<p class="mt-2 text-sm leading-relaxed text-ink/65">{f.note}</p>
 						<p class="mt-3 text-xs font-extrabold tracking-wider text-forest-800">VIEW PROFILE →</p>
 					</div>

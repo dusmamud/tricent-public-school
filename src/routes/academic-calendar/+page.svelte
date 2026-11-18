@@ -15,7 +15,7 @@
 	const catStyle: Record<string, string> = {
 		Holiday: 'bg-red-50 text-red-700',
 		Exam: 'bg-forest-50 text-forest-800',
-		Event: 'bg-gold-500/15 text-gold-600',
+		Event: 'bg-gold-500/15 text-gold-700',
 		Activity: 'bg-cream text-ink/70'
 	};
 </script>
@@ -42,7 +42,7 @@
 					</span>
 					<div>
 						<h2 class="font-display text-2xl font-bold text-forest-900">{t.term}</h2>
-						<p class="mt-1 text-sm font-bold text-gold-600">{t.period}</p>
+						<p class="mt-1 text-sm font-bold text-gold-700">{t.period}</p>
 						<p class="mt-2 text-sm leading-relaxed text-ink/65">{t.note}</p>
 					</div>
 				</div>

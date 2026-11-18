@@ -11,7 +11,7 @@
 
 <div class={center ? 'text-center' : 'text-left'}>
 	<p
-		class="text-xs font-extrabold tracking-[0.28em] text-gold-600 uppercase {center
+		class="text-xs font-extrabold tracking-[0.28em] text-gold-700 uppercase {center
 			? ''
 			: ''}"
 	>

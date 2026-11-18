@@ -13,12 +13,30 @@
 		content="ट्राइसेंट पब्लिक स्कूल, पटना में शैक्षणिक वर्ष 2027–28 के लिए प्रवेश — नर्सरी से कक्षा IX और कक्षा XI। प्रवेश प्रक्रिया, महत्वपूर्ण तिथियाँ और शुल्क संरचना।"
 	/>
 	<link rel="canonical" href="https://tricent-public-school.pages.dev/admissions-hindi" />
+	<meta property="og:title" content="प्रवेश 2027–28 | ट्राइसेंट पब्लिक स्कूल, पटना" />
+	<meta
+		property="og:description"
+		content="ट्राइसेंट पब्लिक स्कूल, पटना में शैक्षणिक वर्ष 2027–28 के लिए प्रवेश — नर्सरी से कक्षा IX और कक्षा XI। प्रवेश प्रक्रिया, महत्वपूर्ण तिथियाँ और शुल्क संरचना।"
+	/>
+	<meta property="og:image" content="https://tricent-public-school.pages.dev/images/og-default.jpg" />
+	<meta property="og:url" content="https://tricent-public-school.pages.dev/admissions-hindi" />
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="Tricent Public School" />
+	<meta property="og:locale" content="hi_IN" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="प्रवेश 2027–28 | ट्राइसेंट पब्लिक स्कूल, पटना" />
+	<meta
+		name="twitter:description"
+		content="ट्राइसेंट पब्लिक स्कूल, पटना में शैक्षणिक वर्ष 2027–28 के लिए प्रवेश — नर्सरी से कक्षा IX और कक्षा XI।"
+	/>
+	<meta name="twitter:image" content="https://tricent-public-school.pages.dev/images/og-default.jpg" />
 </svelte:head>
 
 <PageHero
 	title="प्रवेश 2027–28"
 	subtitle="नर्सरी से कक्षा IX और कक्षा XI के लिए प्रवेश खुले हैं। अपने बच्चे के उज्ज्वल भविष्य की शुरुआत ट्राइसेंट से करें।"
 	crumb={[{ label: 'Home', href: '/' }, { label: 'Admissions', href: '/admissions' }, { label: 'हिंदी में' }]}
+	meta={false}
 />
 
 <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">

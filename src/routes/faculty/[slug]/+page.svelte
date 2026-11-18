@@ -12,15 +12,46 @@
 	const firstName = $derived(
 		teacher.name.replace(/^(Dr\.|Mr\.|Mrs\.|Ms\.)\s+/, '').split(' ')[0]
 	);
+	const canonical = $derived(`https://tricent-public-school.pages.dev/faculty/${teacher.slug}`);
+	const ogImage = 'https://tricent-public-school.pages.dev/images/og-default.jpg';
 </script>
 
 <svelte:head>
-	<title>{teacher.name} — {teacher.role} | Tricent Public School</title>
+	<title>{teacher.name} | Tricent Public School</title>
 	<meta
 		name="description"
 		content="{teacher.name}, {teacher.role} ({teacher.department}) at Tricent Public School, Patna. {teacher.bio}"
 	/>
-	<link rel="canonical" href="https://tricent-public-school.pages.dev/faculty/{teacher.slug}" />
+	<meta property="og:title" content="{teacher.name} — {teacher.role}" />
+	<meta
+		property="og:description"
+		content="{teacher.name}, {teacher.role} ({teacher.department}) at Tricent Public School, Patna. {teacher.bio}"
+	/>
+	<meta property="og:image" content={ogImage} />
+	<meta property="og:url" content={canonical} />
+	<meta property="og:type" content="profile" />
+	<meta property="og:site_name" content="Tricent Public School" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="{teacher.name} — {teacher.role}" />
+	<meta
+		name="twitter:description"
+		content="{teacher.name}, {teacher.role} ({teacher.department}) at Tricent Public School, Patna."
+	/>
+	<meta name="twitter:image" content={ogImage} />
+	<link rel="canonical" href={canonical} />
+	{@html `<script type="application/ld+json">${JSON.stringify({
+		'@context': 'https://schema.org',
+		'@type': 'Person',
+		name: teacher.name,
+		jobTitle: teacher.role,
+		description: teacher.bio,
+		worksFor: {
+			'@type': 'School',
+			name: 'Tricent Public School',
+			url: 'https://tricent-public-school.pages.dev/'
+		},
+		url: canonical
+	})}</script>`}
 </svelte:head>
 
 <!-- Portfolio hero -->

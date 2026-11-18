@@ -17,6 +17,18 @@
 	const shown = $derived(cat === 'All' ? all : all.filter((f) => f.category === cat));
 </script>
 
+<svelte:head>
+	{@html `<script type="application/ld+json">${JSON.stringify({
+		'@context': 'https://schema.org',
+		'@type': 'FAQPage',
+		mainEntity: all.map((f) => ({
+			'@type': 'Question',
+			name: f.q,
+			acceptedAnswer: { '@type': 'Answer', text: f.a }
+		}))
+	})}</script>`}
+</svelte:head>
+
 <PageHero
 	title="Frequently Asked Questions"
 	subtitle="Answers to the questions parents ask us most — admissions, fees, transport, academics and school life."

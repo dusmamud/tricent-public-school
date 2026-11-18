@@ -155,14 +155,26 @@
 				<article
 					class="fade-up flex h-full flex-col overflow-hidden rounded-xl border border-forest-900/10 bg-white shadow-sm"
 				>
-					<img
-						src={selected.photo}
-						alt={selected.name}
-						loading="lazy"
-						class="h-52 w-full object-cover sm:h-60"
-					/>
+					<picture class="contents">
+						<source
+							type="image/avif"
+							srcset={({ 'school-bus': [480], dance: [480], 'sports-day': [480], 'computer-lab': [480, 800], 'smart-classroom': [480, 800] }[selected.photo.replace('/images/', '').replace(/\.[^.]+$/, '')] ?? [480, 800, 1200]).map((w) => `/images/responsive/${selected.photo.replace('/images/', '').replace(/\.[^.]+$/, '')}-${w}.avif ${w}w`).join(', ')}
+							sizes="(max-width: 1024px) 100vw, 40vw"
+						/>
+						<source
+							type="image/webp"
+							srcset={({ 'school-bus': [480], dance: [480], 'sports-day': [480], 'computer-lab': [480, 800], 'smart-classroom': [480, 800] }[selected.photo.replace('/images/', '').replace(/\.[^.]+$/, '')] ?? [480, 800, 1200]).map((w) => `/images/responsive/${selected.photo.replace('/images/', '').replace(/\.[^.]+$/, '')}-${w}.webp ${w}w`).join(', ')}
+							sizes="(max-width: 1024px) 100vw, 40vw"
+						/>
+						<img
+							src={selected.photo}
+							alt={selected.name}
+							loading="lazy"
+							class="h-52 w-full object-cover sm:h-60"
+						/>
+					</picture>
 					<div class="flex flex-1 flex-col p-6 sm:p-7">
-						<p class="flex items-center gap-2 text-xs font-extrabold tracking-[0.25em] text-gold-600 uppercase">
+						<p class="flex items-center gap-2 text-xs font-extrabold tracking-[0.25em] text-gold-700 uppercase">
 							<Icon name="pin" cls="h-4 w-4" />
 							Stop {tourSpots.findIndex((s) => s.id === selected.id) + 1} of {tourSpots.length}
 						</p>
@@ -204,7 +216,19 @@
 							}}
 							class="group w-64 shrink-0 snap-start overflow-hidden rounded-xl border border-forest-900/10 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-lg sm:w-72"
 						>
-							<img src={p.src} alt={p.caption} loading="lazy" class="h-44 w-full object-cover" />
+							<picture class="contents">
+								<source
+									type="image/avif"
+									srcset={({ 'school-bus': [480], dance: [480], 'sports-day': [480], 'computer-lab': [480, 800], 'smart-classroom': [480, 800] }[p.src.replace('/images/', '').replace(/\.[^.]+$/, '')] ?? [480, 800, 1200]).map((w) => `/images/responsive/${p.src.replace('/images/', '').replace(/\.[^.]+$/, '')}-${w}.avif ${w}w`).join(', ')}
+									sizes="288px"
+								/>
+								<source
+									type="image/webp"
+									srcset={({ 'school-bus': [480], dance: [480], 'sports-day': [480], 'computer-lab': [480, 800], 'smart-classroom': [480, 800] }[p.src.replace('/images/', '').replace(/\.[^.]+$/, '')] ?? [480, 800, 1200]).map((w) => `/images/responsive/${p.src.replace('/images/', '').replace(/\.[^.]+$/, '')}-${w}.webp ${w}w`).join(', ')}
+									sizes="288px"
+								/>
+								<img src={p.src} alt={p.caption} loading="lazy" class="h-44 w-full object-cover" />
+							</picture>
 							<span class="flex min-h-11 items-center gap-2 px-4 py-2 text-sm font-bold text-forest-900">
 								<Icon name="map" cls="h-4 w-4 shrink-0 text-gold-600" />
 								{p.caption}
@@ -214,7 +238,19 @@
 						<figure
 							class="w-64 shrink-0 snap-start overflow-hidden rounded-xl border border-forest-900/10 bg-white shadow-sm sm:w-72"
 						>
-							<img src={p.src} alt={p.caption} loading="lazy" class="h-44 w-full object-cover" />
+							<picture class="contents">
+								<source
+									type="image/avif"
+									srcset={({ 'school-bus': [480], dance: [480], 'sports-day': [480], 'computer-lab': [480, 800], 'smart-classroom': [480, 800] }[p.src.replace('/images/', '').replace(/\.[^.]+$/, '')] ?? [480, 800, 1200]).map((w) => `/images/responsive/${p.src.replace('/images/', '').replace(/\.[^.]+$/, '')}-${w}.avif ${w}w`).join(', ')}
+									sizes="288px"
+								/>
+								<source
+									type="image/webp"
+									srcset={({ 'school-bus': [480], dance: [480], 'sports-day': [480], 'computer-lab': [480, 800], 'smart-classroom': [480, 800] }[p.src.replace('/images/', '').replace(/\.[^.]+$/, '')] ?? [480, 800, 1200]).map((w) => `/images/responsive/${p.src.replace('/images/', '').replace(/\.[^.]+$/, '')}-${w}.webp ${w}w`).join(', ')}
+									sizes="288px"
+								/>
+								<img src={p.src} alt={p.caption} loading="lazy" class="h-44 w-full object-cover" />
+							</picture>
 							<figcaption class="flex min-h-11 items-center gap-2 px-4 py-2 text-sm font-bold text-forest-900">
 								<Icon name="monitor" cls="h-4 w-4 shrink-0 text-gold-600" />
 								{p.caption}
