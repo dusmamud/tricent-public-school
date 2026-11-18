@@ -1,15 +1,14 @@
-/*:
+/*
   Cache-Control: public, max-age=0, must-revalidate
-  X-Tricent-Headers-Test: active
 
-/_app/immutable/*:
+/_app/immutable/*
   ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
 
-/fonts/*:
+/fonts/*
   ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
 
-/images/*:
+/images/*
   ! Cache-Control
   Cache-Control: public, max-age=604800
