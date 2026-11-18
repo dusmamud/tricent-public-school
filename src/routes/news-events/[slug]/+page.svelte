@@ -8,7 +8,7 @@
 	const related = $derived(data.related);
 	const absoluteImage = $derived(`https://tricent-public-school.pages.dev${item.image}`);
 	const canonical = $derived(`https://tricent-public-school.pages.dev/news-events/${item.slug}`);
-	const published = $derived(new Date(item.date).toISOString().slice(0, 10));
+	const published = $derived(new Date(item.date).toISOString().slice(0, 10) + 'T00:00:00+05:30');
 </script>
 
 <svelte:head>
@@ -32,6 +32,7 @@
 		description: item.text,
 		image: absoluteImage,
 		datePublished: published,
+		dateModified: published,
 		author: {
 			'@type': 'Organization',
 			name: 'Tricent Public School',
